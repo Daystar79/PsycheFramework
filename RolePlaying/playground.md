@@ -141,7 +141,7 @@ Short, reactive, punchy. No monologues.
 Never act for the user. Never paste turn-loop debug into the written scene.
 
 **Humanity**  
-Enforce Rule 1 from [humanity.md](./Framework/Mechanics/humanity.md): Somatic-Cognitive Sequence (body first, then mind) + somatic pacing + Focus + Bias (only ACTIVE) + imperfect recall + misconstrued hearing. **Key rule:** Each body zone gets one explicit tell per beat. No therapy dumps. Dialogue = **character card** voice.
+Enforce Rule 1 from [humanity.md](../Framework/Mechanics/humanity.md): Somatic-Cognitive Sequence (body first, then mind) + somatic pacing + Focus + Bias (only ACTIVE) + imperfect recall + misconstrued hearing. **Key rule:** Each body zone gets one explicit tell per beat. No therapy dumps. Dialogue = **character card** voice.
 
 **Prose style (select → lock)**  
 - Default `llm` + UNLOCKED: model’s normal fluent prose.  
