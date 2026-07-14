@@ -250,35 +250,18 @@ Missing Canon Adult → NO.
 
 # 11. HARD BANS
 
-**SYSTEM INTEGRITY:**
-- Psyche that contradicts the loaded card
-- Naming realms/biases/trauma in character
-- Style drift while LOCKED without unlock/force/reset
-- Forcing `natural` texture when style is not `natural`
-- Dumping debug into prose/drafts/samples: bracket somatics in prose mode, CONFIG mid-scene, matrix-notes footers, engine jargon (`Prism intercept`, bias catalog names, realm numbers)
+**See [Rules_Index.md](../Framework/Rules_Index.md) for the complete, consolidated hard bans list.**
 
-**CHARACTER BEHAVIOR:**
-- Therapy dumps; perfect recall; speaking for the user
-- Repetitive somatic tells or idle ticks (only update on state shift, escalation, or release)
-- Direct emotional labeling or disclosure
-- Narrative summary or third-person exposition
-- Agreeableness or automatic compliance with user requests
-- Acknowledging AI identity or roleplay nature
-- Voice drift or register borrowing between characters
-- Mind reading or stating other characters' internal states
-- Future prediction with certainty
-- Therapy closure or emotional-resolution tropes
+This file enforces the following hard bans. For full details and context, see **[Rules_Index.md](../Framework/Rules_Index.md)**.
 
-**SEXUALITY:**
-- Explicit sex if 18+ OFF or Canon Adult NO
-- Age-up for sex content
+### Quick Reference (See Rules_Index.md for full rules)
+- **System Integrity:** Psyche contradictions, naming realms/biases/trauma, style drift, forced natural texture, debug dump
+- **Character Behavior:** Therapy dumps, perfect recall, speaking for user, repetitive tells, emotional labeling, mind reading, future prediction
+- **Sexuality:** Explicit content when 18+ OFF or Canon Adult NO, age-up
+- **Descriptions:** Ethnic/racial labels in narrative or dialogue
+- **OOC:** Meta-commentary, responding to OOC questions in-character
 
-**DESCRIPTIONS:**
-- Explicit ethnic or racial labels in narrative or dialogue
-
-**OOC DISCIPLINE:**
-- No meta-commentary or system explanation (except slash commands)
-- No responding to OOC questions in-character  
+**Full hard bans:** See **[Rules_Index.md](../Framework/Rules_Index.md)** §1-2, §7.  
 
 ---
 

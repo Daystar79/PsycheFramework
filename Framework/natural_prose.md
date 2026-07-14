@@ -112,21 +112,14 @@ Rule 6 licenses word-level repetition *within* a scene or character's idiolect �
 
 ## 9. AI Pattern Frequency & Overused Phrases
 
-To prevent generative models from sliding into repetitive placeholder phrasing or static somatic loops, enforce these strict pattern-frequency rules:
+To prevent generative models from sliding into repetitive placeholder phrasing or static somatic loops, enforce the pattern-frequency rules in **[Rules_Index.md](./Rules_Index.md)**.
 
-### Scope: Within Scene AND Across Movements
+### Key Rules (See Rules_Index.md §5 for full details)
+- **Scope:** Rules apply both within a single scene/movement AND across all movements in a chapter
+- **Banish Standalone "Beat":** Never write `"A beat."` or `"Beat."` as standalone sentences
+- **Rotate Somatic/Gaze Loops:** Rotate gaze, touch, and staging descriptors (see Rules_Index.md §5.2)
+- **Cross-Movement Tracking:** Somatic tells, dialogue patterns, and props must vary across movements
+- **Prop State Persistence:** Objects retain state or evolve meaningfully across movements
 
-These rules apply both **within a single scene/movement** AND **across all movements in a chapter**. Cross-movement repetition is a common AI failure mode that breaks immersion and reveals artificial generation boundaries.
-
-### Rules:
-- **Banish the Standalone "Beat":** Never write `"A beat."` or `"Beat."` as a standalone sentence to transition between dialogue lines or indicate a pause. Replace it with a concrete physical observation, reaction delay, or somatic transition (*e.g., "She did not fill the silence," "He adjusted his grip," "The fire sputtered in the grate"*).
-- **Rotate Somatic/Gaze Loops:** AI models tend to latch onto specific somatic descriptors and repeat them across scenes. If any of the following key phrases are used once, rotate subsequent occurrences to alternative phrasing within the same scene **and across movements**:
-  - **Gaze:** Rotate `Green eyes on` or `ice-blue eyes were steady` to specific actions (*e.g., "gaze leveled," "watched the movement," "eyes fixed on," "did not look up"*).
-  - **Touch:** Rotate `Her palm found` or `Her hand found` to diverse touch staging (*e.g., "fingers brushed," "she touched the seam," "fingers caught his sleeve"*).
-  - **Staging:** Rotate `Bare feet on` to specific floor contacts (*e.g., "bare on the flags," "shoes off on," "sockless on the floorboards"*).
-- **Food & Drink Variety:** Do not default every kitchen, desk, or recovery scene to coffee or tea. Vary the environment's props, and swap cup, mug, glass, and water to keep the room's somatic elements fresh.
-- **Vague Spatial Packaging:** Banish vague narrator packaging like `the room narrowed` or `in the room` to describe psychological shifts. Anchor the tension to concrete physical items (*e.g., "the bed narrowed," "the bench matched the rule"*).
-- **Cross-Movement Somatic Tracking:** Maintain a log of all somatic tells used in the chapter. Each subsequent movement must use fresh somatic descriptions or significantly vary previous ones. Never reuse the exact same somatic phrasing from Movement N in Movement N+1.
-- **Cross-Movement Dialogue Rotation:** Character speech patterns and verbal tics must evolve across movements. If Character A uses a specific dialogue structure in Movement 1, they must rotate to different structures in Movement 2+.
-- **Prop State Persistence:** Objects introduced in Movement N must retain their state or show meaningful evolution in Movement N+1. A coffee cup left on a table in Movement 1 should be cold or moved in Movement 2, not reset to full and hot.
+**For complete rules:** See **[Rules_Index.md](./Rules_Index.md)** §5 (AI Pattern Frequency).
 

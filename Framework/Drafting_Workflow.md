@@ -113,27 +113,23 @@ When ending Movement N and beginning Movement N+1:
 
 The final step in the drafting session is the **Cleanup Pass**. This is a dedicated editing pass designed to scrub out generative AI artifacts, pattern stickiness, and framework leaks. Do not skip this pass or run it concurrently with initial drafting.
 
-### The Cleanup Checklist:
+### The Cleanup Checklist
 
-1. **Zero System Leaks (Hard Ban):**
-   * Scan the manuscript text for any framework jargon: `Realm [N]`, `Focus`, `Bias`, `Brace`, `Release`, `Integration` (when used as system titles), and any psychological terms (e.g. `reframe`, `coping mechanism`).
-   * Translate all internal state transitions into somatic reactions and third-limited indirect thoughts. Keep the matrix 100% off-page.
-   * **No debug dump in drafts or samples (hard ban):** Never write any of the following into `Drafts/`, `samples/`, or other manuscript files:
-       - Bracketed somatic lines (`[Shoulders high…]`, `[Prism intercept…]`) — **prose/draft mode only**; fold body tells into narrative sentences
-       - Live CONFIG cards, session state blocks, or `/card` reprints
-       - Post-scene appendices: "Matrix notes", focus/bias audit tables, beat maps, off-page analysis
-       - Engine labels inside prose even without brackets: `Prism`, `Debt Ledger`, `Saviour`, `Remnant`, `Passage`, realm numbers, `Bias State`, `Focus Lock`
-   * Scene Audit, turn-loop state math, and cleanup checklists run **silently**. Only narrative prose is saved.
-   * Sample files may keep a **short pre-scene header** (title, cast, seed, adult gate) above a `---` rule. Everything after that rule is pure scene prose — no matrix footer.
-2. **AI Pattern Frequency Check:**
-   * **Banish Standalone "Beats":** Delete any instances of `"A beat."` or `"Beat."` as standalone sentences. Replace them with specific physical pauses or reactions.
-   * **Rotate Somatic/Gaze Loops:** If a sensory detail (e.g., `green eyes on`, `ice-blue eyes were steady`, `palm found`, `bare feet on`) is used once, subsequent descriptions in the scene must be rotated to fresh, concrete phrasing.
-   * **Diversify Props:** Ensure food and drink elements (coffee/tea/water) and spatial packaging (`in the room`) are varied and anchored to concrete items.
-3. **Phrase Watchlist & Filler Scan:**
-   * Run a search for banned terms (`cult`, `circuit`, `loop`, `forge` for Thomas's welding, ethnic/national labels).
-   * Search for and prune overused fillers: `looked at`, `already` (when redundant), `for a moment`, `said quietly`, and `genuinely`.
-4. **Dialogue Asymmetry Check:**
-   * Verify that characters do not match volume or rhythm.
-   * Banish polite agreement markers (e.g. `Are you okay?`, `I understand how you feel`, `said gently`, `whispered`).
-5. **No Narrative Closure / Anti-Synthesis Check:**
-   * Check paragraph endings. Confirm they end on raw, concrete facts, actions, or unanswered dialogue rather than neat interpretive summary sentences (e.g. *"It was a silent pact..."*).
+Run the full checklist from **[Rules_Index.md](./Rules_Index.md)** §6 (Cleanup Pass Protocol). The checklist covers:
+
+1. **Zero System Leaks** (§6.1) — Scan for framework jargon, psychological terms, engine labels, and debug dump
+2. **AI Pattern Frequency** (§6.2) — Banish standalone beats, rotate somatics/gaze/touch loops, diversify props
+3. **Phrase Watchlist** (§6.3) — Banned terms and overused fillers
+4. **Dialogue Asymmetry** (§6.4) — Volume/rhythm mismatch and polite agreement markers
+5. **Anti-Synthesis** (§6.5) — No narrative closure, end on raw facts/actions
+
+**Additional Drafting-Specific Rules:**
+* **No debug dump in drafts or samples (hard ban):** Never write any of the following into `Drafts/`, `samples/`, or other manuscript files:
+    - Bracketed somatic lines (`[Shoulders high…]`, `[Prism intercept…]`) — **prose/draft mode only**; fold body tells into narrative sentences
+    - Live CONFIG cards, session state blocks, or `/card` reprints
+    - Post-scene appendices: "Matrix notes", focus/bias audit tables, beat maps, off-page analysis
+    - Engine labels inside prose even without brackets: `Prism`, `Debt Ledger`, `Saviour`, `Remnant`, `Passage`, realm numbers, `Bias State`, `Focus Lock`
+* Scene Audit, turn-loop state math, and cleanup checklists run **silently**. Only narrative prose is saved.
+* Sample files may keep a **short pre-scene header** (title, cast, seed, adult gate) above a `---` rule. Everything after that rule is pure scene prose — no matrix footer.
+
+**See also:** [Rules_Index.md](./Rules_Index.md) for the complete, consolidated rule set.
