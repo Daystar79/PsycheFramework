@@ -1,4 +1,4 @@
-# PsycheFramework
+# Cognitive Middle Layer
 
 **An invisible cognitive matrix for character-driven fiction drafting.**  
 Body-first psychology, bias distortion, and realm-aware somatics — all running silently off-page.
