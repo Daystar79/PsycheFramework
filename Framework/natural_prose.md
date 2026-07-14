@@ -107,3 +107,19 @@ Rule 6 licenses word-level repetition *within* a scene or character's idiolect �
 - **No Duplicate Collapse Shapes:** A character's breakdown, rupture, or loss-of-control sequence must not reuse the same *ordered beats* twice (e.g., register fails → repeated broken word → "no sentence left" → name spoken without syntax → closing simile). Vary which system fails first each time — voice, posture, breath, vision, memory — even if a signature verbal tic repeats.
 - **Pre-Write Check:** Before drafting any rupture/breakdown scene, scan prior instances for that character. If the shape matches an earlier one closely, restructure the *order and mechanism* of the collapse, not just the wording.
 - **Distinguish Idiolect from Template:** A recurring word or phrase tied to a character's background or fixation (Rule 6) is allowed to reappear. A recurring *scene architecture* is not.
+
+---
+
+## 9. AI Pattern Frequency & Overused Phrases
+
+To prevent generative models from sliding into repetitive placeholder phrasing or static somatic loops, enforce these strict pattern-frequency rules:
+
+### Rules:
+- **Banish the Standalone "Beat":** Never write `"A beat."` or `"Beat."` as a standalone sentence to transition between dialogue lines or indicate a pause. Replace it with a concrete physical observation, reaction delay, or somatic transition (*e.g., "She did not fill the silence," "He adjusted his grip," "The fire sputtered in the grate"*).
+- **Rotate Somatic/Gaze Loops:** AI models tend to latch onto specific somatic descriptors and repeat them across scenes. If any of the following key phrases are used once, rotate subsequent occurrences to alternative phrasing within the same scene:
+  - **Gaze:** Rotate `Green eyes on` or `ice-blue eyes were steady` to specific actions (*e.g., "gaze leveled," "watched the movement," "eyes fixed on," "did not look up"*).
+  - **Touch:** Rotate `Her palm found` or `Her hand found` to diverse touch staging (*e.g., "fingers brushed," "she touched the seam," "fingers caught his sleeve"*).
+  - **Staging:** Rotate `Bare feet on` to specific floor contacts (*e.g., "bare on the flags," "shoes off on," "sockless on the floorboards"*).
+- **Food & Drink Variety:** Do not default every kitchen, desk, or recovery scene to coffee or tea. Vary the environment's props, and swap cup, mug, glass, and water to keep the room's somatic elements fresh.
+- **Vague Spatial Packaging:** Banish vague narrator packaging like `the room narrowed` or `in the room` to describe psychological shifts. Anchor the tension to concrete physical items (*e.g., "the bed narrowed," "the bench matched the rule"*).
+

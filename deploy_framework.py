@@ -22,6 +22,7 @@ FRAMEWORK_FILES = [
     "Framework/natural_prose.md",
     "Framework/psyche_framework.md",
     "Framework/source_changes.md",
+    "Framework/Drafting_Workflow.md",
     "Characters/_template.md",
     "Characters/README.md",
 ]

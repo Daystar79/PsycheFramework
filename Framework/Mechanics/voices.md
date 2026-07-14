@@ -70,9 +70,21 @@ These six archetypes are **templates** for building character cards. At runtime,
 
 ## IV. Audit Checklist (Run before saving)
 
-1. **Filler Scan:** Cut `looked at`, `for a moment`, `said quietly`, `genuinely`.
-2. **Abstract Emotion Audit:** Replace internal state summaries with physical beats (`jaw lock`, `skin flush`, `tremor`).
-3. **Voice Check:** Do two characters sound interchangeable? If yes, cut and rebuild.
-4. **Document-Register Scan:** Search dialogue for paperwork vocabulary; translate to idiolect unless reading aloud.
-5. **Vernacular Baseline:** Ban clinical/academic jargon in speech unless the character is reading a document.
-6. **Abstract & Geometric Description Audit:** Replace *geometry, dimension, trajectory, symmetry, equilibrium* with concrete physical description.
+1. **Phrase Watchlist & Banned Words (Cut completely):**
+   - **Banned terminology:** Cut `cult` (use *Order*, *Foundation*, *house*, *annex*, *community*).
+   - **Guide jargon:** Banish `Echo`, `Form`, `Presence`, `Integration` when used as Remnant names or Realms.
+   - **Mechanism labels:** Banish `circuit`, `loop`, or `fear discharge` (Rue/Selene's bond must be shown, never named).
+   - **Occupational terms:** Banish `forge` for Thomas's welding (use *workshop* or *annex bay*; *forge* is cosmology only).
+   - **Identity labels:** Banish *ethnic and national labels* (e.g., Russian, Japanese, Caucasian) in description or dialogue. Show physical features, bone structure, and movements instead.
+2. **Filler Scan (Prune overuse):**
+   - Cut `looked at` (replace with active tracking or posture).
+   - Cut `already` (prune when redundant to the timeline).
+   - Cut `for a moment` or `a long moment` (replace with concrete physical pauses/beats).
+   - Cut `said quietly` (replace with tone, breath, or silence).
+   - Cut `genuinely` (show sincerity, do not state it in the narration).
+3. **Abstract Emotion Audit:** Replace internal state summaries with physical beats (`jaw lock`, `skin flush`, `tremor`).
+4. **Voice Check:** Do two characters sound interchangeable? If yes, cut and rebuild.
+5. **Document-Register Scan:** Search dialogue for paperwork vocabulary; translate to idiolect unless reading aloud.
+6. **Vernacular Baseline:** Ban clinical/academic jargon in speech unless the character is reading a document.
+7. **Abstract & Geometric Description Audit:** Replace *geometry, dimension, trajectory, symmetry, equilibrium* with concrete physical description.
+
