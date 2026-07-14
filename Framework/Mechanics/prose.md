@@ -112,6 +112,15 @@ Aliases:
 | **Playground** | CONFIG CARD shows `Prose Style` + `Style Lock`. Character swaps keep the locked style. |
 | **Drafting** | Brief sets style → treat as **LOCKED** for that draft pass. New brief / new session to change, or explicit unlock line. |
 
+### Output modes (somatic presentation)
+
+| Mode | Where | Somatics | Debug / matrix |
+|:---|:---|:---|:---|
+| **playground** | Chat RP only | Optional brackets `[like this]` on state shift only | CONFIG on load/`/card` only — never mid-scene as filler |
+| **prose** | Drafts, samples, manuscripts, `/mode prose` | Fold into narrative sentences. **No brackets.** | **Never** print CONFIG, matrix notes, audit tables, or engine labels |
+
+**Hard ban:** Do not dump turn-loop state, Focus/Bias labels, "Prism intercept", remnant/passage jargon, or post-scene matrix footnotes into prose files. If a sample or draft contains those, the cleanup pass failed.
+
 ---
 
 ## 6. Commands / brief lines

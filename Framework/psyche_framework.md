@@ -144,3 +144,4 @@ When drafting or editing a scene:
 4. **Audit Dialogue & Staging:** Polarize physical actions and spoken words (e.g., Realm VIII loop → subtle code-switching).
 5. **Trace the somatic transition:** Mark internal shifts with somatic triggers (jaw release, throat tighten, breath landing low).
 6. **Never name the system on the page:** No realm numbers, bias labels, or the word "trauma" in dialogue or free-indirect thought.
+7. **Audit is internal only:** Do **not** print audit results, matrix notes, CONFIG blocks, focus/bias tables, or bracketed debug somatics into the draft, sample, or manuscript. Write the scene; leave the checklist off the page.

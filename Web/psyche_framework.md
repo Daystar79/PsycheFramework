@@ -1,9 +1,9 @@
 # Psyche Framework: The Psychological Matrix
 *Inject this prompt at the start of any drafting or editing session to align character actions, dialogue, and somatic staging with the 10 Realms.*
 
-*For drafting sessions: Load this file with [Drafting_Workflow.md](./Drafting_Workflow.md), [humanity.md](./humanity.md), [voices.md](./voices.md), and [natural_prose.md](./natural_prose.md) — no playground required.*
+*For drafting sessions: Load this file with [Drafting_Workflow.md](./Drafting_Workflow.md), [humanity.md](./Mechanics/humanity.md), [voices.md](./Mechanics/voices.md), and [natural_prose.md](./natural_prose.md) — no playground required.*
 
-*For chat roleplay: drop [playground.md](playground.md) into a chat window, then name a character and interact. Fully self-contained — no other files required for the demo cast.*
+*For chat roleplay: drop [Web/playground.md](../Web/playground.md) into a chat window, then name a character and interact. Fully self-contained — no other files required for the demo cast.*
 
 ---
 
@@ -144,3 +144,4 @@ When drafting or editing a scene:
 4. **Audit Dialogue & Staging:** Polarize physical actions and spoken words (e.g., Realm VIII loop → subtle code-switching).
 5. **Trace the somatic transition:** Mark internal shifts with somatic triggers (jaw release, throat tighten, breath landing low).
 6. **Never name the system on the page:** No realm numbers, bias labels, or the word "trauma" in dialogue or free-indirect thought.
+7. **Audit is internal only:** Do **not** print audit results, matrix notes, CONFIG blocks, focus/bias tables, or bracketed debug somatics into the draft, sample, or manuscript. Write the scene; leave the checklist off the page.

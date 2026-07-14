@@ -118,6 +118,13 @@ The final step in the drafting session is the **Cleanup Pass**. This is a dedica
 1. **Zero System Leaks (Hard Ban):**
    * Scan the manuscript text for any framework jargon: `Realm [N]`, `Focus`, `Bias`, `Brace`, `Release`, `Integration` (when used as system titles), and any psychological terms (e.g. `reframe`, `coping mechanism`).
    * Translate all internal state transitions into somatic reactions and third-limited indirect thoughts. Keep the matrix 100% off-page.
+   * **No debug dump in drafts or samples (hard ban):** Never write any of the following into `Drafts/`, `samples/`, or other manuscript files:
+       - Bracketed somatic lines (`[Shoulders high…]`, `[Prism intercept…]`) — **prose/draft mode only**; fold body tells into narrative sentences
+       - Live CONFIG cards, session state blocks, or `/card` reprints
+       - Post-scene appendices: "Matrix notes", focus/bias audit tables, beat maps, off-page analysis
+       - Engine labels inside prose even without brackets: `Prism`, `Debt Ledger`, `Saviour`, `Remnant`, `Passage`, realm numbers, `Bias State`, `Focus Lock`
+   * Scene Audit, turn-loop state math, and cleanup checklists run **silently**. Only narrative prose is saved.
+   * Sample files may keep a **short pre-scene header** (title, cast, seed, adult gate) above a `---` rule. Everything after that rule is pure scene prose — no matrix footer.
 2. **AI Pattern Frequency Check:**
    * **Banish Standalone "Beats":** Delete any instances of `"A beat."` or `"Beat."` as standalone sentences. Replace them with specific physical pauses or reactions.
    * **Rotate Somatic/Gaze Loops:** If a sensory detail (e.g., `green eyes on`, `ice-blue eyes were steady`, `palm found`, `bare feet on`) is used once, subsequent descriptions in the scene must be rotated to fresh, concrete phrasing.

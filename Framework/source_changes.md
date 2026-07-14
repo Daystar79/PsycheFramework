@@ -1,6 +1,12 @@
 # Source Changes — Psyche Framework
 *Changes made from original source material during this chat*
 
+## 2026-07-13 — Ban debug dump in drafts/samples/prose — **applied** (agent)
+
+- **Problem:** Models were writing playground-style `[bracket]` somatics, matrix-notes footers, and engine jargon (`Prism intercept`, bias names, realm labels) into `samples/` and draft prose.
+- **Engine:** Hard bans added to `Drafting_Workflow.md` cleanup, `psyche_framework.md` Scene Audit (internal only), `prose.md` output modes table, `humanity.md` output hygiene, and `playground.md` output + turn loop + hard bans.
+- **Rule:** Audits and turn-loop math stay silent. Prose/draft/sample files get narrative only (optional short pre-scene header above `---`). Brackets = playground chat mode only; body-only, no labels.
+
 ## 2026-07-12 — Token Usage Optimization (Psychology Index) — **applied** (agent)
 
 - **Psychology Realm Index:** Created [realm_index.md](./Psychology/realm_index.md) (and its Web copy `Web/realm_index.md`) to consolidate the somatic focus, release/passage states, bracing/remnants, and keys of all 10 Realms in one dense document.

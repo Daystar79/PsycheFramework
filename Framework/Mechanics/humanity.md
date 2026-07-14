@@ -21,6 +21,8 @@ Characters are high-fidelity biological systems.
 
 **On the page:** Body before insight; somatic pacing; wound dormancy in low-stakes; no therapy closure; imperfect recall + deflection; biased hearing. Never name realms/biases/trauma.
 
+**Output hygiene:** Realm math, bias names, and "prism" language are **engine-internal**. In drafts and samples (prose mode), show only body and behavior — never bracketed debug lines, never a matrix notes footer, never `Prism intercept` / `Debt Ledger` / realm numbers in the narrative.
+
 ---
 
 ## Rule 2: Voice Fidelity (No Blending)
