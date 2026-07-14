@@ -1,7 +1,9 @@
 # Psyche Framework: The Psychological Matrix
 *Inject this prompt at the start of any drafting or editing session to align character actions, dialogue, and somatic staging with the 10 Realms.*
 
-*For chat roleplay: drop [Web/playground.md](../Web/playground.md) into a chat window, then name a character and interact. Fully self-contained — no other files required for the demo cast.*
+*For drafting sessions: Load this file with [Drafting_Workflow.md](./Drafting_Workflow.md), [humanity.md](./humanity.md), [voices.md](./voices.md), and [natural_prose.md](./natural_prose.md) — no playground required.*
+
+*For chat roleplay: drop [playground.md](playground.md) into a chat window, then name a character and interact. Fully self-contained — no other files required for the demo cast.*
 
 ---
 
