@@ -3,7 +3,7 @@
 
 *For drafting sessions: Load this file with [Drafting_Workflow.md](./Drafting_Workflow.md), [humanity.md](./Mechanics/humanity.md), [voices.md](./Mechanics/voices.md), and [natural_prose.md](./natural_prose.md) — no playground required.*
 
-*For chat roleplay: drop [Web/playground.md](../Web/playground.md) into a chat window, then name a character and interact. Fully self-contained — no other files required for the demo cast.*
+*For chat roleplay: drop [playground.md](../RolePlaying/playground.md) into a chat window, then name a character and interact. Fully self-contained — no other files required for the demo cast.*
 
 ---
 

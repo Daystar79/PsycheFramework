@@ -29,4 +29,4 @@ Age on the card is canon. If age is under 18, **Canon Adult must be NO**.
 2. Fill Identity (especially **Age** + **Canon Adult**)
 3. Fill Psyche Matrix from the Great Wheel + bias catalog
 4. Optionally map **Voice archetype base** to A–F for engine defaults, then override with idiolect
-5. For chat demos: drop [`playground.md`](../Web/playground.md) (or root `playground.md`) into the chat, then paste your card and name them — or add them to the playground Character Directory
+5. For chat demos: drop [`RolePlaying/playground.md`](../RolePlaying/playground.md) into the chat, then paste your card and name them — or add them to the playground Character Directory

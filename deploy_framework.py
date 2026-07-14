@@ -17,7 +17,7 @@ import sys
 
 # Define framework components to distribute
 FRAMEWORK_FILES = [
-    "playground.md",
+    "RolePlaying/playground.md",
     "Framework/formatting_rules.md",
     "Framework/natural_prose.md",
     "Framework/psyche_framework.md",
@@ -30,8 +30,7 @@ FRAMEWORK_FILES = [
 FRAMEWORK_DIRS = [
     "Framework/Mechanics",
     "Framework/Psychology",
-    "Web",
-    "samples",
+    "RolePlaying",
 ]
 
 NEW_BOOK_DIRS = [

@@ -1,6 +1,13 @@
 # Source Changes — Psyche Framework
 *Changes made from original source material during this chat*
 
+## 2026-07-13 — Remove Web/; RolePlaying/ holds playground — **applied** (agent)
+
+- **Deleted** `Web/` (mirrored flat copies no longer used).
+- **Created** `RolePlaying/`; moved root `playground.md` → `RolePlaying/playground.md`.
+- Updated links in `psyche_framework.md`, `Characters/README.md`; relative path in playground to `../Framework/Mechanics/humanity.md`.
+- `deploy_framework.py`: distribute `RolePlaying/` (+ playground path); dropped `Web` from deploy dirs.
+
 ## 2026-07-13 — Ban debug dump in drafts/samples/prose — **applied** (agent)
 
 - **Problem:** Models were writing playground-style `[bracket]` somatics, matrix-notes footers, and engine jargon (`Prism intercept`, bias names, realm labels) into `samples/` and draft prose.
