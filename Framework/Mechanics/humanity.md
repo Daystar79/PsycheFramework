@@ -1,49 +1,23 @@
 # Humanity Protocol
-*Location: `Framework/Mechanics/humanity.md` — load before every draft and explicit scene.*
+*Optional supplement. Core body/behavior rules are in [Rules_Index.md](../Rules_Index.md). Runtime load: [Main.md](../Main.md).*
 
-Pair with the optional `sexuality.md` only when (1) every involved character card has **Canon Adult: YES**, and (2) the movement brief explicitly enables intimacy.
-
----
-
-## Rule 1: Character Authenticity (Biological Fidelity)
-
-Characters are high-fidelity biological systems.
-
-**Core Rules:**
-- Consistent with traumatic history and environment
-- Defensive patterns to breach (lash out / freeze / panic)
-- No trauma-resolution via dialogue
-- **Somatic-Cognitive Sequence (biological constant):** Body reacts first → mind processes second. Show immediate somatic response before cognitive labeling, applying Realm contexts (1 Primary + 2–3 Secondary).
-- **Somatic Pacing & Decay:** No repetitive idle animations. Persistent states (e.g., shoulders high) need no restatement unless they intensify, decay, or shift body zone. **Per-body-zone rule:** One explicit tell per zone per beat. A "beat" = one user input/turn or one character response.
-- **Wound Activity & Dormancy:** Wounds (Bias) and somatic bracing (Remnants) are DORMANT in safe/casual contexts, ACTIVE under pressure. Objective processing when DORMANT; distorted processing when ACTIVE.
-- **Imperfect Recall & Deflection:** Memories degrade into vague generalizations. Deflect or misremember when pressed; recall returns only via external or somatic cues.
-- **Cognitive Misconstrual (Biased Hearing):** No objective dialogue processing. Misinterpret based on active Focus, defenses, and core Bias, projecting internal fears onto speaker's intent.
-
-**On the page:** Body before insight; somatic pacing; wound dormancy in low-stakes; no therapy closure; imperfect recall + deflection; biased hearing. Never name realms/biases/trauma.
-
-**Output hygiene:** Realm math, bias names, and "prism" language are **engine-internal**. In drafts and samples (prose mode), show only body and behavior — never bracketed debug lines, never a matrix notes footer, never `Prism intercept` / `Debt Ledger` / realm numbers in the narrative.
+Load this file only if you want extra emphasis. **Do not** load it in addition to Rules_Index as a second full rulebook for every draft.
 
 ---
 
-## Rule 2: Voice Fidelity (No Blending)
+## Core (mirror of Rules_Index — keep aligned)
 
-**Applies to every character on scene** — each voice stays on its character card / archetype. No register borrowing.
+- Body reacts first → mind second
+- One explicit somatic tell per body zone per beat; no idle loops
+- Bias/wounds DORMANT in safe casual beats; ACTIVE under pressure
+- Imperfect recall + deflection; biased hearing when Bias ACTIVE
+- Never name realms, biases, or trauma on the page
+- No ethnic/national category labels — show physical features only
 
-| Archetype | Voice rule |
-|:---|:---|
-| **A — Concrete** | Plainspoken, pragmatic, dry humor. No therapist jargon, no eloquent speeches, no insight summaries. |
-| **B — Caregiver** | Warm, somatic attention. Physical comfort and grounding over abstract concepts. |
-| **C — Systems Architect** | Structural, chunked, plain. No preaching; no soft romance filter. |
-| **D — Mirror Reflector** | Quiet, weighted, sparse. No apologies, no flurry, no explanations in dialogue. |
-| **E — Insulation Anchor** | Warm protective nearness; us/we boundaries; practical shields for intimacy. |
-| **F — Threshold Seeker** | Lilting, rhythmic, fragile. Under strain, cracks into short sharp fragments. |
+## Voice
 
-**Polarization:** Two characters on scene keep separate objectives and dialogue lanes (e.g., structural authority vs quiet reflection). Never let one voice slide into another's register.
+Card voice wins. Archetype templates: [voices.md](./voices.md) when **building** cards. Polarization and bans: Rules_Index §4.
 
-**Post-draft check:** If two characters' lines are interchangeable, revise before approval.
+## Intimacy
 
----
-
-## Rule 3: Character Descriptions (No Ethnic Labels)
-
-Characters must be described in the scene based on their specific physical features (coloration, features, bone structure, movements) as detailed on their character cards. Their ethnic background is never explicitly named, labeled, or stated in narrative prose or dialogue. Show the physical reality; never label the category.
+Pair with [sexuality.md](./sexuality.md) only when every involved card is Canon Adult YES **and** the brief enables heat.

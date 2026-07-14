@@ -1,11 +1,11 @@
 # Psychology Realm Index
-*Locked July 12, 2026 — Consolidated Reference / Token Optimizer*
+*Required with [Main.md](../Main.md) for drafting. All ten realms in one file — no per-realm files.*
 
 ---
 
 ## The Great Wheel (Ten Realms Index)
 
-This index provides the complete somatic and psychological profile for all 10 Realms. Load this index by default for drafting and scene verification. Only load individual realm files (e.g., `realm_08_integration.md`) if deep, page-level somatic audits of a specific focus are required.
+Somatic and psychological profile for all 10 Realms. Load this index by default with Main + Rules_Index + on-scene cards.
 
 | Realm | Somatic Focus | Release (Passage) Somatics | Bracing (Remnant) Somatics | Key / Trigger |
 |:---:|:---|:---|:---|:---|
@@ -23,5 +23,5 @@ This index provides the complete somatic and psychological profile for all 10 Re
 ---
 
 ## Loading Protocol
-1. By default, load this file `realm_index.md` to access the somatic profiles of all 10 Realms.
-2. In-character dialogue must never name these Realms, numbers, or psychological labels on the page. Translate them strictly to somatic and behavioral actions.
+1. Load this file with Main for every draft session.
+2. Never name Realms, numbers, or psychological labels on the page — only somatic and behavioral actions.

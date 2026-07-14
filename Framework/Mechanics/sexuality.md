@@ -15,10 +15,9 @@
 
 ## Load order (only when eligible and enabled)
 
-1. `Framework/Mechanics/humanity.md`
-2. Relevant **character cards** (matrix + voice + somatic)
-3. Worldbuilding reference — if ritual staging applies
-4. This file
+1. [Main.md](../Main.md) + [Rules_Index.md](../Rules_Index.md) + on-scene **character cards**
+2. This file
+3. Book-local worldbuilding — if ritual staging applies
 
 ---
 

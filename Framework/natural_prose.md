@@ -4,8 +4,8 @@
 This document outlines rules for avoiding "perfect pattern spaces" in AI-generated prose: jagged rhythm, cognitive friction, anti-synthesis. It is the **house natural pack** (Anthony/Barker-adjacent lane).
 
 > [!IMPORTANT]
-> **Do not apply this file automatically.** Prose style is user-selected via [prose.md](./Mechanics/prose.md).  
-> **Session default is `llm`** (model's ordinary fluent prose). The LLM must not drift toward natural/asymmetric patterns while in `llm` style. Load this file only when the user explicitly chooses **`natural`** (aliases: `house`, `asymmetric`, `anthony`, `barker`, `anthony/barker`, `anti-ai`). Once selected, style LOCKS per [prose.md](./Mechanics/prose.md) rules.
+> **Do not apply this file automatically.** Session default is `llm` ([Main.md](./Main.md) §3a).  
+> Load this file only when the user explicitly chooses **`natural`** (aliases: `house`, `asymmetric`, `anthony`, `barker`, `anthony/barker`, `anti-ai`). Once selected, style LOCKS. Full catalog optional: [prose.md](./Mechanics/prose.md).
 
 Character psychology and dialogue voice are independent of this pack.
 

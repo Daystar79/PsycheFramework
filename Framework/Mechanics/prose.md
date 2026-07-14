@@ -1,20 +1,21 @@
 # Prose Protocol
-*Location: `Framework/Mechanics/prose.md` — select narrative register; lock for session coherence.*
+*Optional detail pack. Session defaults and lock-on-select also live in [Main.md](../Main.md) §3a. Load this file only when you need the full catalog/state machine.*
 
 > [!IMPORTANT]
 > **Prose style is user-selected.** Do not force the house "Natural / asymmetric" pack (Anthony/Barker lane) unless chosen.  
 > **Default = `llm`** (model fluent prose), status **unlocked** until the writer makes an explicit style choice.  
 > **Once the writer selects a style, it LOCKS** for the rest of the session (or until explicit unlock / full reset).
 
-Psychology (matrix, voice, somatics, humanity) stays in force regardless of style. Style only changes **how the narrative is written**, not who the character is.
+Psychology (matrix, voice, somatics) stays in force regardless of style. Style only changes **how the narrative is written**, not who the character is.
 
 ---
 
 ## Related
 
+- **Drafting entry:** [Main.md](../Main.md)
 - **Natural / asymmetric pack (optional):** [natural_prose.md](../natural_prose.md)
-- **Character voice (dialogue idiolect):** [voices.md](./voices.md)
-- **Humanity constraints:** [humanity.md](./humanity.md)
+- **Card-building voices:** [voices.md](./voices.md)
+- **Hard bans:** [Rules_Index.md](../Rules_Index.md)
 
 ---
 
@@ -105,21 +106,21 @@ Aliases:
 
 ---
 
-## 5. Playground vs drafting
+## 5. Drafting vs chat RP (style)
 
 | Context | Style control |
 |:---|:---|
-| **Playground** | CONFIG CARD shows `Prose Style` + `Style Lock`. Character swaps keep the locked style. |
-| **Drafting** | Brief sets style → treat as **LOCKED** for that draft pass. New brief / new session to change, or explicit unlock line. |
+| **Drafting** ([Main.md](../Main.md)) | Brief or `/style` sets style → **LOCKED** for the pass |
+| **Chat RP** (RolePlaying) | Style lock per that engine; does not change draft manuscripts |
 
-### Output modes (somatic presentation)
+### Output (drafting vs chat RP)
 
-| Mode | Where | Somatics | Debug / matrix |
-|:---|:---|:---|:---|
-| **playground** | Chat RP only | Optional brackets `[like this]` on state shift only | CONFIG on load/`/card` only — never mid-scene as filler |
-| **prose** | Drafts, samples, manuscripts, `/mode prose` | Fold into narrative sentences. **No brackets.** | **Never** print CONFIG, matrix notes, audit tables, or engine labels |
+| Context | Somatics | Debug / matrix |
+|:---|:---|:---|
+| **Drafting** ([Main.md](../Main.md)) | Fold into narrative. **No brackets.** | **Never** print CONFIG, matrix notes, audit tables, or engine labels |
+| **Chat RP** ([RolePlaying/playground.md](../../RolePlaying/playground.md)) | Optional brackets on state shift only | CONFIG only if that engine allows — never into manuscript files |
 
-**Hard ban:** Do not dump turn-loop state, Focus/Bias labels, "Prism intercept", remnant/passage jargon, or post-scene matrix footnotes into prose files. If a sample or draft contains those, the cleanup pass failed.
+**Hard ban:** Do not dump turn-loop state, Focus/Bias labels, "Prism intercept", remnant/passage jargon, or post-scene matrix footnotes into draft files.
 
 ---
 

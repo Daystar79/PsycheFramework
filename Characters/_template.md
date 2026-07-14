@@ -1,5 +1,5 @@
 # Character Card: [Full Name]
-*Location: `Characters/[slug].md` — load by name into drafting sessions or playground*
+*Location: `Characters/[slug].md` — load with [Main.md](../Framework/Main.md) for drafting*
 
 ---
 
@@ -66,9 +66,9 @@ List only coarse, scene-useful facts. Memories stay vague unless triggered.
 
 ## Load Protocol
 
-When this character is named:
+When this character is on-scene for drafting ([Main.md](../Framework/Main.md)):
 
-1. Copy all matrix, voice, somatic, and adult-gate fields into the live session config.
-2. Set **18+ Sexuality** to **OFF**. Enable only if user requests **and** Canon Adult is **YES**.
-3. Run Focus realm bracing/release from the Psychology realm files (drafting) or the playground realm DB (RP).
+1. Copy matrix, voice, somatic, and adult-gate fields into **silent** live state (do not print CONFIG).
+2. Set **18+ Sexuality** to **OFF**. Enable only if brief/user requests **and** Canon Adult is **YES**.
+3. Run Focus brace/release from [realm_index.md](../Framework/Psychology/realm_index.md).
 4. Never name realms, biases, or "trauma" in character speech.

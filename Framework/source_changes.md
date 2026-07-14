@@ -1,6 +1,15 @@
 # Source Changes — Psyche Framework
 *Changes made from original source material during this chat*
 
+## 2026-07-13 — Finish Main entry path (post-Mistral cleanup) — **applied** (agent)
+
+- **Main.md:** Honest load protocol (always Main + Rules_Index + realm_index + cards); strip RP opening beat / CONFIG / `/debug`; add Prism §3c; de-B&L brief template; drafting-only execute loop; author commands cleaned.
+- **Rules_Index.md:** Drafting-first; playground reduced to pointer; generic phrase watchlist; book-local watchlist optional.
+- **Stubs:** `psyche_framework.md`, `Drafting_Workflow.md` → point at Main (do not load for gen).
+- **Mechanics:** `humanity.md` / `voices.md` slimmed to optional supplements; prose.md marked optional detail.
+- **deploy_framework.py:** Ships Main + Rules_Index first; keeps stubs for overwrite of old book installs.
+- **Characters/README** + `_template` point at Main; samples/ removed again.
+
 ## 2026-07-13 — Remove Web/; RolePlaying/ holds playground — **applied** (agent)
 
 - **Deleted** `Web/` (mirrored flat copies no longer used).
