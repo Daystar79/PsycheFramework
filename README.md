@@ -1,4 +1,4 @@
-# Cognitive Middle Layer
+# Cognitive Middleware
 
 **An invisible cognitive matrix for character-driven fiction drafting.**  
 Body-first psychology, bias distortion, and realm-aware somatics — all running silently off-page.
@@ -7,7 +7,7 @@ Body-first psychology, bias distortion, and realm-aware somatics — all running
 
 ## What It Is
 
-PsycheFramework is a sophisticated runtime engine developed primarily for **"Belief and Love"** (and compatible with related private works such as *A Wanderer’s Guide to the Gates*). It enables consistent, psychologically rich characters through:
+**CognitiveMiddleware** (formerly PsycheFramework) is a sophisticated runtime engine developed primarily for **"Belief and Love"** (and compatible with related private works such as *A Wanderer’s Guide to the Gates*). It enables consistent, psychologically rich characters through:
 
 - **Body Before Insight** — Physical reactions and somatic tells always precede psychological explanation.
 - **Character-First** — Named characters from card files are the single source of truth.
