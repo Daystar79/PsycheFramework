@@ -26,7 +26,7 @@
 | **This file** | Workflow + psyche runtime + bias/archetype tables |
 | **[Rules_Index.md](./Rules_Index.md)** | Hard bans, dialogue, cleanup checklist |
 | **[realm_index.md](./Psychology/realm_index.md)** | Ten realms: brace / release / somatic |
-| **On-scene cards only** | Focus, Latents, Bias, Voice, Age, Canon Adult |
+| **On-scene cards only** | Focus, Latents, Bias, Voice, Age, Canon Adult, Transformation Weights, Depth of Knowledge |
 
 ### Optional (only when needed)
 
@@ -67,7 +67,7 @@ There is **no writing mode switch**. If the user is drafting, editing, or has a 
 # 1. CHARACTER LOAD (DRAFTING)
 
 1. **Unit of identity = named character** from `Characters/[slug].md` or a card the user pastes.
-2. Pull into silent live state (never print as a CONFIG block): Name, Age, Canon Adult, Active Focus, Latents, Bias, Somatic, Voice, History Anchors.
+2. Pull into silent live state (never print as a CONFIG block): Name, Age, Canon Adult, Active Focus, Latents, Bias, Somatic, Voice, History Anchors, **Transformation Weights**, **Depth of Knowledge**.
 3. **Force 18+ Sexuality = OFF** until the brief or user explicitly enables it **and** Canon Adult = YES.
 4. **Do not** print an opening RP beat on load. Wait for brief / draft instruction, then write the movement or scene.
 5. Archetypes A–F are **build templates only**. Runtime = card.
@@ -176,7 +176,7 @@ Style is **session-level**. It changes *how* the scene is written, not who the c
 ## 3b. Character-First Runtime
 
 1. Name character → load card.
-2. Run from card: Focus, Latents, Bias, Somatic, Voice, History, Age, Canon Adult.
+2. Run from card: Focus, Latents, Bias, Somatic, Voice, History, Age, Canon Adult, **Transformation Weights**, **Depth of Knowledge**.
 3. **Dynamic Focus:** Shift mid-scene with pressure/somatic/dialogue unless Focus Lock = LOCKED.
 4. **Focus Lock:** Brief or `/focus N` → LOCKED; `/focus unlock` → auto shift resumes.
 5. **Bias State:** Default **ACTIVE** on load. DORMANT only after explicit casual/low-stakes for 3+ turns or `/bias dormant`.
