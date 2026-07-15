@@ -112,7 +112,7 @@ Use the `_template.md` to create new ones. Archetypes A–F in `Main.md` are sta
 
 ## License & Usage
 
-This framework was built for personal long-form fiction work (primarily **"Belief and Love"** and compatible private projects). Feel free to adapt it for your own projects. Credit appreciated but not required.
+This framework was built for personal long-form fiction work. Feel free to adapt it for your own projects. Credit appreciated but not required.
 
 ---
 
