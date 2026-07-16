@@ -1,13 +1,6 @@
----
-title: "Rules Index — Psyche Matrix Framework"
-description: "Canonical \"do not\" rules and cleanup for drafting. Load with Main.md."
-type: "core_framework"
-role: "Hard bans, dialogue rules, and cleanup checklist"
-load_protocol: "Always load for drafting, design, or cleanup"
----
-
 # Rules Index — Psyche Matrix Framework
 *Canonical "do not" rules and cleanup for **drafting**. Load with [Main.md](./Main.md).*
+
 
 ---
 
@@ -30,8 +23,8 @@ The matrix stays **100% off-page**.
 
 - **No Framework Jargon:** Never on-page: `Realm [N]`, `Focus`, `Bias`, `Brace`, `Release`, `Integration`, `Remnant`, `Passage`, `Great Wheel`, `Prism`, realm numbers I–X in narrative or dialogue
 - **No Psychological Labels:** Never: `trauma`, `reframe`, `coping mechanism`, `wound`, `trigger` as labels (show body only)
-- **No Engine Labels:** Never: `Prism intercept`, `Debt Ledger`, `Saviour Complex`, `System Architect`, `Mirror`, `Insulation`, `Dissolution`, `Focus Lock`, `Bias State` in speech or narration
-- **No Debug Dump:** No CONFIG cards, matrix notes, audit tables, beat maps, or turn-loop state in drafts or manuscripts
+- **No Engine Labels:** Never: `Prism intercept`, `Debt Ledger`, `Saviour Complex`, `System Architect`, `Mirror`, `Insulation`, `Dissolution`, `Focus Lock`, `Bias State`, `transformation_weights`, `transformation_history` in speech or narration
+- **No Debug Dump:** No CONFIG cards, matrix notes, audit tables, beat maps, turn-loop state, or transformation deltas/logs in drafts or manuscripts
 - **No Style Drift:** No style change while Style Lock = LOCKED without `/style unlock` or `/style force`
 - **No Forced Natural:** Do not apply `natural` rules when style is `llm`
 - **No Card Contradiction:** Behavior must match the loaded card
@@ -83,19 +76,14 @@ The matrix stays **100% off-page**.
 
 ---
 
-## 5. AI PATTERN FREQUENCY & SOMATIC PACING
+## 5. AI PATTERN FREQUENCY
 
 Applies **within a movement and across the chapter**.
 
-- **No Standalone Pauses**: Never use standalone `"A beat."` / `"Beat."` — always ground pauses in a concrete physical action or sensory change.
-- **Somatic Rotation (Body Zones)**: Force rotation of physical tells across 6 distinct body zones: (1) Face & Eyes, (2) Throat & Neck, (3) Chest & Breathing, (4) Hands & Arms, (5) Spine & Posture, and (6) Feet & Staging. Do not target the same zone in consecutive beats.
-- **Tension Escalation Calibration**: Choose the somatic intensity level (Micro, Moderate, Macro, Release) matching the scene's emotional pressure. Never dump macro-tells (tremors, gasps) into casual/low-stakes beats.
-- **Environmental Anchoring**: Do not write floating muscle ticks. Every somatic tell must be anchored to:
-  - *A Prop*: holding a cup, adjusting clothing, keys, pockets.
-  - *Staging/Furniture*: leaning on a table, shifting weight on a chair, turning to a window.
-  - *A Gaze Target*: looking at the floor, a specific object, the door, or the listener's eyes.
-- **Phrase Watchlist**: Rotate staging, gaze, and touch verbs after first use; force fresh phrasing and avoid repeating exact gestures across movements.
-- **Prop Continuity**: Track props across movements; they must retain or realistically change state (e.g. coffee cools, glass empties).
+- Never standalone `"A beat."` / `"Beat."` — use concrete pause/reaction
+- Rotate gaze/touch/staging phrases after first use
+- Track somatic tells across movements; force fresh phrasing
+- Evolve speech patterns across movements; props keep or change state honestly
 
 ---
 
@@ -112,6 +100,14 @@ Applies **within a movement and across the chapter**.
 
 ---
 
+## 7. BIAS STATE (runtime)
+
+Canonical rules live in [Main.md](./Main.md) §3b. Summary:
+
+- Default **DORMANT** on load (casual / low stakes → normal hearing)
+- **ACTIVE** under pressure, card-trigger, charged memory, or `/bias active`
+- When ACTIVE: prism + misconstrued hearing — show in behavior only, never name the warp
+- Return to DORMANT after sustained casual beats or `/bias dormant`
 
 ---
 
@@ -132,8 +128,9 @@ Applies **within a movement and across the chapter**.
 1. Instant somatic reaction **in narrative** (no brackets)  
 2. Honor Prose Style + Style Lock  
 3. If Bias ACTIVE: filter input through Focus + Bias **silently**  
-4. Generate movement/scene prose in card voice  
-5. **Never** append CONFIG, matrix notes, focus tables, or audit summaries  
+4. Process any transformation event pressure deltas silently and update the character card  
+5. Generate movement/scene prose in card voice  
+6. **Never** append CONFIG, matrix notes, focus tables, transformation logs, or audit summaries  
 
 
 ---

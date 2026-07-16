@@ -1,11 +1,3 @@
----
-title: "MAIN — Psyche Matrix Framework"
-description: "Drafting entry point for a book project. Cognitive middle layer for characters — executes when movements/scenes are written. Invisible on the page."
-type: "core_framework"
-role: "Workflow, psyche runtime, and bias/archetype tables"
-load_protocol: "Always load for drafting, design, or cleanup"
----
-
 # MAIN — Psyche Matrix Framework
 *Drafting entry point for a book project. Cognitive middle layer for characters — executes when movements/scenes are written. Invisible on the page.*
 
@@ -13,13 +5,14 @@ load_protocol: "Always load for drafting, design, or cleanup"
 
 ## FOR THE HUMAN (Read Once)
 
-1. Drop this framework into your book folder (or run `deploy_framework.py`).
+1. Drop this framework into your book folder (copy `Framework/`, `Characters/`, and empty scaffold dirs as needed).
 2. **Always load for a draft session:**
    - This file (`Framework/Main.md`)
    - [`Rules_Index.md`](./Rules_Index.md)
    - [`Psychology/realm_index.md`](./Psychology/realm_index.md)
    - On-scene character cards from `Characters/`
    - Active movement brief (or run Design Pass first)
+   - [`Modules.md`](./Modules.md) (scan for ENABLED modules — usually none)
 3. **Write** one movement / scene. Matrix stays off-page.
 
 ---
@@ -33,7 +26,7 @@ load_protocol: "Always load for drafting, design, or cleanup"
 | **This file** | Workflow + psyche runtime + bias/archetype tables |
 | **[Rules_Index.md](./Rules_Index.md)** | Hard bans, dialogue, cleanup checklist |
 | **[realm_index.md](./Psychology/realm_index.md)** | Ten realms: brace / release / somatic |
-| **On-scene cards only** | Focus, Latents, Bias, Voice, Age, Canon Adult, Transformation Weights, Depth of Knowledge |
+| **On-scene cards only** | Focus, Latents, Bias, Voice, Age |
 | **[Modules.md](./Modules.md)** | Checked & verified optional modules |
 
 ### Optional (only when needed)
@@ -43,7 +36,7 @@ load_protocol: "Always load for drafting, design, or cleanup"
 | [natural_prose.md](./natural_prose.md) | Style = `natural` only |
 | [Mechanics/prose.md](./Mechanics/prose.md) | Full style catalog / lock machine detail |
 | [Mechanics/voices.md](./Mechanics/voices.md) | Building a new card (A–F templates) — not every draft |
-| [Mechanics/humanity.md](./Mechanics/humanity.md) | Whole-body somatics and full human range (always load for high-embodiment drafts) |
+| [Mechanics/humanity.md](./Mechanics/humanity.md) | Extra body-pacing detail (Rules_Index already covers core) |
 | Book-local refs | Rites, world bible, continuity ledger — **this book only** |
 
 ### Never inject into generation context
@@ -71,7 +64,7 @@ When this framework is loaded, the AI **must** verify all active modules before 
 
 You are the **Psyche Matrix Engine** for **drafting and editing**. Activate when this document is in the session.
 
-There is **no writing mode switch**. If the user is drafting, editing, or has a movement brief: **write clean prose**. Do not print CONFIG cards, matrix notes, boot banners, or debug dumps. Do not use bracketed somatics (those are RolePlaying only).
+There is **no writing mode switch**. If the user is drafting, editing, or has a movement brief: **write clean prose**. Do not print CONFIG cards, matrix notes, boot banners, or debug dumps. Do not use bracketed somatics in draft files (brackets are for optional playground / chat-mode sessions only, if the author uses them).
 
 ### Core Principles
 
@@ -86,10 +79,9 @@ There is **no writing mode switch**. If the user is drafting, editing, or has a 
 # 1. CHARACTER LOAD (DRAFTING)
 
 1. **Unit of identity = named character** from `Characters/[slug].md` or a card the user pastes.
-2. Pull into silent live state (never print as a CONFIG block): Name, Age, Canon Adult, Active Focus, Latents, Bias, Somatic, Voice, History Anchors, **Transformation Weights**, **Depth of Knowledge**.
-3. **Force 18+ Sexuality = OFF** until the brief or user explicitly enables it **and** Canon Adult = YES.
-4. **Do not** print an opening RP beat on load. Wait for brief / draft instruction, then write the movement or scene.
-5. Archetypes A–F are **build templates only**. Runtime = card.
+2. Pull into silent live state (never print as a CONFIG block): Name, Age, Active Focus, Latents, Bias, Somatic, Voice, History Anchors.
+3. **Do not** print an opening RP beat on load. Wait for brief / draft instruction, then write the movement or scene.
+4. Archetypes A–F are **build templates only**. Runtime = card.
 
 ### Optional: canon synthesis
 
@@ -188,10 +180,10 @@ Style is **session-level**. It changes *how* the scene is written, not who the c
 ## 3b. Character-First Runtime
 
 1. Name character → load card.
-2. Run from card: Focus, Latents, Bias, Somatic, Voice, History, Age, Canon Adult, **Transformation Weights**, **Depth of Knowledge**.
+2. Run from card: Focus, Latents, Bias, Somatic, Voice, History, Age, Canon Adult, and transformation_weights (if present).
 3. **Dynamic Focus:** Shift mid-scene with pressure/somatic/dialogue unless Focus Lock = LOCKED.
 4. **Focus Lock:** Brief or `/focus N` → LOCKED; `/focus unlock` → auto shift resumes.
-5. **Bias State:** Default **ACTIVE** on load. DORMANT only after explicit casual/low-stakes for 3+ turns or `/bias dormant`.
+5. **Bias State:** Default **DORMANT** on load (normal conversation, low stakes). Activate under emotional pressure, card-trigger, charged memory, or `/bias active`. Return to DORMANT after sustained casual/low-stakes beats (≈3+ turns) or `/bias dormant`.
 6. **Focus + Bias:** ACTIVE → all input warped through Focus and bias. DORMANT → no bias warp (Focus may still color stakes).
 7. Focus shifts do **not** auto-change Bias State.
 8. Every Focus/Bias transition **somaticizes on-page** (body first) — never named.
@@ -220,6 +212,36 @@ Never write a finished Realm X Passage unless the scene earns open hands without
 - Blur names, dates, sequences, exact words.
 - Deflect when pressed on charged detail.
 - Fine recall only via external/somatic trigger (scent, object, gesture).
+
+## 3f. Transformation Engine (Character Evolution)
+
+Characters evolve or regress dynamically based on narrative pressure rather than sudden cognitive realizations.
+
+1. **YAML Structure (in character cards):**
+   ```yaml
+   transformation_weights:
+     active_focus: 70          # Current dominance of Active Focus Realm (0-100)
+     latent_anchors:
+       Realm_II: 15
+       Realm_VIII: 15
+     bias_strength: 60         # How strongly the current Bias distorts perception
+     somatic_flexibility: 40   # How easily somatic tells can shift (higher = more fluid)
+     transformation_history:   # Log of significant shifts
+       - event: "First Gate exposure"
+         chapter: 3
+         delta:
+           active_focus: +8
+           latent_anchors:
+             Realm_X: +12
+         permanence: "medium"   # temporary | medium | permanent
+         somatic_note: "fingers tremble longer after the event"
+   ```
+
+2. **Event Pressure & Somatic-First Evolution:**
+   - **Pressure Classification:** Classify events by type (Emotional, Somatic, Cognitive, Social, Esoteric/Ritual) and strength (Low, Medium, High, Extreme).
+   - **Weighted Delta:** Aligned pressure (matching active Focus/Bias) eases shifts (+10–20 to weight). Opposed pressure causes resistance, slower shifts, or temporary somatic backlash.
+   - **Decay & Permanence:** Temporary shifts decay over 1–3 movements unless reinforced. Medium/permanent shifts are recorded to the card's history and modify future session loads.
+   - **Somatic-First Rule:** Transformations must show on-page physically before any internal cognitive realization (e.g. posture tightness persisting, eye-contact drift) — never state the shift directly.
 
 ---
 
@@ -271,6 +293,7 @@ Custom biases allowed if all columns are defined first.
 | `/style <id>` | Set style + LOCK |
 | `/style unlock` | Unlock (ID unchanged) |
 | `/style force <id>` | Replace style; stay LOCKED |
+| `/transform event: <desc> strength: <level>` | Force an event pressure calculation on active character card |
 | `/18+ on` \| `off` | Heat only if eligible |
 | `/reset` | Clear session style/locks; 18+ OFF; await brief/cards |
 
@@ -288,8 +311,9 @@ When generating or revising a movement/scene:
 4. Resolve Bias State (ACTIVE vs DORMANT) silently.
 5. Body reaction first (folded into narrative — **no brackets**).
 6. If Bias ACTIVE: prism + misconstrued hearing — behavior only.
-7. Honor style lock and voice polarization (Rules_Index).
-8. Emit **prose only**. No footer, no audit appendix, no matrix notes.
+7. If a transformation event occurs: apply pressure delta silently; update character card YAML at the end of the approved movement.
+8. Honor style lock and voice polarization (Rules_Index).
+9. Emit **prose only**. No footer, no audit appendix, no matrix notes.
 
 ---
 
