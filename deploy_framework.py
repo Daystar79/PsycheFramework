@@ -16,7 +16,7 @@ import shutil
 import sys
 
 # Define framework components to distribute
-# Core drafting entry: Main + Rules_Index + realm_index (via Psychology/) + cards template
+# Core drafting entry: Main + Rules_Index + realm_data.yaml (via Psychology/) + cards template
 FRAMEWORK_FILES = [
     "Framework/Main.md",
     "Framework/Rules_Index.md",

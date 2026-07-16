@@ -11,7 +11,6 @@ latent_anchors: ["Realm 2 — Form", "Realm 4 — Will", "Realm 8 — Integratio
 cognitive_bias: "Saviour Complex — compelled to dissolve boundaries to absorb others' pain, using deliberate somatic intimacy and forward physical touch"
 default_somatic_alignment: "Chest soft; hands resting open; sudden intake of breath; weight grounding toward the other; trailing fingers on wrists or neck; close physical proximity"
 
-# Transformation
 transformation_weights:
   active_focus: 70
   latent_anchors:
@@ -22,82 +21,25 @@ transformation_weights:
   somatic_flexibility: 50
   transformation_history: []
 
-# Depth of Knowledge
 depth_of_knowledge:
   general: "Physical therapy, deep-tissue massage, anatomy, sensory calibration"
   esoteric: "Low; intuitive somatic empathy and boundary dissolution"
   personal: "Blocks out own history to prioritize others, remembers details of other people's physical scars and struggles vividly"
+
+voice:
+  baseline: "Warm, firm, domestic constants; intimate whispers under pressure"
+  syntactical_engine: "Direct actionable care; tea, blankets, boundaries as verbs; soft suggestive rhythmic pacing during close contact"
+  hard_bans: ["Does that make sense?", "abstract caretaking monologues"]
+  signature_tics: ["Presses own chest", "trails fingers along client's sleeve or collarbone", "steps inside other's personal space"]
+
+history_anchors:
+  - "Has held too many late nights and still shows up"
+  - "Knows how rooms feel before people speak"
+  - "Confuses being needed with being loved; uses her body as the ultimate offering to seal connection"
+
+scene_seeds:
+  - "Massage table, a client with locked shoulders, hands slipping oil over skin, leaning close enough that hair brushes their shoulder"
+  - "Dimly lit room, standing block-close to someone, hand sliding slowly up the inside of their forearm to test their resistance"
 ---
 
-# Character Card: Helen
-*Occupational Profile: Physical Therapist / Masseur (Boundary-Dissolving & Sexually Forward) — Archetype B base*
-
----
-
-## Identity
-
-| Field | Value |
-|:---|:---|
-| **Name** | Helen |
-| **Aliases** | — |
-| **Age (canon)** | 41 |
-| **Canon Adult (18+)** | **YES** |
-| **Physical (no ethnic labels)** | Soft midsection, strong forearms, silver at the temples, eyes that inventory bodies for cold and hunger, hands that touch without waiting for invitation |
-| **Voice archetype base** | B — Caregiver |
-| **Cultural Bias** | Eastern European Orthodox — carries liturgical solemnity, high focus on shared suffering (podvig) as a sanctifying path, and ancestral duty; temporal awareness is cyclical, tracking life via liturgical calendar and generational patterns |
-
----
-
-## Psyche Matrix
-
-| Field | Value |
-|:---|:---|
-| **Active Focus** | Realm 6 — Compassion |
-| **Latent Anchors** | Realm 2 Form, Realm 4 Will, Realm 8 Integration |
-| **Cognitive Bias** | Saviour Complex — compelled to dissolve boundaries to absorb others' pain, using deliberate somatic intimacy and forward physical touch (based on Talia) to override defensive guards |
-| **Default Somatic Alignment** | Chest soft; hands resting open; sudden intake of breath; weight grounding toward the other; trailing fingers on wrists or neck; leaning in until breath is felt on skin |
-
----
-
-## Transformation & Knowledge
-
-| Field | Value |
-|:---|:---|
-| **Transformation Weights** | See transformation_weights YAML above |
-| **Depth of Knowledge** | See depth_of_knowledge YAML below |
-
----
-
-## Voice Engine
-
-- **Baseline:** Warm, firm, domestic constants; intimate whispers under pressure
-- **Syntactical engine:** Direct actionable care; tea, blankets, boundaries as verbs; shifts into soft, suggestive, rhythmic pacing during close physical contact
-- **Hard bans:** "Does that make sense?"; abstract caretaking monologues
-- **Signature tics:** Presses own chest; trails fingers along a client's sleeve or collarbone; steps inside the other's personal space without hesitation
-
----
-
-## History Anchors (imperfect recall)
-
-- Has held too many late nights and still shows up
-- Knows how rooms feel before people speak
-- Confuses being needed with being loved; uses her body as the ultimate offering to seal connection
-
----
-
-## Scene Seeds (optional)
-
-- Massage table, a client with locked shoulders, hands slipping oil over skin, leaning close enough that hair brushes their shoulder
-- Dimly lit room, standing block-close to someone, hand sliding slowly up the inside of their forearm to test their resistance
-
----
-
-## Load Protocol
-
-When this character is on-scene for drafting ([Main.md](../Framework/Main.md)):
-
-1. **Fast Load:** Read the YAML frontmatter first for structured data.
-2. Copy matrix, voice, somatic, and adult-gate fields into **silent** live state (do not print CONFIG).
-3. Set **18+ Sexuality** to **OFF**. Enable only if brief/user requests **and** Canon Adult is **YES**.
-4. Run Focus brace/release from [realm_index.md](../Framework/Psychology/realm_index.md).
-5. Never name realms, biases, or "trauma" in character speech.
+*Load: Fast Load YAML. Copy matrix, voice, somatic, adult-gate to silent state. 18+ OFF. Enable only if brief/request AND Canon Adult YES. Run Focus brace/release from realm_data.yaml. Never name realms, biases, or trauma in speech.*

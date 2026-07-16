@@ -33,6 +33,12 @@ SYSTEM_LEAKS = {
         (r"\bInsulation\b", "Insulation bias name leak"),
         (r"\bDissolution\b", "Dissolution bias name leak"),
     ],
+    "Out-of-Character Lookup / Temporal Leaks": [
+        (r"\b(look up|database|search the web|search web|as an AI|my database|retriev\w+ records|external search)\b", "Out-of-character AI lookup / temporal leak"),
+    ],
+    "AI Safety / Preachy Tone Leaks": [
+        (r"\b(it'?s important to remember|to be fair|let'?s look at this|while that is a common|actually, from a|safety guidelines?|safety protocols?|respectful conversation|inappropriate content|moral perspective|ethical considerations?|cannot fulfill this request)\b", "AI safety tone / preachiness / correction leak"),
+    ],
 }
 
 # Define regex patterns for banned dialogue tags and filler phrases

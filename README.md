@@ -37,7 +37,7 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 3. For every drafting session, load:
    - `Framework/Main.md`
    - `Framework/Rules_Index.md`
-   - `Framework/Psychology/realm_index.md`
+   - `Framework/Psychology/realm_data.yaml`
    - Relevant character cards from `Characters/`
 4. Write movements/scenes using the brief + cards. The matrix runs silently.
 5. Run the linter to ensure no engine terms or banned fillers leaked:
@@ -53,7 +53,7 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 |------|---------|--------------|
 | `Framework/Main.md` | Core engine, workflow, commands, and principles | **Always load** |
 | `Framework/Rules_Index.md` | Hard bans, cleanup protocol, dialogue rules | **Always load** |
-| `Framework/Psychology/realm_index.md` | Somatic profiles for all 10 Realms | **Always load** |
+| `Framework/Psychology/realm_data.yaml` | Somatic profiles for all 10 Realms | **Always load** |
 | `Framework/linter.py` | Automated prose linter to check for system leaks | Command-line utility |
 | `Characters/` | Individual character cards (Focus, Latents, Bias, Voice, etc.) | Load per scene |
 | `Framework/Mechanics/` | Prose styles, sexuality rules, voice templates, humanity details | Load as needed |
@@ -99,7 +99,7 @@ Character cards support `transformation_weights` tracking:
 ## Historical & Safety Gates (Roleplaying)
 
 - **Safety Gating:** Strict prohibition of Lolicon/Shotacon tropes. Canon verification is required for 18+ Anime/Hentai imports.
-- **Historical Figures:** Lifespan/active era must be specified. Character cards prioritize their **own writings/primary documentation**, falling back to the cultural and temporal bias of their era only when documentation is lacking. Modern concepts are strictly banned from their awareness.
+- **Historical Figures:** Lifespan/active era must be specified. Character cards prioritize their **own writings/primary documentation**, falling back to the cultural and temporal bias of their era only when documentation is lacking. Modern or post-era concepts are strictly banned from their awareness. Under no circumstances may the AI engine break character or use external search/lookup tools to resolve historical gaps during active roleplay.
 
 ---
 
