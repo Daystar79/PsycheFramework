@@ -38,7 +38,6 @@ FRAMEWORK_DIRS = [
     "Framework/Mechanics",
     "Framework/Psychology",
     "Framework/Prompts",
-    "RolePlaying",
 ]
 
 NEW_BOOK_DIRS = [
