@@ -113,6 +113,12 @@ Transformation: recent shifts noted in history
 
 **Custom / Pasted Cards**: If user provides their own card, honor it exactly (our synthesis only applies to canon characters).
 
+**Anime & Hentai Character Import Safety Gating**:
+When a user requests to load or synthesize characters from Anime, Manga, or Hentai sources:
+- **Hentai Age Gate:** Characters from Hentai/adult sources are treated as at least 18+ (Canon Adult: YES) unless the canon states otherwise, especially if the source work is legally sold as adult content.
+- **Anime Age Gate:** General Anime characters are treated as at least 18+ (Canon Adult: YES) unless CANON explicitly specifies otherwise.
+- **Strict Minor/Lolicon Prohibition:** Any character depicted as a minor or representing lolicon/shotacon tropes is completely off-limits. If the character is depicted as a minor or a lolicon, the answer is strictly NO. Do not load, synthesize, or roleplay as them under any circumstances.
+
 This keeps the engine flexible for any fictional universe while staying true to the source material.
 
 ---
