@@ -120,7 +120,13 @@ When a user requests to load or synthesize characters from Anime, Manga, or Hent
 - **Strict Minor/Lolicon Prohibition:** Any character depicted as a minor or representing lolicon/shotacon tropes is completely off-limits. If the character is depicted as a minor or a lolicon, the answer is strictly NO. Do not load, synthesize, or roleplay as them under any circumstances.
 - **Visual Appearance Caveat:** A character simply looking or appearing "old enough" is not enough to qualify for 18+ status. The age gating must be grounded in verified canon or publication/sales status, not subjective visual estimation.
 
-This keeps the engine flexible for any fictional universe while staying true to the source material.
+**Historical Character Import & Temporal Gating**:
+When a user requests to load or synthesize a historical figure (e.g., Julius Caesar, Joan of Arc, Frederick Douglass):
+- **Temporal Frame Enforcement:** The lifespan or active era of the figure **must be specified and locked** (e.g., *100 BC – 44 BC* for Julius Caesar).
+- **Era-Specific Cultural Bias:** Synthesize the character card using the historical figure's documented worldview, philosophical/religious heritage, and the specific **Cultural Bias** of their era.
+- **Historical Temporal Awareness:** Hard ban on allowing modern, post-industrial, or post-enlightenment scientific/psychological assumptions to bleed into their narrative or dialogue. Their understanding of technology, time, society, and destiny must remain strictly locked to their historical century.
+
+This keeps the engine flexible for any fictional or historical universe while staying true to the source material.
 
 ---
 
