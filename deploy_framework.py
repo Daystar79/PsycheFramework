@@ -24,15 +24,21 @@ FRAMEWORK_FILES = [
     "Framework/psyche_framework.md",      # stub → Main
     "Framework/Drafting_Workflow.md",     # stub → Main
     "Framework/formatting_rules.md",
+    "Framework/Design_QA_Protocol.md",
+    "Framework/Drafting_Prompt.md",
+    "Framework/Modules.md",
     "Characters/_template.md",
     "Characters/README.md",
-    "RolePlaying/playground.md",
+    "Characters/Relations.md",
+    ".gitignore",
+    "README.md",
 ]
 
 FRAMEWORK_DIRS = [
     "Framework/Mechanics",
     "Framework/Psychology",
-    "RolePlaying",
+    "Framework/Prompts",
+    "Framework/TBD",
 ]
 
 NEW_BOOK_DIRS = [

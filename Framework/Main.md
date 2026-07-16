@@ -1,3 +1,11 @@
+---
+title: "MAIN — Psyche Matrix Framework"
+description: "Drafting entry point for a book project. Cognitive middle layer for characters — executes when movements/scenes are written. Invisible on the page."
+type: "core_framework"
+role: "Workflow, psyche runtime, and bias/archetype tables"
+load_protocol: "Always load for drafting, design, or cleanup"
+---
+
 # MAIN — Psyche Matrix Framework
 *Drafting entry point for a book project. Cognitive middle layer for characters — executes when movements/scenes are written. Invisible on the page.*
 
@@ -13,7 +21,6 @@
    - On-scene character cards from `Characters/`
    - Active movement brief (or run Design Pass first)
 3. **Write** one movement / scene. Matrix stays off-page.
-4. Chat roleplay is separate: [`RolePlaying/playground.md`](../RolePlaying/playground.md) — not required for drafting.
 
 ---
 
@@ -27,6 +34,7 @@
 | **[Rules_Index.md](./Rules_Index.md)** | Hard bans, dialogue, cleanup checklist |
 | **[realm_index.md](./Psychology/realm_index.md)** | Ten realms: brace / release / somatic |
 | **On-scene cards only** | Focus, Latents, Bias, Voice, Age, Canon Adult, Transformation Weights, Depth of Knowledge |
+| **[Modules.md](./Modules.md)** | Checked & verified optional modules |
 
 ### Optional (only when needed)
 
@@ -34,9 +42,8 @@
 |:---|:---|
 | [natural_prose.md](./natural_prose.md) | Style = `natural` only |
 | [Mechanics/prose.md](./Mechanics/prose.md) | Full style catalog / lock machine detail |
-| [Mechanics/sexuality.md](./Mechanics/sexuality.md) | Canon Adult YES **and** brief/`/18+ on` enables heat |
 | [Mechanics/voices.md](./Mechanics/voices.md) | Building a new card (A–F templates) — not every draft |
-| [Mechanics/humanity.md](./Mechanics/humanity.md) | Extra body-pacing detail (Rules_Index already covers core) |
+| [Mechanics/humanity.md](./Mechanics/humanity.md) | Whole-body somatics and full human range (always load for high-embodiment drafts) |
 | Book-local refs | Rites, world bible, continuity ledger — **this book only** |
 
 ### Never inject into generation context
@@ -45,6 +52,18 @@
 - Superseded stubs: `psyche_framework.md`, `Drafting_Workflow.md` (pointers only)
 - Demo cast cards unless testing
 - Entire prior chapters when only the last movement is required (see Draft rules)
+
+---
+
+## MODULE VERIFICATION PROTOCOL (Core Supremacy)
+
+When this framework is loaded, the AI **must** verify all active modules before generation:
+1. **Index Scan:** Check the **`Framework/Modules.md`** file to identify all modules marked as `ENABLED`.
+2. **Compatibility Verification:** For each enabled module:
+   - Verify that it does not conflict with the core rules in `Rules_Index.md` (e.g. attempting to override hard bans or output hygiene).
+   - Verify that it does not conflict with other active modules (as documented in their respective files or `Modules.md`).
+   - If any incompatibility or core rule breach is found, the module is declared **unverified** and must be silently disabled (with a short warning to the author in stdout).
+3. **Core Supremacy:** No module instruction is allowed to override or supersede the rules in `Rules_Index.md` or the core logic in `Main.md`. If a conflict occurs, the core system rules take absolute precedence, and the conflicting module rule is ignored.
 
 ---
 
@@ -74,14 +93,7 @@ There is **no writing mode switch**. If the user is drafting, editing, or has a 
 
 ### Optional: canon synthesis
 
-Only if the user asks to invent a card for a well-documented fictional character (or uses `/create`): synthesize Focus, Latents, Bias, Somatic, Voice, Age, Canon Adult from canon knowledge, then treat it as a normal card. Still no CONFIG dump; still no automatic opening beat.
-
-### Canon Adult gate
-
-| Card field | Sexuality |
-|:---|:---|
-| **Canon Adult: YES** (age ≥ 18) | May enable if brief/session explicitly opts in. Default OFF. |
-| **Canon Adult: NO** / under 18 / unclear | Explicit sexual content **forbidden**. Never age-up. |
+Only if the user asks to invent a card for a well-documented fictional character (or uses `/create`): synthesize Focus, Latents, Bias, Somatic, Voice, Age from canon knowledge, then treat it as a normal card. Still no CONFIG dump; still no automatic opening beat.
 
 ---
 
@@ -289,12 +301,10 @@ When generating or revising a movement/scene:
 | [Psychology/realm_index.md](./Psychology/realm_index.md) | **Required** — realm somatics |
 | [natural_prose.md](./natural_prose.md) | Optional style pack |
 | [Mechanics/prose.md](./Mechanics/prose.md) | Optional style detail |
-| [Mechanics/sexuality.md](./Mechanics/sexuality.md) | Optional heat (gated) |
 | [Mechanics/voices.md](./Mechanics/voices.md) | Card-building templates |
 | [Mechanics/humanity.md](./Mechanics/humanity.md) | Optional body-detail supplement |
 | [psyche_framework.md](./psyche_framework.md) | **Superseded** — stub |
 | [Drafting_Workflow.md](./Drafting_Workflow.md) | **Superseded** — stub |
-| [RolePlaying/playground.md](../RolePlaying/playground.md) | Chat RP only |
 
 ---
 

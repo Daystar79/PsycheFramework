@@ -1,7 +1,13 @@
+---
+title: "Rules Index — Psyche Matrix Framework"
+description: "Canonical \"do not\" rules and cleanup for drafting. Load with Main.md."
+type: "core_framework"
+role: "Hard bans, dialogue rules, and cleanup checklist"
+load_protocol: "Always load for drafting, design, or cleanup"
+---
+
 # Rules Index — Psyche Matrix Framework
 *Canonical "do not" rules and cleanup for **drafting**. Load with [Main.md](./Main.md).*
-
-Chat roleplay uses [RolePlaying/playground.md](../RolePlaying/playground.md). Bracket somatics and RP turn chrome live there — **not** in draft output.
 
 ---
 
@@ -13,7 +19,6 @@ Chat roleplay uses [RolePlaying/playground.md](../RolePlaying/playground.md). Br
 4. Description & formatting
 5. Dialogue
 6. Pattern frequency
-7. Sexuality gate
 
 ---
 
@@ -51,12 +56,6 @@ The matrix stays **100% off-page**.
 - **Biased Hearing (Bias ACTIVE):** Warp input through Focus + Bias; show in response, never name the warp
 - **Somatic Deflection:** Under pressure on charged memory, change subject or go to body/environment
 
-### Canon Adult / 18+
-
-- Explicit sexual content forbidden if 18+ OFF or Canon Adult NO or age unclear
-- Never age-up to unlock
-- Enable only when Canon Adult YES **and** brief/`/18+ on` says so
-- When on: somatic heat (weight, breath, friction, barriers) — see [sexuality.md](./Mechanics/sexuality.md) if loaded
 
 ---
 
@@ -84,14 +83,19 @@ The matrix stays **100% off-page**.
 
 ---
 
-## 5. AI PATTERN FREQUENCY
+## 5. AI PATTERN FREQUENCY & SOMATIC PACING
 
 Applies **within a movement and across the chapter**.
 
-- Never standalone `"A beat."` / `"Beat."` — use concrete pause/reaction
-- Rotate gaze/touch/staging phrases after first use
-- Track somatic tells across movements; force fresh phrasing
-- Evolve speech patterns across movements; props keep or change state honestly
+- **No Standalone Pauses**: Never use standalone `"A beat."` / `"Beat."` — always ground pauses in a concrete physical action or sensory change.
+- **Somatic Rotation (Body Zones)**: Force rotation of physical tells across 6 distinct body zones: (1) Face & Eyes, (2) Throat & Neck, (3) Chest & Breathing, (4) Hands & Arms, (5) Spine & Posture, and (6) Feet & Staging. Do not target the same zone in consecutive beats.
+- **Tension Escalation Calibration**: Choose the somatic intensity level (Micro, Moderate, Macro, Release) matching the scene's emotional pressure. Never dump macro-tells (tremors, gasps) into casual/low-stakes beats.
+- **Environmental Anchoring**: Do not write floating muscle ticks. Every somatic tell must be anchored to:
+  - *A Prop*: holding a cup, adjusting clothing, keys, pockets.
+  - *Staging/Furniture*: leaning on a table, shifting weight on a chair, turning to a window.
+  - *A Gaze Target*: looking at the floor, a specific object, the door, or the listener's eyes.
+- **Phrase Watchlist**: Rotate staging, gaze, and touch verbs after first use; force fresh phrasing and avoid repeating exact gestures across movements.
+- **Prop Continuity**: Track props across movements; they must retain or realistically change state (e.g. coffee cools, glass empties).
 
 ---
 
@@ -108,15 +112,6 @@ Applies **within a movement and across the chapter**.
 
 ---
 
-## 7. SEXUALITY (Summary Gate)
-
-| Condition | Explicit sex |
-|:---|:---|
-| 18+ OFF | Forbidden |
-| Canon Adult NO / age unclear | Forbidden |
-| Canon Adult YES + explicit enable | Allowed; somatic, not clinical dump |
-
-Full kinetic rules: load [sexuality.md](./Mechanics/sexuality.md) only when enabled.
 
 ---
 
@@ -140,7 +135,6 @@ Full kinetic rules: load [sexuality.md](./Mechanics/sexuality.md) only when enab
 4. Generate movement/scene prose in card voice  
 5. **Never** append CONFIG, matrix notes, focus tables, or audit summaries  
 
-For chat RP brackets and slash-heavy loops, use RolePlaying/playground only.
 
 ---
 

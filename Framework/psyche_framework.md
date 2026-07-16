@@ -7,4 +7,3 @@ Hard bans: **[Rules_Index.md](./Rules_Index.md)**.
 
 Do **not** load this file for generation. Load `Main.md` + `Rules_Index.md` + `realm_index.md` + on-scene cards.
 
-Chat roleplay: **[RolePlaying/playground.md](../RolePlaying/playground.md)**.

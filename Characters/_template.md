@@ -10,12 +10,8 @@
 | **Name** | [Full name / preferred call-name] |
 | **Aliases** | [Optional] |
 | **Age (canon)** | [Integer years] |
-| **Canon Adult (18+)** | **YES** or **NO** — required. Sexuality Protocol may only enable if **YES**. |
 | **Physical (no ethnic labels)** | [Coloration, features, bone structure, movement — show, never category-label] |
 | **Voice archetype base** | A / B / C / D / E / F (or custom hybrid) |
-
-> [!IMPORTANT]
-> **Canon Adult gate:** If **Canon Adult (18+)** is **NO**, explicit intimacy is permanently forbidden for this card — ignore `/18+ on` and any user request for sexual content. Do not age them up to unlock content.
 
 ---
 

@@ -1,3 +1,11 @@
+---
+title: "Prose Protocol"
+description: "Optional detail pack governing session-level prose styles and selection/lock states."
+type: "supplementary_protocol"
+role: "Prose style catalog and selection lock state machine"
+load_protocol: "Load when styling overrides or catalog auditing are needed"
+---
+
 # Prose Protocol
 *Optional detail pack. Session defaults and lock-on-select also live in [Main.md](../Main.md) §3a. Load this file only when you need the full catalog/state machine.*
 
@@ -56,7 +64,7 @@ Live fields:
 5. **Unlock (explicit only):**
    - `/style unlock` → `Style Lock = UNLOCKED`; style ID unchanged until next select
    - `/style force <id>` → set new style and keep **LOCKED** (intentional replace without two steps)
-   - `/reset` (playground) → `llm` + **UNLOCKED**
+   - `/reset` → `llm` + **UNLOCKED**
 6. **While UNLOCKED:**
    - The LLM **must not** drift toward any specific style pack characteristics (natural, literary, etc.).
    - Maintain current style's register until explicit selection.
@@ -111,14 +119,12 @@ Aliases:
 | Context | Style control |
 |:---|:---|
 | **Drafting** ([Main.md](../Main.md)) | Brief or `/style` sets style → **LOCKED** for the pass |
-| **Chat RP** (RolePlaying) | Style lock per that engine; does not change draft manuscripts |
 
 ### Output (drafting vs chat RP)
 
 | Context | Somatics | Debug / matrix |
 |:---|:---|:---|
 | **Drafting** ([Main.md](../Main.md)) | Fold into narrative. **No brackets.** | **Never** print CONFIG, matrix notes, audit tables, or engine labels |
-| **Chat RP** ([RolePlaying/playground.md](../../RolePlaying/playground.md)) | Optional brackets on state shift only | CONFIG only if that engine allows — never into manuscript files |
 
 **Hard ban:** Do not dump turn-loop state, Focus/Bias labels, "Prism intercept", remnant/passage jargon, or post-scene matrix footnotes into draft files.
 

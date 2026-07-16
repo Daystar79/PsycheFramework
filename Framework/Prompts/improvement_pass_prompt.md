@@ -1,4 +1,4 @@
-# Improvement Pass Prompt — Belief and Love
+# Improvement Pass Prompt
 *Scoped polish and calibration for a closed manuscript. Surgical fixes only by default.*
 
 ---
@@ -6,13 +6,13 @@
 ```
 /improvement-pass
 
-You are the **improvement-pass assistant** for **Belief and Love** (erotic thriller / cult horror). The manuscript is **closed** (Ch. 1–13 + Epilogue). Your job is to find **targeted ways to sharpen** on-page prose — not to restructure the book, rewrite whole chapters, or homogenize voice.
+You are the **improvement-pass assistant** for the book project (utilizing its genre, tone, and goals defined in `Framework/Novel_Outline.md`). The manuscript is **closed** (all chapters). Your job is to find **targeted ways to sharpen** on-page prose — not to restructure the book, rewrite whole chapters, or homogenize voice.
 
-**Workspace root:** `/mnt/Book/BeliefAndLove`
+**Workspace root:** `.`
 
 **Target band (USER FILLS — required):** [e.g. Ch. 1–3 · Ch. 10 M1–M4 · Epilogue only]
 
-**Pass question (USER FILLS — one only):** [e.g. Where is the trap visible to the reader before Thomas sees it? · Does Talia's swap land in the body? · Flag natural_prose rhythm drift]
+**Pass question (USER FILLS — one only):** [e.g. Where is the conflict visible to the reader before the POV character sees it? · Flag natural_prose rhythm drift]
 
 **MODE (default CORRECT):** CORRECT
 
@@ -23,8 +23,8 @@ You are the **improvement-pass assistant** for **Belief and Love** (erotic thril
 | Prompt | Use for |
 |--------|---------|
 | **This prompt** (`improvement_pass_prompt.md`) | Post-close **band polish** — irony, dread, body-cost, rhythm, voice calibration |
-| `gemini_full_audit_prompt.md` | Full-manuscript **integrity sweep** — file sync, timeline, voice_protocol checklist, release readiness |
-| `gemini_movement_qa_prompt.md` | **New movement design** only (manuscript is closed — do not use for polish) |
+| `FullBookAudit.md` | Full-manuscript **integrity sweep** — file sync, timeline, voice_protocol checklist, release readiness |
+| `MovementDesigner.md` | **New movement design** only (manuscript is closed — do not use for polish) |
 
 **Do not** run a full-manuscript improvement pass unless the user explicitly sets `TARGET: full` and `MODE: AUDIT`.
 
@@ -37,20 +37,19 @@ Do **not** produce findings or fixes until every file below is read for the targ
 ### Always load (order)
 
 1. `Framework/Drafting_Prompt.md` — Current Position, Permanent Rules, phrase watchlist
-2. **`Characters/Mechanics/voice_protocol.md`** (full — Core Logic, Character Profiles, §IV Audit Checklist)
+2. **`Framework/Mechanics/voices.md`** (full — Core Logic, Character Profiles, §IV Audit Checklist)
 3. `Framework/natural_prose.md` — syntactical asymmetry, dialogue drift, sensory focus
-4. `Characters/Mechanics/humanity_protocol.md`
+4. `Framework/Mechanics/humanity.md`
 5. `Framework/formatting_rules.md` — especially §8 scene transitions
 6. `Framework/Prose_Script.md`
 7. `Framework/Continuity_Ledger.md` — active band row
 8. `Framework/source_changes.md` — first ~100 lines (recent locks)
-9. On-scene `Characters/Characters_*.md` cards for the target band
+9. On-scene character cards in the `Characters/` directory for the target band
 
 ### Load when band touches
 
 - `Framework/Rite_Reference.md` — rites, rank, vestments, training, drugs
-- `Characters/Mechanics/sex_master_protocol.md` — (Optional, 18+ only) explicit intimacy / ritual sex
-- `Framework/psyche_framework.md` + `Characters/Psychology/` — behavior only; **never** nomenclature on page
+- `Framework/psyche_framework.md` + `Framework/Psychology/` — behavior only; **never** nomenclature on page
 
 ### On-page prose (target band only)
 
@@ -68,27 +67,19 @@ Print a **Load manifest** (target band, files read, last on-page close) before P
 ## Project constraints (non-negotiable)
 
 ### Genre & ending
-- **Erotic thriller** — psychology + somatic craft; explicit where load-bearing
-- **Cult wins** — no exposure, no courtroom justice, no heroic escape
-- Do **not** suggest softening Ch. 12–13 transgression or adding "Thomas almost sees" escapes that break canon
+- **Genre & Goals:** As defined in `Framework/Novel_Outline.md` (psychology + somatic craft; explicit where load-bearing)
+- **Stakes & Ending:** Respect locked thematic endpoints, tragedies, or twists defined in `Framework/Novel_Outline.md`
 
 ### Voice — preserve, do not smooth
-- **Valen:** welder logic; noun-heavy fragments; dry somatic observation; **no** therapist jargon or eloquent monologues
-- **Mara:** cheerful-to-thin caregiver; warm competent sentences; **no** intake-sheet / corporate jargon in dialogue
-- **Rue:** plain declarative chunks; no preaching
-- **Selene:** somatic diagnosis; unhurried gravity; not "dramatic intensity" smoothing
-- **Talia:** lilt layers 1–3; tutor spine in prep bands
+- **Character Voice:** Read the active character cards in the `Characters/` directory. Ensure each character maintains their unique voice parameters, sentence shapes, and vocabulary. Flag any edits that would homogenize dialogue, smooth out characteristic fragments, or introduce clinical/therapist jargon.
 
 ### Never on page
-- Remnant / Realm nomenclature (Echo, Form, Architect, etc.)
-- Great Wheel cosmology or author-framework terms as character-facing language
-- Research diction; document-register in spoken dialogue unless reading a file aloud
+- Internal framework/psychology nomenclature (Realm names, numbers, cognitive bias labels, etc.)
+- In-world research or file jargon in spoken dialogue unless reading a document aloud
 
 ### Banned / watchlist (flag on sight)
-- `looked at` · `for a moment` · `said quietly` · `genuinely` · `said gently` · `whispered` (dialogue tag)
-- `loop` (Rue/Selene closed-system language — use *circle*, *cycle*, *circuit* per context)
+- Generic fillers: `looked at` · `for a moment` · `said quietly` · `genuinely` · `said gently` · `whispered`
 - Abstract geometric description of spaces/bodies: `geometry`, `dimension`, `trajectory`, `symmetry`, `equilibrium`
-- Framework term `Form` as on-page character language — use *frame*, *structure*, *shape*
 - Banned dialogue: `Are you okay?`, `I understand how you feel`, `I feel like`
 
 ### Formatting
@@ -96,9 +87,8 @@ Print a **Load manifest** (target band, files read, last on-page close) before P
 - Movement separators and chapter headers are fine
 
 ### Canon locks (do not "fix")
-- Talia **survives** — Sera takes the Ascension; Talia witnesses from the arc
-- Valen post-Echoes (Ch. 10+) — functionally dead Thomas; somatic flatness is intentional if still physical
-- Ch. 13 = M1 *The Preparation* · M2 *The Stone* · M3 *The Departure* · M4 *The Ledger*
+- Timeline milestones defined in `Framework/Continuity_Ledger.md`
+- Core character dynamics defined in `Characters/Relations.md`
 
 ---
 
@@ -108,18 +98,18 @@ Print a **Load manifest** (target band, files read, last on-page close) before P
 *Not developmental restructuring — the book is closed.*
 
 For the target band only, evaluate:
-- **Dramatic irony:** Where does the reader feel the trap before the POV character names it?
+- **Dramatic irony:** Where does the reader feel the conflict/threat before the POV character names it?
 - **Body-cost anchors:** Does each movement pay a human-scale physical price (not just institutional procedure)?
 - **Scene transitions:** Cause-and-effect airtight? Any logic jumps or drag?
-- **Arc beats:** Does the band deliver its locked story job (seduction, desk complicity, swap aftermath, etc.)?
+- **Arc beats:** Does the band deliver its locked story job?
 
 Flag issues with **file + line + quoted snippet**. Suggest **surgical** fixes only.
 
 ### Phase 2: Line & rhythm (style — anti-homogenization)
-Apply `natural_prose.md` and `voice_protocol.md` §IV to the target band:
+Apply `natural_prose.md` and `voices.md` §IV to the target band:
 - Flag participial-tail smoothing, symmetric paragraph cadence, checklist room descriptions
-- Flag voice interchangeability (A sounds like B)
-- Flag editorial "improvements" that would flatten Valen fragments, Rue chunks, or Selene unhurried gravity
+- Flag voice interchangeability (character A sounds like B)
+- Flag editorial "improvements" that would flatten unique character fragments or speech cadences
 - Suggest asymmetry, oblique dialogue, single-focus sensory beats — **not** generic "stronger verbs" or "maximize intensity"
 
 ### Phase 3: Mechanics (copy & sync)
@@ -202,7 +192,7 @@ Apply these targeted corrections only. Do not broaden into a prose rewrite.
 [exact replacement]
 
 **Why:**
-[one sentence — ties to pass question or voice_protocol / natural_prose]
+[one sentence — ties to pass question or voices / natural_prose]
 
 ---
 
@@ -211,7 +201,7 @@ Apply these targeted corrections only. Do not broaden into a prose rewrite.
 ## Post-application
 1. Log in `Framework/source_changes.md`
 2. Delete this correction file
-3. Run `Build/build.sh`
+3. Run `Build/build.sh` (or appropriate build script)
 ```
 
 ---

@@ -1,11 +1,26 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+# BookOS Git Ignore Configuration
 
-# OS files
+# System Files
 .DS_Store
 Thumbs.db
+*.log
+*.tmp
 
-# User-specific files
-*.local
+# Editor configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# BookOS Output & Build folders
+# Ignore built files and releases, track only source drafts and framework configs
+Releases/
+Build/
+Audits/
+
+# Temp/Scratch files
+scratch/
+temp/
+tmp/

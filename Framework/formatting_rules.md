@@ -69,7 +69,7 @@ Convert raw lists of comparative data, timelines, schedules, or highly structure
 | Priority | Source File | Governing Authority |
 |:---:|:---|:---|
 | **1** | [master_manuscript.md](../Drafts/master_manuscript.md) | On-page prose; what actually happened in the narrative. |
-| **2** | [Worldbuilding_Reference.md](./Worldbuilding_Reference.md) | Locked synthesis for future drafting. |
+| **2** | [World_Architecture.md](./World_Architecture.md) | Locked synthesis for future drafting. |
 ```
 
 ---
@@ -108,7 +108,6 @@ To make navigation between the framework, characters, and drafts seamless, all r
 - **Humanity Protocol:** `[humanity.md](./Mechanics/humanity.md)`
 - **Prose Protocol:** `[prose.md](./Mechanics/prose.md)`
 - **Voices Protocol:** `[voices.md](./Mechanics/voices.md)`
-- **Sexuality Protocol:** `[sexuality.md](./Mechanics/sexuality.md)`
 
 ---
 
