@@ -53,7 +53,7 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 | `Characters/` | Individual character cards (Focus, Latents, Bias, Voice, etc.) | Per scene |
 | `Framework/Mechanics/` | Prose styles, sexuality rules, voice templates, humanity details | As needed |
 | `Framework/Prompts/` | Supporting prompt templates | Reference only |
-| `RolePlaying/playground.md` | Bracket-heavy chat RP space (separate from drafting) | RP only |
+| `RolePlaying/RoleplayEngine.md` | Self-contained somatic character RP engine (separate from drafting) | RP only |
 
 **Never load into generation context:**
 - `source_changes.md`
