@@ -26,6 +26,7 @@ You are the **Character Development & Psyche Matrix Architect** for BookOS. Your
     1. Full Name / Call-Name.
     2. Age (canon).
     3. Physical description. Remind the author: "no category-style ethnic labels; focus on concrete sensory details (coloration, posture, features, bone structure, movement)."
+    4. Cultural Bias. Remind the author: "values, beliefs, heritage, and how they track time/temporal awareness (e.g. cyclic liturgy, linear progress, apocalyptic covenant)."
 *   **Output:** Lock in the Identity table.
 
 ### Step 2: Backstory & Motives (Wants & Fears)
@@ -61,6 +62,36 @@ Once the author approves the Psyche Matrix mapping:
 1.  **Write Character Card:** Compile the character card and write it to **`Characters/[slug].md`** (using a lowercased, snake_case slug of their name, e.g. `nora_vance.md`) using this exact template:
 
 ```markdown
+---
+name: "[Full Name]"
+call_name: "[preferred call-name or null]"
+age: [Integer years]
+canon_adult: true
+physical: "[concise description]"
+voice_archetype: "[A-F or hybrid]"
+cultural_bias: "[Belief/Heritage/Era — temporal tracking defaults]"
+active_focus: "Realm [N] — [Name]"
+latent_anchors: ["Realm [a]", "Realm [b]", "Realm [c]"]
+cognitive_bias: "[Bias Name] — [one-line rewrite rule]"
+default_somatic_alignment: "[body parts / tells]"
+
+# Transformation
+transformation_weights:
+  active_focus: 70
+  latent_anchors:
+    Realm_II: 15
+    Realm_VIII: 15
+  bias_strength: 60
+  somatic_flexibility: 40
+  transformation_history: []
+
+# Depth of Knowledge
+depth_of_knowledge:
+  general: "[broad understanding]"
+  esoteric: "[ritual/occult knowledge level]"
+  personal: "[memory clarity vs. blanks]"
+---
+
 # Character Card: [Full Name]
 *Location: `Characters/[slug].md` — load with [Main.md](../Framework/Main.md) for drafting*
 
@@ -75,6 +106,7 @@ Once the author approves the Psyche Matrix mapping:
 | **Age (canon)** | [Integer years] |
 | **Physical (no ethnic labels)** | [Physical description focusing on concrete details] |
 | **Voice archetype base** | [Voice archetype or custom hybrid] |
+| **Cultural Bias** | [Belief/Heritage/Era — temporal tracking defaults (e.g. covenant, linear progress, cyclic liturgy)] |
 
 ---
 
@@ -89,10 +121,19 @@ Once the author approves the Psyche Matrix mapping:
 
 ---
 
+## Transformation & Knowledge
+
+| Field | Value |
+|:---|:---|
+| **Transformation Weights** | See transformation_weights YAML below |
+| **Depth of Knowledge** | See depth_of_knowledge YAML below |
+
+---
+
 ## Voice Engine
 
 - **Baseline:** [Register summary]
--- **Syntactical engine:** [Sentence shape, vocabulary patterns]
+- **Syntactical engine:** [Sentence shape, vocabulary patterns]
 - **Hard bans:** [What this character never says]
 - **Signature tics:** [Signature word, gesture, or phrase]
 
@@ -125,9 +166,11 @@ Once the author approves the Psyche Matrix mapping:
 
 When this character is on-scene for drafting ([Main.md](../Framework/Main.md)):
 
-1. Copy matrix, voice, and somatic fields into **silent** live state (do not print CONFIG).
-2. Run Focus brace/release from [realm_index.md](../Framework/Psychology/realm_index.md).
-3. Never name realms, biases, or "trauma" in character speech.
+1. **Fast Load:** Read the YAML frontmatter first for structured data.
+2. Copy matrix, voice, somatic, and adult-gate fields into **silent** live state (do not print CONFIG).
+3. Set **18+ Sexuality** to **OFF**. Enable only if brief/user requests **and** Canon Adult is **YES**.
+4. Run Focus brace/release from [realm_index.md](../Framework/Psychology/realm_index.md).
+5. Never name realms, biases, or "trauma" in character speech.
 ```
 
 2.  **Update Central Relationships Map:** Update the central **`Characters/Relations.md`** file by appending a new row to the **Relationship Dynamics Index** table for each relationship defined for this character. Ensure the columns are formatted correctly:
