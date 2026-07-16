@@ -113,6 +113,12 @@ Transformation: recent shifts noted in history
 
 **Custom / Pasted Cards**: If user provides their own card, honor it exactly (our synthesis only applies to canon characters).
 
+**Anime & Hentai Import Guidelines**:
+When importing or synthesizing characters from anime, manga, or adult (hentai) sources:
+- **No Visual Tropes or Shorthand:** Banish all visual-only tropes (e.g. sweat drops, popping head veins, nosebleeds, chibi shifts, exaggerated blushing). Translate these into realistic biological reactions (e.g., skin warming, muscle tension, throat constriction, gaze deflection).
+- **Ground Character Tropes:** Ground cartoonish behavioral archetypes (Tsundere, Kuudere, Yandere) in realistic cognitive biases. For example, a Tsundere should be synthesized with a strong *Insulation* or *Debt Ledger* bias and a Realm IV (Will) active Focus, where defensive hostility is a physical coping shield rather than a comedic tick.
+- **De-cartoonize Intimacy:** If the Sexuality Protocol is enabled for an adult/hentai-derived character (strictly requiring age ≥ 18), ban exaggerated cartoon tropes (e.g. instant mindless submission, lack of physical limits or fatigue, exaggerated anatomy). Enforce biological constants, kinetic mass, skin friction, and actual somatic boundary tension.
+
 This keeps the engine flexible for any fictional universe while staying true to the source material.
 
 ---
