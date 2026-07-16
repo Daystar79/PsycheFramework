@@ -12,6 +12,7 @@
 | **Age (canon)** | [Integer years] |
 | **Physical (no ethnic labels)** | [Coloration, features, bone structure, movement — show, never category-label] |
 | **Voice archetype base** | A / B / C / D / E / F (or custom hybrid) |
+| **Cultural Bias** | [Belief/Heritage/Era — temporal tracking defaults (e.g. covenant, linear progress, cyclic liturgy)] |
 
 ---
 
@@ -45,6 +46,7 @@ age: [Integer years]
 canon_adult: true
 physical: "[concise description]"
 voice_archetype: "[A-F or hybrid]"
+cultural_bias: "[Belief/Heritage/Era — temporal tracking defaults]"
 active_focus: "Realm [N] — [Name]"
 latent_anchors: ["Realm [a]", "Realm [b]", "Realm [c]"]
 cognitive_bias: "[Bias Name] — [one-line rewrite rule]"

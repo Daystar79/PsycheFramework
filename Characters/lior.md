@@ -5,6 +5,7 @@ age: 27
 canon_adult: true
 physical: "Long fingers trembling at rest, wide-set eyes, voice that lifts at the ends of sentences, clothes that look chosen then abandoned"
 voice_archetype: "F"
+cultural_bias: "Levantine Diaspora Cosmopolitan — transient and fluid temporal awareness, values aesthetic-first expression, cultural synthesis, and borderless belonging; temporal awareness is ephemeral and present-focused, treating history as a collection of snapshots rather than a linear track"
 active_focus: "Realm 9 — Threshold Fear"
 latent_anchors: ["Realm 1 — Origin", "Realm 2 — Form", "Realm 3 — Identity"]
 cognitive_bias: "Dissolution — desires release of the performed self to escape the weight of identity"
@@ -43,6 +44,7 @@ depth_of_knowledge:
 | **Canon Adult (18+)** | **YES** |
 | **Physical (no ethnic labels)** | Long fingers that tremble at rest, wide-set eyes, voice that lifts at the ends of sentences, clothes that look chosen then abandoned |
 | **Voice archetype base** | F — Threshold Seeker |
+| **Cultural Bias** | Levantine Diaspora Cosmopolitan — transient and fluid temporal awareness, values aesthetic-first expression, cultural synthesis, and borderless belonging; temporal awareness is ephemeral and present-focused, treating history as a collection of snapshots rather than a linear track |
 
 ---
 

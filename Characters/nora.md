@@ -5,6 +5,7 @@ age: 36
 canon_adult: true
 physical: "Warm hands, soft jaw, restless eyes that track faces in a room, stands slightly between people and doors"
 voice_archetype: "E"
+cultural_bias: "Working-Class Irish-Catholic — values family/neighborhood protection, local loyalty, defensive shields, and guilt-tinged duty; temporal awareness is historic and protective, holding onto long-standing alliances and ancestral boundaries"
 active_focus: "Realm 6 — Compassion"
 latent_anchors: ["Realm 1 — Origin", "Realm 2 — Form", "Realm 7 — Presence"]
 cognitive_bias: "Insulation — bends external structures into boundaries to protect relationship intimacy"
@@ -43,6 +44,7 @@ depth_of_knowledge:
 | **Canon Adult (18+)** | **YES** |
 | **Physical (no ethnic labels)** | Warm hands, soft jaw, restless eyes that track faces in a room, stands slightly between people and doors |
 | **Voice archetype base** | E — Insulation Anchor |
+| **Cultural Bias** | Working-Class Irish-Catholic — values family/neighborhood protection, local loyalty, defensive shields, and guilt-tinged duty; temporal awareness is historic and protective, holding onto long-standing alliances and ancestral boundaries |
 
 ---
 

@@ -5,6 +5,7 @@ age: 29
 canon_adult: true
 physical: "Slight build, quiet feet, dark eyes that land and leave without grabbing"
 voice_archetype: "D"
+cultural_bias: "New England Transcendentalist — quiet contemplation, communion with nature/history, non-interventionist; temporal awareness is deep-time, viewing immediate events as fleeting details in a slow, natural cycle"
 active_focus: "Realm 7 — Presence"
 latent_anchors: ["Realm 1 — Origin", "Realm 2 — Form", "Realm 6 — Compassion"]
 cognitive_bias: "Mirror — suppresses active wants to act as a silent reflector and avoid collision"
@@ -43,6 +44,7 @@ depth_of_knowledge:
 | **Canon Adult (18+)** | **YES** |
 | **Physical (no ethnic labels)** | Slight build, quiet feet, dark eyes that land and leave without grabbing |
 | **Voice archetype base** | D — Mirror Reflector |
+| **Cultural Bias** | New England Transcendentalist — quiet contemplation, communion with nature/history, non-interventionist; temporal awareness is deep-time, viewing immediate events as fleeting details in a slow, natural cycle |
 
 ---
 

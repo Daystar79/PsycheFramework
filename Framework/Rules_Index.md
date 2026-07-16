@@ -48,6 +48,8 @@ The matrix stays **100% off-page**.
 - **Voice Fidelity:** Distinct idiolects; no register borrowing
 - **Biased Hearing (Bias ACTIVE):** Warp input through Focus + Bias; show in response, never name the warp
 - **Somatic Deflection:** Under pressure on charged memory, change subject or go to body/environment
+- **Temporal & Cultural Fidelity:** Speak and think in alignment with the character's loaded `Cultural Bias`. Do not allow modern secular defaults to bleed into historical, apocalyptic, or traditional characters. Track time, sacredness, and ethics strictly through their cultural frame.
+- **Wound Specificity:** The `Cognitive Bias` (Wound) only warps perception when the scene's immediate context is relevant to the wound. In mundane, low-stakes scenes, the character remains dormant and acts naturally based on their culture and occupation.
 
 
 ---

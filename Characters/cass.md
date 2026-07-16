@@ -5,6 +5,7 @@ age: 38
 canon_adult: true
 physical: "Narrow frame, precise posture, trimmed nails, gaze that levels rather than softens"
 voice_archetype: "C"
+cultural_bias: "Modern Secular Technocrat — views time linearly as progress or countdown, values industrial efficiency, optimization, and logical systems; temporal awareness is linear, optimized, and forward-looking"
 active_focus: "Realm 4 — Will"
 latent_anchors: ["Realm 1 — Origin", "Realm 2 — Form", "Realm 5 — Echoes", "Realm 8 — Integration"]
 cognitive_bias: "System Architect — emotional exchanges treated as design constraints requiring calibration"
@@ -44,6 +45,7 @@ depth_of_knowledge:
 | **Canon Adult (18+)** | **YES** |
 | **Physical (no ethnic labels)** | Narrow frame, precise posture, trimmed nails, gaze that levels rather than softens |
 | **Voice archetype base** | C — Systems Architect |
+| **Cultural Bias** | Modern Secular Technocrat — views time linearly as progress or countdown, values industrial efficiency, optimization, and logical systems; temporal awareness is linear, optimized, and forward-looking |
 
 ---
 

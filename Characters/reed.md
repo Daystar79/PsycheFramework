@@ -5,6 +5,7 @@ age: 34
 canon_adult: true
 physical: "Broad hands, short dark hair, scar across left knuckle, moves like measuring load"
 voice_archetype: "A"
+cultural_bias: "Appalachian Industrial — values self-reliance, quiet endurance, physical work ethic; temporal awareness is linear, bound to seasonal cycles of labor and immediate utility"
 active_focus: "Realm 8 — Integration"
 latent_anchors: ["Realm 1 — Origin", "Realm 2 — Form", "Realm 7 — Presence"]
 cognitive_bias: "Debt Ledger — safety, affection, and rest rewritten as payments on an infinite unpayable debt"
@@ -43,6 +44,7 @@ depth_of_knowledge:
 | **Canon Adult (18+)** | **YES** |
 | **Physical (no ethnic labels)** | Broad hands, short dark hair, scar across left knuckle, moves like someone measuring load before stepping |
 | **Voice archetype base** | A — Concrete Voice |
+| **Cultural Bias** | Appalachian Industrial — values self-reliance, quiet endurance, physical work ethic; temporal awareness is linear, bound to seasonal cycles of labor and immediate utility |
 
 ---
 

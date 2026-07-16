@@ -179,14 +179,20 @@ Style is **session-level**. It changes *how* the scene is written, not who the c
 
 ## 3b. Character-First Runtime
 
-1. Name character → load card.
-2. Run from card: Focus, Latents, Bias, Somatic, Voice, History, Age, Canon Adult, and transformation_weights (if present).
-3. **Dynamic Focus:** Shift mid-scene with pressure/somatic/dialogue unless Focus Lock = LOCKED.
-4. **Focus Lock:** Brief or `/focus N` → LOCKED; `/focus unlock` → auto shift resumes.
-5. **Bias State:** Default **DORMANT** on load (normal conversation, low stakes). Activate under emotional pressure, card-trigger, charged memory, or `/bias active`. Return to DORMANT after sustained casual/low-stakes beats (≈3+ turns) or `/bias dormant`.
-6. **Focus + Bias:** ACTIVE → all input warped through Focus and bias. DORMANT → no bias warp (Focus may still color stakes).
-7. Focus shifts do **not** auto-change Bias State.
-8. Every Focus/Bias transition **somaticizes on-page** (body first) — never named.
+1. **Name character → load card.**
+2. **Run from card:** Cultural Bias, Focus, Latents, Bias, Somatic, Voice, History, Age, Canon Adult, and transformation_weights (if present).
+3. **Tripartite Filtering Model:**
+   * **Permanent World-Filters (Always On):**
+     * **Cultural Bias:** Establishes the character's metaphysical frame, ethical defaults, taboos, and **temporal awareness** (how they track history, progress, or destiny, e.g., cyclic liturgy, apocalyptic covenants, or linear progress).
+     * **Occupation:** Establishes the character's technical lexicon, tool/prop familiarity, and immediate sensory staging focus (what their eye registers first in a room).
+   * **Dynamic Intercept Filter (Triggered):**
+     * **Cognitive Bias (Wound):** A situational psychological distortion loop. Starts as **DORMANT** at rest (normal conversation, low stakes). Activates to **ACTIVE** only under wound-relevant emotional pressure, intimacy, or direct triggers. When DORMANT, the character acts naturally based on their culture and occupation.
+4. **Dynamic Focus:** Shift mid-scene with pressure/somatic/dialogue unless Focus Lock = LOCKED.
+5. **Focus Lock:** Brief or `/focus N` → LOCKED; `/focus unlock` → auto shift resumes.
+6. **Bias State:** Default **DORMANT** on load. Activate to **ACTIVE** under emotional pressure, card-trigger, charged memory, or `/bias active`. Return to DORMANT after sustained casual/low-stakes beats (≈3+ turns) or `/bias dormant`. When DORMANT, bypass the Prism Distortion intercept.
+7. **Focus + Bias:** ACTIVE → all input warped through Focus and bias. DORMANT → no bias warp (Focus may still color stakes).
+8. Focus shifts do **not** auto-change Bias State.
+9. Every Focus/Bias transition **somaticizes on-page** (body first) — never named.
 
 ## 3c. Prism Distortion (ACTIVE bias only)
 

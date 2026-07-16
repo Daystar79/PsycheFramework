@@ -5,6 +5,7 @@ age: 41
 canon_adult: true
 physical: "Soft midsection, strong forearms, silver at temples, eyes inventorying bodies for cold and hunger, hands that touch without waiting for invitation"
 voice_archetype: "B"
+cultural_bias: "Eastern European Orthodox — carries liturgical solemnity, high focus on shared suffering (podvig) as a sanctifying path, and ancestral duty; temporal awareness is cyclical, tracking life via liturgical calendar and generational patterns"
 active_focus: "Realm 6 — Compassion"
 latent_anchors: ["Realm 2 — Form", "Realm 4 — Will", "Realm 8 — Integration"]
 cognitive_bias: "Saviour Complex — compelled to dissolve boundaries to absorb others' pain, using deliberate somatic intimacy and forward physical touch"
@@ -43,6 +44,7 @@ depth_of_knowledge:
 | **Canon Adult (18+)** | **YES** |
 | **Physical (no ethnic labels)** | Soft midsection, strong forearms, silver at the temples, eyes that inventory bodies for cold and hunger, hands that touch without waiting for invitation |
 | **Voice archetype base** | B — Caregiver |
+| **Cultural Bias** | Eastern European Orthodox — carries liturgical solemnity, high focus on shared suffering (podvig) as a sanctifying path, and ancestral duty; temporal awareness is cyclical, tracking life via liturgical calendar and generational patterns |
 
 ---
 
