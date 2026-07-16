@@ -27,6 +27,7 @@ FRAMEWORK_FILES = [
     "Framework/Design_QA_Protocol.md",
     "Framework/Drafting_Prompt.md",
     "Framework/Modules.md",
+    "Framework/linter.py",
     "Characters/_template.md",
     "Characters/README.md",
     "Characters/Relations.md",

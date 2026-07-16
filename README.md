@@ -7,7 +7,7 @@ Body-first psychology, bias distortion, and realm-aware somatics — all running
 
 ## What It Is
 
-**CognitiveMiddleware** (formerly PsycheFramework) is a sophisticated runtime engine developed primarily for **"Belief and Love"** (and compatible with related private works such as *A Wanderer’s Guide to the Gates*). It enables consistent, psychologically rich characters through:
+**CognitiveMiddleware** (formerly PsycheFramework) is a sophisticated runtime engine developed for character-driven long-form fiction. It enables consistent, psychologically rich characters through:
 
 - **Body Before Insight** — Physical reactions and somatic tells always precede psychological explanation.
 - **Character-First** — Named characters from card files are the single source of truth.
@@ -31,7 +31,7 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 
 ## Quick Start
 
-1. Clone or copy this framework into your book project folder ("Belief and Love" or compatible private repo).
+1. Clone or copy this framework into your book project folder.
 2. Run `deploy_framework.py` (optional but recommended) to set up structure.
 3. For every drafting session, load:
    - `Framework/Main.md`
