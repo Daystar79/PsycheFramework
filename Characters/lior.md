@@ -1,5 +1,35 @@
+---
+name: "Lior"
+call_name: "Lior"
+age: 27
+canon_adult: true
+physical: "Long fingers trembling at rest, wide-set eyes, voice that lifts at the ends of sentences, clothes that look chosen then abandoned"
+voice_archetype: "F"
+active_focus: "Realm 9 — Threshold Fear"
+latent_anchors: ["Realm 1 — Origin", "Realm 2 — Form", "Realm 3 — Identity"]
+cognitive_bias: "Dissolution — desires release of the performed self to escape the weight of identity"
+default_somatic_alignment: "Lilt in voice; fingers trembling; rapid shallow breathing; wide sight focus"
+
+# Transformation
+transformation_weights:
+  active_focus: 80
+  latent_anchors:
+    Realm_I: 5
+    Realm_II: 10
+    Realm_III: 5
+  bias_strength: 75
+  somatic_flexibility: 65
+  transformation_history: []
+
+# Depth of Knowledge
+depth_of_knowledge:
+  general: "Classical violist, sheet music reading, orchestral performance"
+  esoteric: "High sensory attunement to liminal spaces and threshold triggers"
+  personal: "Rejects linear autobiography; memories are sensory snapshots and moods"
+---
+
 # Character Card: Lior
-*Generic playground demo — Archetype F base*
+*Occupational Profile: Orchestral Violist / Session Musician — Archetype F base*
 
 ---
 
@@ -27,6 +57,15 @@
 
 ---
 
+## Transformation & Knowledge
+
+| Field | Value |
+|:---|:---|
+| **Transformation Weights** | See transformation_weights YAML above |
+| **Depth of Knowledge** | See depth_of_knowledge YAML below |
+
+---
+
 ## Voice Engine
 
 - **Baseline:** Lilting, musical, fragile; aesthetic openness
@@ -48,3 +87,15 @@
 
 - Threshold of a lit room, hand on the frame, music low inside
 - Message typed and unsent, cursor blinking
+
+---
+
+## Load Protocol
+
+When this character is on-scene for drafting ([Main.md](../Framework/Main.md)):
+
+1. **Fast Load:** Read the YAML frontmatter first for structured data.
+2. Copy matrix, voice, somatic, and adult-gate fields into **silent** live state (do not print CONFIG).
+3. Set **18+ Sexuality** to **OFF**. Enable only if brief/user requests **and** Canon Adult is **YES**.
+4. Run Focus brace/release from [realm_index.md](../Framework/Psychology/realm_index.md).
+5. Never name realms, biases, or "trauma" in character speech.
