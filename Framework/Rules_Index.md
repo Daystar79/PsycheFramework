@@ -108,8 +108,10 @@ Applies within a movement and across the chapter.
 - State changes = somatic, not explained
 - Callbacks = imperfect memory + trigger
 - End on concrete anchor; continue from it; no character "re-entry" reset
+- Durable matrix lives in `Characters/[slug]_log.yaml` (and Character_Change_Log); scene close lives in Continuity_Ledger
+- Character cards are identity/build sheets only — never append movement history or weight deltas to card YAML
 
-Before M(N+1): read M(N); note ending somatic/env/props/open loops; confirm Focus/Bias; no duplicated tells/patterns/staging.
+Before M(N+1): read M(N) + Continuity_Ledger close + log snapshot; note ending somatic/env/props/open loops; confirm Focus/Bias; no duplicated tells/patterns/staging.
 
 ---
 
@@ -117,7 +119,7 @@ Before M(N+1): read M(N); note ending somatic/env/props/open loops; confirm Focu
 1. Instant somatic reaction in narrative (no brackets)
 2. Honor Prose Style + Style Lock
 3. If Bias ACTIVE: filter input through Focus + Bias silently
-4. Process transformation event pressure deltas silently and update character card
+4. Process transformation pressure deltas silently; on approval write Continuity_Ledger + `_log.yaml` (not the character card)
 5. Generate movement/scene prose in card voice
 6. Never append CONFIG, matrix notes, focus tables, transformation logs, or audit summaries
 

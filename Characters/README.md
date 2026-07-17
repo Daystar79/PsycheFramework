@@ -1,36 +1,54 @@
 # Characters Directory
 
-Named fictional people are the **unit of load**. Archetypes A–F are voice/matrix templates only ([Main.md](../Framework/Main.md) §5, [voices.md](../Framework/Mechanics/voices.md)).
+Named fictional people are the **unit of load**. Archetypes A–F are voice/matrix templates only ([Main.md](../Framework/Main.md), [voices.md](../Framework/Mechanics/voices.md)).
+
+## Card vs log
+
+| File | Role |
+|:---|:---|
+| `Characters/[slug].md` | **Identity / build sheet** — voice, bias name, build-default weights, history anchors |
+| `Characters/[slug]_log.yaml` | **Runtime matrix** — snapshot + movement history; overrides card Focus/weights/somatic when present |
+| [`_log_template.yaml`](./_log_template.yaml) | Schema scaffold for new logs |
+
+Do **not** write movement deltas or `transformation_history` onto the card. Evolution commits go to the log (and [Character_Change_Log.md](../Framework/Character_Change_Log.md)). Scene close goes to [Continuity_Ledger.md](../Framework/Continuity_Ledger.md).
 
 ## Card format
 
 Character cards are **pure YAML** (`.md` extension for tooling compatibility):
 
 - Entire card is a single YAML document between `---` fences
-- Structured fields: identity, psyche matrix, transformation tracking, `depth_of_knowledge`, `voice`, `history_anchors`, `scene_seeds`
-- One-line load protocol after the closing `---`
-- No duplicate markdown tables — the YAML is the source of truth
+- Structured fields: identity, psyche matrix, `transformation_weights` (**build defaults**), `depth_of_knowledge`, `voice`, `history_anchors`, `scene_seeds`
+- One-line load protocol after the closing `---` (overlays `_log.yaml` snapshot when present)
+- No duplicate markdown tables — the YAML is the identity source of truth
 
 ## Drafting flow
 
 1. Author names on-scene characters.
 2. System loads `Characters/[slug].md` (or a pasted card).
-3. Silent live state from the card: Focus, Latents, Bias, Somatic, and Voice.
-4. [Main.md](../Framework/Main.md) + [Rules_Index.md](../Framework/Rules_Index.md) + [realm_data.yaml](../Framework/Psychology/realm_data.yaml) execute on movement/scene — no bare archetype letter.
+3. Overlay `Characters/[slug]_log.yaml` snapshot when present (Focus, weights, baseline somatic, bias_strength).
+4. Silent live state: Focus, Latents, Bias, Somatic, and Voice.
+5. [Main.md](../Framework/Main.md) + [Rules_Index.md](../Framework/Rules_Index.md) + [realm_data.yaml](../Framework/Psychology/realm_data.yaml) execute on movement/scene — no bare archetype letter.
+6. On approval: update Continuity_Ledger + character log (not the card).
 
 ## Files
 
-- [`_template.md`](./_template.md) — **public** scaffold; copy for new characters (CC BY-SA 4.0)
+- [`_template.md`](./_template.md) — **public** card scaffold (CC BY-SA 4.0)
+- [`_log_template.yaml`](./_log_template.yaml) — **public** log schema (CC BY-SA 4.0)
 - [`README.md`](./README.md) — this file (public format docs)
-- Demo cards (`reed`, `helen`, `cass`, `wren`, `nora`, `lior`) — **author-local testing only**; not open-licensed; not deployed to other book folders
+- Demo cards (`reed`, `helen`, `cass`, `wren`, `nora`, `lior`) — **author-local testing only**; not open-licensed; not deployed
 - [`Relations.md`](./Relations.md) — **author-local** cast relationship map; not open-licensed; not deployed
 
-See [LICENSE.md](../LICENSE.md) §3 for the carve-out. Downstream projects should start from `_template.md` only.
+See [LICENSE.md](../LICENSE.md) §3 for the carve-out. Downstream projects should start from `_template.md` + `_log_template.yaml` only.
+
+## Drop-in chat (no git)
+
+For live RP without this folder, paste [`Simulator/CharacterRuntime.md`](../Simulator/CharacterRuntime.md) into a chat. It uses a portable **Character Pack** (CARD + MEMORY) with optional Google Drive / paste save — same data model as card + `_log.yaml`.
 
 ## Adding a novel character
 
 1. Copy `_template.md` → `Characters/[slug].md` (or run [character_builder_prompt.md](../Framework/Prompts/character_builder_prompt.md))
-2. Fill YAML fields: **age**, **canon_adult**, physical, cultural_bias
-3. Fill psyche matrix from Main + realm_data.yaml
-4. Voice: nearest A–F base under `voice:`, then override with idiolect on the card
-5. Drafting: load Main + Rules_Index + realm_data.yaml + this card
+2. Copy `_log_template.yaml` → `Characters/[slug]_log.yaml`; seed snapshot from the card (`as_of: build`); leave `history: []`
+3. Add a Snapshot row in [Character_Change_Log.md](../Framework/Character_Change_Log.md)
+4. Fill card YAML: **age**, **canon_adult**, physical, cultural_bias, psyche matrix from Main + realm_data.yaml
+5. Voice: nearest A–F base under `voice:`, then override with idiolect on the card
+6. Drafting: load Main + Rules_Index + realm_data.yaml + card + log (+ Continuity_Ledger)

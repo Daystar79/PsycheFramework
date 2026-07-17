@@ -3,7 +3,12 @@
 Framework Deployment & Scaffolding Script
 ----------------------------------------
 This script distributes the Authors Psyche Matrix Framework and writing mechanics
-to other book folders in the same parent directory (/mnt/Book).
+to other book folders in the same parent directory as this repo.
+
+Launch (OS-aware):
+  python scripts/run.py deploy [target]
+  scripts/unix/deploy.sh              # Unix
+  scripts/windows/deploy.ps1          # Windows
 
 It can:
 1. Initialize a brand-new book folder with the correct structure and framework files.
@@ -21,7 +26,7 @@ import sys
 # NOT deployed (author-local only; see LICENSE.md §3):
 #   - Named character cards (Characters/*.md except _template + README)
 #   - Characters/Relations.md
-# Simulator/ is public — authors can roleplay cards before drafting.
+# Simulator/ is public — drop-in CharacterRuntime (pack load/save, modes).
 FRAMEWORK_FILES = [
     "Framework/Main.md",
     "Framework/Rules_Index.md",
@@ -34,7 +39,10 @@ FRAMEWORK_FILES = [
     "Framework/Drafting_Prompt.md",
     "Framework/Modules.md",
     "Framework/linter.py",
+    "Framework/Continuity_Ledger.md",
+    "Framework/Character_Change_Log.md",
     "Characters/_template.md",
+    "Characters/_log_template.yaml",
     "Characters/README.md",
     ".gitignore",
     "README.md",

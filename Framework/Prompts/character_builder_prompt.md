@@ -78,6 +78,7 @@ latent_anchors: ["Realm [a]", "Realm [b]", "Realm [c]"]
 cognitive_bias: "[Bias Name] — [one-line rewrite rule]"
 default_somatic_alignment: "[body parts / tells]"
 
+# Build defaults only. Runtime evolution → Characters/[slug]_log.yaml
 transformation_weights:
   active_focus: 70
   latent_anchors:
@@ -85,7 +86,6 @@ transformation_weights:
     Realm_VIII: 15
   bias_strength: 60
   somatic_flexibility: 40
-  transformation_history: []
 
 depth_of_knowledge:
   general: "[broad understanding]"
@@ -108,7 +108,7 @@ scene_seeds:
   - "[Scene Seed 2]"
 ---
 
-*Load: Fast Load YAML. Copy matrix, voice, somatic, adult-gate to silent state. 18+ OFF. Enable only if brief/request AND Canon Adult YES. Run Focus brace/release from realm_data.yaml. Never name realms, biases, or trauma in speech.*
+*Load: Fast Load YAML. Copy matrix, voice, somatic, adult-gate to silent state. Overlay Characters/[slug]_log.yaml snapshot when present. 18+ OFF. Enable only if brief/request AND Canon Adult YES. Run Focus brace/release from realm_data.yaml. Never name realms, biases, or trauma in speech.*
 ```
 
 **Format rules for the written file:**
@@ -117,15 +117,19 @@ scene_seeds:
 *   Put history and seeds as YAML lists — never as markdown sections.
 *   Set `canon_adult: false` (or omit enabling heat) if age is under 18 or adult status is unclear.
 *   Use realm keys like `Realm_II` under `transformation_weights.latent_anchors` to match existing demo cards.
-*   Optional `relationships:` YAML list may be included, but bonds must still be indexed in `Relations.md` (step 2 below).
+*   Do **not** put `transformation_history` or movement deltas on the card — evolution lives in `Characters/[slug]_log.yaml`.
+*   Optional `relationships:` YAML list may be included, but bonds must still be indexed in `Relations.md` (step 3 below).
 
-2.  **Update Central Relationships Map:** Update the central **`Characters/Relations.md`** file by appending a new row to the **Relationship Dynamics Index** table for each relationship defined for this character. Ensure the columns are formatted correctly:
+2.  **Generate Character Log File:** Create `Characters/[slug]_log.yaml` from `Characters/_log_template.yaml`. Seed `snapshot` from the card's build defaults (`as_of: build`) and initialize `history: []`.
+2b. **Sync Consolidated Log:** Add a **Current Matrix Snapshot** row for the new character in `Framework/Character_Change_Log.md` (Focus, latent weights, bias strength, default somatic, flexibility, `As of: build`).
+
+3.  **Update Central Relationships Map:** Update the central **`Characters/Relations.md`** file by appending a new row to the **Relationship Dynamics Index** table for each relationship defined for this character. Ensure the columns are formatted correctly:
     *   **Character A:** The name of the character currently being created.
     *   **Character B:** The name of the related character.
     *   **Core Dynamic:** The bond type and emotional baseline.
     *   **Focus/Bias Warp Notes:** Specific details on how the characters' respective Active Focus and Cognitive Biases distort or conflict in their dynamic.
 
-3.  **Post-Initialization Cleanup (Mandatory for Agents):** Once the specified number of characters from Step 0 have been created and saved, move this prompt file from `Framework/Prompts/character_builder_prompt.md` to `Framework/Setup/character_builder_prompt.md` (creating the directory if needed). Notify the author that their initial cast has been created and that this builder has been archived to the setup folder.
+4.  **Post-Initialization Cleanup (Mandatory for Agents):** Once the specified number of characters from Step 0 have been created and saved, move this prompt file from `Framework/Prompts/character_builder_prompt.md` to `Framework/Setup/character_builder_prompt.md` (creating the directory if needed). Notify the author that their initial cast has been created and that this builder has been archived to the setup folder.
 
 Begin by welcoming the author, explaining the character building workflow, and asking **Step 0: Cast Size Configuration** to determine how many characters will be built.
 ```

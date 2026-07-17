@@ -33,16 +33,30 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 ## Quick Start
 
 1. Clone or copy this framework into your book project folder.
-2. Run `deploy_framework.py` (optional but recommended) to set up the directories.
+2. Deploy scaffolds (optional but recommended) — **pick by OS** (or use the auto launcher):
+   ```bash
+   # Preferred (auto-detects Windows vs Unix):
+   python3 scripts/run.py deploy
+
+   # Unix / macOS / WSL:
+   scripts/unix/deploy.sh
+
+   # Windows PowerShell:
+   # powershell -NoProfile -ExecutionPolicy Bypass -File scripts/windows/deploy.ps1
+   ```
 3. For every drafting session, load:
    - `Framework/Main.md`
    - `Framework/Rules_Index.md`
    - `Framework/Psychology/realm_data.yaml`
-   - Relevant character cards from `Characters/`
+   - On-scene character cards + `Characters/[slug]_log.yaml` (runtime matrix)
+   - `Framework/Continuity_Ledger.md` (scene timeline / close)
 4. Write movements/scenes using the brief + cards. The matrix runs silently.
-5. Run the linter to ensure no engine terms or banned fillers leaked:
+5. On approved movements: dual commit — Continuity_Ledger **and** character logs (not the cards).
+6. Run the linter (again: auto launcher or OS-specific wrapper):
    ```bash
-   ./Framework/linter.py Drafts/
+   python3 scripts/run.py lint Drafts/
+   # Unix:    scripts/unix/lint.sh Drafts/
+   # Windows: scripts/windows/lint.ps1 Drafts\
    ```
 
 ---
@@ -54,14 +68,33 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 | `Framework/Main.md` | Core engine, workflow, commands, and principles | **Always load** |
 | `Framework/Rules_Index.md` | Hard bans, cleanup protocol, dialogue rules | **Always load** |
 | `Framework/Psychology/realm_data.yaml` | Somatic profiles for all 10 Realms | **Always load** |
-| `Framework/linter.py` | Automated prose linter to check for system leaks | Command-line utility |
-| `Characters/_template.md` | Public card scaffold (Focus, Latents, Bias, Voice, etc.) | Copy for new characters |
-| `Characters/` (named cards, `Relations.md`) | **Author-local only** — demo cast for private testing; not open-licensed; not deployed | Local testing |
+| `Framework/linter.py` | Automated prose linter (core) | Via `scripts/run.py lint` |
+| `scripts/run.py` | OS-aware launcher (deploy / lint / migrate) | **Agents: use this** |
+| `scripts/unix/*.sh` | Unix shell wrappers | Linux / macOS / WSL |
+| `scripts/windows/*` | Windows PowerShell / CMD wrappers | Windows |
+| `Characters/_template.md` | Public card scaffold (identity + build defaults only) | Copy for new characters |
+| `Characters/_log_template.yaml` | Public runtime log schema (snapshot + history) | Copy → `[slug]_log.yaml` |
+| `Framework/Continuity_Ledger.md` | Scene timeline / somatic close | Always load when drafting |
+| `Framework/Character_Change_Log.md` | Consolidated matrix snapshot (human-readable) | Optional / post-commit sync |
+| `Characters/` (named cards, `Relations.md`) | **Author-local only** — demo cast; not open-licensed; not deployed | Local testing |
 | `Framework/Mechanics/` | Prose styles, sexuality rules, voice templates, humanity details | Load as needed |
 | `Framework/Prompts/` | Interactive character builder and improvement prompts | Reference only |
-| `Simulator/CharacterRuntime.md` | Roleplay runtime — drop into a chat to rehearse how a card acts before drafting | Drop into chat + card |
+| `Simulator/CharacterRuntime.md` | **Drop-in** RP engine: storage boot, Character Pack load/save, modes TEST/COMPANION/HEAT | Paste whole file into chat |
 
 ---
+
+## Character Simulator (drop-in)
+
+**No git required.** Paste `Simulator/CharacterRuntime.md` into any chat to activate.
+
+1. Runtime runs **Storage Boot** (detects Drive/local/paste capability).
+2. You **load**, **create**, or **paste** a **Character Pack** (card + memory in one portable file).
+3. Play in `/mode test` (fidelity), `companion` (relationship), or `heat` (adult, gated).
+4. `/save` writes change-state back to cloud (if tools exist) or dumps a pack for re-paste.
+
+Pack = CARD (identity) + MEMORY (snapshot, bond, pins, heat). Same idea as `Characters/[slug].md` + `_log.yaml` for repo users.
+
+Key simulator commands: `/load` `/new` `/save` `/pack` `/storage` `/mode` `/user` `/18+` `/pin` — full list inside the runtime file.
 
 ## Author Commands (Drafting & RP)
 
@@ -90,10 +123,10 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 
 ## Transformation & Evolution
 
-Character cards support `transformation_weights` tracking:
-- `active_focus` dominance and `latent_anchors` weights.
-- `bias_strength` and `somatic_flexibility` (rate of physical tell adaptation).
-- `transformation_history` tracking permanence of past events.
+- **Cards** hold build-default `transformation_weights` (active focus, latent anchors, bias strength, somatic flexibility).
+- **Runtime evolution** lives in `Characters/[slug]_log.yaml` (snapshot + history) and is mirrored in `Framework/Character_Change_Log.md`.
+- **Scene close** (day/time, temporary body state, plot beats) lives in `Framework/Continuity_Ledger.md`.
+- Do not append movement history to character cards.
 
 ---
 
@@ -106,11 +139,29 @@ Character cards support `transformation_weights` tracking:
 
 ## Automated Prose Linter (`linter.py`)
 
-Run `Framework/linter.py` on your drafts to scan for:
+Run via the OS-aware launcher (or platform wrappers under `scripts/`):
+
+```bash
+python3 scripts/run.py lint Drafts/
+```
+
+Scans drafts for:
 - **System Leaks:** On-page mentions of Realms, biases, and matrix weights.
 - **Therapy-Speak:** Jargon like *wound*, *trauma*, *trigger*, or *reframe*.
 - **Dialogue Tags/Fillers:** Banned markers like *whispered*, *Are you okay*, and *said quietly*.
 - **Formatting Breaks:** Excessive horizontal rules (`---`) separating real-time actions.
+
+See [scripts/README.md](scripts/README.md) for Windows vs Unix command tables (for humans and AI agents).
+
+## Scripts (Windows & Unix)
+
+| Tool | Auto (any OS) | Unix | Windows |
+|:---|:---|:---|:---|
+| Deploy | `python3 scripts/run.py deploy [target]` | `scripts/unix/deploy.sh` | `scripts/windows/deploy.ps1` |
+| Lint | `python3 scripts/run.py lint <path>` | `scripts/unix/lint.sh` | `scripts/windows/lint.ps1` |
+| Migrate | `python3 scripts/run.py migrate` | `scripts/unix/migrate.sh` | `scripts/windows/migrate.ps1` |
+
+**AI agents:** detect the host OS, then either call `scripts/run.py` (preferred) or the matching `scripts/unix/` / `scripts/windows/` wrapper. Do not run `.sh` on native Windows or `.ps1` on Unix unless a compatible shell is confirmed.
 
 ---
 

@@ -2,7 +2,7 @@
 name: "[Full Name]"
 call_name: "[preferred call-name or null]"
 age: [Integer years]
-canon_adult: YES
+canon_adult: true
 physical: "[Coloration, features, bone structure, movement — show, never category-label]"
 voice_archetype: "[A-F or hybrid]"
 cultural_bias: "[Belief/Heritage/Era — temporal tracking defaults (e.g. covenant, linear progress, cyclic liturgy)]"
@@ -11,6 +11,7 @@ latent_anchors: ["Realm [a] — [Name]", "Realm [b] — [Name]", "Realm [c] — 
 cognitive_bias: "[Bias Name] — [one-line rewrite rule]"
 default_somatic_alignment: "[throat, breath, jaw, posture, hands…]"
 
+# Build defaults only. Runtime evolution → Characters/[slug]_log.yaml (not this file).
 transformation_weights:
   active_focus: 70
   latent_anchors:
@@ -18,7 +19,6 @@ transformation_weights:
     Realm_VIII: 15
   bias_strength: 60
   somatic_flexibility: 40
-  transformation_history: []
 
 depth_of_knowledge:
   general: "[broad understanding]"
@@ -47,4 +47,4 @@ scene_seeds:
   - "[Alternate seed]"
 ---
 
-*Load: Fast Load YAML. Copy matrix, voice, somatic, adult-gate to silent state. 18+ OFF. Enable only if brief/request AND Canon Adult YES. Run Focus brace/release from realm_data.yaml. Never name system terms in speech.*
+*Load: Fast Load YAML. Copy matrix, voice, somatic, adult-gate to silent state. Overlay Characters/[slug]_log.yaml snapshot when present. 18+ OFF. Enable only if brief/request AND Canon Adult YES. Run Focus brace/release from realm_data.yaml. Never name system terms in speech.*

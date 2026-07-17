@@ -2,7 +2,7 @@
 
 Cognitive Middleware is a hybrid project containing both software utilities and creative, conceptual specifications. To accommodate both, the project is licensed under a dual hybrid structure, with an explicit carve-out for author-local testing materials.
 
-1. **Software & Scripts:** All executable code, utility scripts, and program files (including `.py` files such as `Framework/linter.py` and `deploy_framework.py`) are licensed under the **MIT License**.
+1. **Software & Scripts:** All executable code, utility scripts, and program files (including `.py` files such as `Framework/linter.py`, `deploy_framework.py`, `migrate_optimized.py`, and `scripts/**`) are licensed under the **MIT License**.
 2. **Creative Content & Specifications:** All markdown manuals, guides, rules, the public character **template**, prompts, YAML configurations under `Framework/`, and the Roleplay **Simulator** runtime are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
 3. **Author-Local Materials (Not Licensed):** Named character cards and relationship maps are **not** part of the open-source grant. See [§3](#3-author-local-materials-all-rights-reserved).
 
@@ -38,9 +38,9 @@ Copyright (c) 2026 Cian Didymos
 
 This license applies to open specifications and scaffolding, including:
 
-* `Framework/` manuals, rules, prompts, mechanics, and YAML schemas
+* `Framework/` manuals, rules, prompts, mechanics, YAML schemas, and empty ledger scaffolds (`Continuity_Ledger.md`, `Character_Change_Log.md`)
 * `Simulator/` Roleplay / CharacterRuntime engine (interactive pre-draft character testing)
-* `Characters/_template.md` and `Characters/README.md` (format documentation only)
+* `Characters/_template.md`, `Characters/_log_template.yaml`, and `Characters/README.md` (format documentation / scaffolds only)
 * Project `README.md` and other top-level documentation not listed in §3
 
 It does **not** apply to materials listed in §3.
@@ -66,12 +66,14 @@ The following paths (and any substantially similar copies or renames) are includ
 
 ### Excluded paths
 
-* **Named character cards** under `Characters/` other than `_template.md` and `README.md` (for example: `cass.md`, `helen.md`, `lior.md`, `nora.md`, `reed.md`, `wren.md`, and any future cast cards)
+* **Named character cards** under `Characters/` other than `_template.md`, `_log_template.yaml`, and `README.md` (for example: `cass.md`, `helen.md`, `lior.md`, `nora.md`, `reed.md`, `wren.md`, and any future cast cards)
+* **Named character logs** matching those cast members (`Characters/[slug]_log.yaml` when filled for author-local cast)
 * **`Characters/Relations.md`** (cast relationship map)
 * Historical backups or renames of the above under `backups_*` (named cards and relations only; framework/engine backups that are not cast content follow their open counterparts)
 
 ### Intent
 
-* Downstream book projects and redistributions should use **`Characters/_template.md`** to build their own cast, then optionally load cards into **`Simulator/CharacterRuntime.md`** to rehearse behaviour before drafting.
+* Downstream book projects and redistributions should use **`Characters/_template.md`** to build their own cast, then optionally drop in **`Simulator/CharacterRuntime.md`** (Character Pack load/save) to rehearse behaviour before drafting.
 * `deploy_framework.py` does **not** distribute named cards or `Relations.md`; it **does** distribute `Simulator/`.
+* User-created **Character Packs** (private card + memory files in cloud or local storage) are not part of this repository’s open-source grant unless the user publishes them.
 * Presence of reserved files in the repo does **not** constitute an open-source license grant for those files.
