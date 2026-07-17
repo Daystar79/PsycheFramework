@@ -1,22 +1,24 @@
 # Cognitive Middleware
 
-**An invisible cognitive matrix for character-driven fiction drafting and somatic roleplay.**  
-Body-first psychology, bias distortion, and realm-aware somatics — running silently off-page.
+**The product: an invisible cognitive middle layer for AI-assisted long-form fiction.**  
+Body-first psychology, bias distortion, and realm-aware somatics — running silently **off-page** so drafts stay clean manuscript prose.
+
+Roleplay / chat drop-ins under `Simulator/` are optional side tools (card testing, private sessions). They are **not** the product surface.
 
 ---
 
 ## What It Is
 
-**CognitiveMiddleware** is a sophisticated runtime engine developed for character-driven long-form fiction. It enables consistent, psychologically rich characters through:
+**Cognitive Middleware** is a file-native runtime for **character-driven novel drafting**. Load it with your cards and write movements; the matrix keeps characters consistent without leaking system jargon into the page.
 
 - **Body Before Insight** — Physical reactions and somatic tells always precede psychological explanation.
 - **Character-First** — Named characters from card files are the single source of truth.
 - **Tripartite Filtering** — Worldview filters split into background world-filters (Cultural Bias & Occupation) and a dynamic situational filter (Cognitive Bias / Wound) that remains dormant at rest.
 - **100% Off-Page** — The entire matrix stays invisible in the final prose. No realm numbers, bias names, or system terms appear on the page.
 - **Great Wheel Integration** — Somatic and bracing/release profiles for all 10 Realms.
-- **Transformation Engine** — Dynamic evolution or regression of character attributes based on narrative pressure and somatic tells.
+- **Transformation Engine** — Dynamic evolution or regression of character attributes based on narrative pressure and somatic tells (logs + ledgers, not mutated identity cards).
 
-The framework is designed to fight common AI writing problems: therapy-speak, perfect recall, symmetric dialogue, pattern repetition, and on-page system leakage.
+Built to fight common AI writing problems: therapy-speak, perfect recall, symmetric dialogue, pattern repetition, and on-page system leakage.
 
 ---
 
@@ -26,7 +28,7 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 - Characters are not therapists, narrators, or helpful assistants.
 - Memory is imperfect and biased. Recall is triggered somatically, not on command.
 - Style, focus, and bias state are controllable but never visible in the output.
-- Adult/sexual content is strictly gated and never enabled by default.
+- Adult/sexual modules stay gated and off by default; drafting does not require them.
 
 ---
 
@@ -77,26 +79,19 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 | `Framework/Continuity_Ledger.md` | Scene timeline / somatic close | Always load when drafting |
 | `Framework/Character_Change_Log.md` | Consolidated matrix snapshot (human-readable) | Optional / post-commit sync |
 | `Characters/` (named cards, `Relations.md`) | **Author-local only** — demo cast; not open-licensed; not deployed | Local testing |
-| `Framework/Mechanics/` | Prose styles, sexuality rules, voice templates, humanity details | Load as needed |
-| `Framework/Prompts/` | Interactive character builder and improvement prompts | Reference only |
-| `Simulator/CharacterRuntime.md` | **Drop-in** RP engine: storage boot, Character Pack load/save, modes TEST/COMPANION/HEAT | Paste whole file into chat |
+| `Framework/Mechanics/` | Prose styles, optional heat protocol, voice templates, humanity | Load as needed |
+| `Framework/Prompts/` | Character builder and improvement prompts | Reference only |
+| `Simulator/` | **Optional** — live card test / private RP drop-in (not core drafting) | See below |
 
 ---
 
-## Character Simulator (drop-in)
+## Optional: Character Simulator
 
-**No git required.** Paste `Simulator/CharacterRuntime.md` into any chat to activate.
+Side path for **stress-testing a card in chat** before drafting, or private live sessions. **Product core remains Framework/ + Characters/ + ledgers.**
 
-1. Runtime runs **Storage Boot** (detects Drive/local/paste capability).
-2. You **load**, **create**, or **paste** a **Character Pack** (card + memory in one portable file).
-3. Play in `/mode test` (fidelity), `companion` (relationship), or `heat` (adult, gated).
-4. `/save` writes change-state back to cloud (if tools exist) or dumps a pack for re-paste.
+Paste `Simulator/CharacterRuntime.md` into a chat if you want the drop-in (storage boot, Character Pack, `/mode test` default). Companion/heat modes are optional and gated — details in that file and `Simulator/README.md`.
 
-Pack = CARD (identity) + MEMORY (snapshot, bond, pins, heat). Same idea as `Characters/[slug].md` + `_log.yaml` for repo users.
-
-Key simulator commands: `/load` `/new` `/save` `/pack` `/storage` `/mode` `/user` `/18+` `/pin` — full list inside the runtime file.
-
-## Author Commands (Drafting & RP)
+## Author Commands (drafting)
 
 | Command | Effect |
 |---------|--------|
@@ -130,10 +125,10 @@ Key simulator commands: `/load` `/new` `/save` `/pack` `/storage` `/mode` `/user
 
 ---
 
-## Historical & Safety Gates (Roleplaying)
+## Historical & Safety Gates
 
-- **Safety Gating:** Strict prohibition of Lolicon/Shotacon tropes. Canon verification is required for 18+ Anime/Hentai imports.
-- **Historical Figures:** Lifespan/active era must be specified. Character cards prioritize their **own writings/primary documentation**, falling back to the cultural and temporal bias of their era only when documentation is lacking. Modern or post-era concepts are strictly banned from their awareness. Under no circumstances may the AI engine break character or use external search/lookup tools to resolve historical gaps during active roleplay.
+- **Age / content:** Strict prohibition of Lolicon/Shotacon. Canon adult verification required before any 18+ paths (simulator or drafting heat protocol).
+- **Historical figures:** Lifespan/era on the card; prefer primary documentation; no post-era bleed; no live web lookups mid-scene to “fix” history.
 
 ---
 
@@ -170,11 +165,11 @@ See [scripts/README.md](scripts/README.md) for Windows vs Unix command tables (f
 Cognitive Middleware uses a hybrid open-source license model:
 
 * Software components (such as `Framework/linter.py` and `deploy_framework.py`) are licensed under the **MIT License**.
-* Creative content, manuals, the public character **template**, prompts, YAML schemas under `Framework/`, and **`Simulator/`** (Roleplay / CharacterRuntime) are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
+* Creative content, manuals, the public character **template**, prompts, YAML schemas under `Framework/`, and optional **`Simulator/`** are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
 * **Author-local materials are not open-sourced:** named cards under `Characters/` (except `_template.md` / `README.md`) and `Characters/Relations.md`. All rights reserved; not distributed by `deploy_framework.py`.
 
 Copyright (c) 2026 Cian Didymos. See [LICENSE.md](LICENSE.md) for full license details.
 
 ---
 
-*Install once. Load for every session. Let the matrix run silently. Write clean prose.*
+*Install once. Load the middle layer for every draft session. Let the matrix run silently. Write clean prose.*

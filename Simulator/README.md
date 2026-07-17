@@ -1,56 +1,28 @@
-# Simulator — Character Runtime (drop-in)
+# Simulator (optional)
 
-## What it is
+**Cognitive Middleware’s product is the drafting middle layer** (`Framework/`, character cards, logs, ledgers, linter).  
 
-`CharacterRuntime.md` is a **self-contained** chat runtime for Cognitive Middleware characters. Paste the whole file into Claude, Gemini, ChatGPT, Grok, etc. — **no git clone required**.
+This folder is a **side tool**: live chat against a card so you (or friends) can stress-test behaviour before writing — or run private RP sessions. It is shipped because the same psyche engine is useful off-manuscript; it is **not** the marketed product surface.
 
-It is both:
+## CharacterRuntime.md
 
-- A **testing harness** for how a card behaves before you draft
-- A **companion / heat** engine when you want ongoing RP with memory
+Self-contained drop-in. Paste the whole file into a chat (no git required).
 
-## Quick start
-
-1. Open [`CharacterRuntime.md`](./CharacterRuntime.md).
-2. Copy **the entire file** into a new chat.
-3. Answer the **Storage Boot** menu:
-   - **Load** an existing Character Pack (Drive/local/paste)
-   - **Create** a new pack
-   - **Paste** a pack or card
-4. Optional: `/mode companion` · `/user name: …` · `/18+ on` (adults only)
-5. `/save` when bond, matrix, or heat state should persist
-
-## Character Pack
-
-Portable unit (one markdown file recommended):
-
-| Section | Holds |
+| Mode | Intent |
 |:---|:---|
-| **META** | slug, storage provider, file id, autosave |
-| **CARD** | Identity + build defaults (same idea as `Characters/[slug].md`) |
-| **MEMORY** | Snapshot, bond, pins, heat, history (same idea as `_log.yaml`) |
+| **TEST** (default) | Author fidelity — “how would this card act?” |
+| **COMPANION** / **HEAT** | Optional live session modes (adult paths gated) |
 
-### Persistence levels
+Persistence: Character Pack (CARD + MEMORY) via Drive/local/paste — see the runtime file.
 
-| Level | Host | Save |
-|:-----:|:---|:---|
-| L3 | Cloud read+write tools | Update/create pack file |
-| L2 | Cloud read only | Dump pack for manual upload |
-| L1 | Local workspace | Write `Characters/` files |
-| L0 | Paste-only chat | Dump pack to re-paste next time |
+## When to use what
 
-## Modes
-
-| Mode | Purpose |
+| Goal | Use |
 |:---|:---|
-| `TEST` | Author fidelity; low initiative |
-| `COMPANION` | Relationship continuity; character wants |
-| `HEAT` | Explicit adult RP — requires canon adult + `/18+ on` |
-
-## Repo users
-
-If you have the full Cognitive Middleware tree, L1 can sync pack ↔ `Characters/[slug].md` + `[slug]_log.yaml`. Deploy still ships this folder via `deploy_framework.py`.
+| Write a novel / movement | `Framework/Main.md` + Rules + realm_data + cards + logs |
+| Check a card in chat | This simulator, `/mode test` |
+| Private live RP | This simulator; keep packs private |
 
 ## License
 
-Simulator content is open under **CC BY-SA 4.0** (see root `LICENSE.md`). Your private Character Packs (named cards + intimate memory) are **your** data — keep them private.
+CC BY-SA 4.0 for the runtime text (root `LICENSE.md`). Your packs and private sessions are your data.

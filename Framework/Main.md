@@ -230,8 +230,8 @@ Custom biases allowed if all columns defined first.
 # RULES
 Canonical bans and cleanup: `Rules_Index.md` (always loaded with this file). Silent audit only — never print checklists into draft.
 
-# ADULT MODE (Roleplay Only)
-Adult/sexual content is gated by Canon Adult field on character cards. For drafting sessions using this framework, adult mode is OFF by default and not applicable. For live character sessions, drop in `Simulator/CharacterRuntime.md` (storage boot + Character Pack + modes TEST/COMPANION/HEAT). Adult heat is a final enhancement layer only; see that file for gates, ladder, and `/save` persistence.
+# ADULT / LIVE SESSION (optional — not required for drafting)
+Drafting does not need adult mode. Optional heat protocol: `Mechanics/sexuality.md` (gated). Optional live chat against a card: `Simulator/CharacterRuntime.md` (side tool; TEST mode default). Product path remains this file + Rules_Index + realm_data + cards + logs + ledgers.
 
 ---
 

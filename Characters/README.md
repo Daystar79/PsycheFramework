@@ -40,9 +40,9 @@ Character cards are **pure YAML** (`.md` extension for tooling compatibility):
 
 See [LICENSE.md](../LICENSE.md) §3 for the carve-out. Downstream projects should start from `_template.md` + `_log_template.yaml` only.
 
-## Drop-in chat (no git)
+## Optional live test (not the product core)
 
-For live RP without this folder, paste [`Simulator/CharacterRuntime.md`](../Simulator/CharacterRuntime.md) into a chat. It uses a portable **Character Pack** (CARD + MEMORY) with optional Google Drive / paste save — same data model as card + `_log.yaml`.
+Drafting uses this folder + Framework. For a **chat stress-test** of a card (or private sessions), paste [`Simulator/CharacterRuntime.md`](../Simulator/CharacterRuntime.md). Portable **Character Pack** (CARD + MEMORY) mirrors card + `_log.yaml`.
 
 ## Adding a novel character
 

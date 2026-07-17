@@ -3,10 +3,13 @@ framework: CognitiveMiddleware
 version: "2026-07-17"
 type: character_runtime
 load_priority: 20
-description: "Self-contained drop-in somatic character runtime. Storage boot + Character Pack persistence. Modes TEST/COMPANION/HEAT. Adult = final enhancement only."
+product_role: optional_side_tool
+description: "Optional drop-in chat runtime for card testing / private RP. Product core is Framework drafting middleware. Storage boot + Character Pack. Modes TEST/COMPANION/HEAT."
 ---
 
-# CHARACTER RUNTIME — Psyche Matrix Character System
+# CHARACTER RUNTIME — Psyche Matrix (optional drop-in)
+
+**Product note:** Cognitive Middleware’s real product is the **drafting middle layer** (Framework + cards + logs + ledgers). This file is an **optional side tool** — live chat to stress-test a card or run private sessions. Default mode is **TEST**.
 
 **Drop this entire file into a chat window to activate.**  
 No git clone required. Character identity + memory live in a **Character Pack** (paste or cloud).
