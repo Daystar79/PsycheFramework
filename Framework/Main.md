@@ -162,6 +162,9 @@ Custom biases allowed if all columns defined first.
 # RULES
 Canonical bans and cleanup: `Rules_Index.md` (always loaded with this file). Silent audit only — never print checklists into draft.
 
+# ADULT MODE (Roleplay Only)
+Adult/sexual content is gated by Canon Adult field on character cards. For drafting sessions using this framework, adult mode is OFF by default and not applicable. For character sessions using `Simulator/CharacterRuntime.md`, see that file for full adult mode pipeline and boundary gating rules.
+
 ---
 
 # EXECUTE ON MOVEMENT (Turn Logic)

@@ -12,8 +12,8 @@ echo "Creating backups..."
 mkdir -p backups_$(date +%Y%m%d)
 cp Framework/Main.md backups_$(date +%Y%m%d)/Main_original.md
 cp Framework/Rules_Index.md backups_$(date +%Y%m%d)/Rules_Index_original.md
-cp Framework/Psychology/realm_index.md backups_$(date +%Y%m%d)/realm_index_original.md
-cp RolePlaying/RoleplayEngine.md backups_$(date +%Y%m%d)/RoleplayEngine_original.md
+cp Framework/Psychology/realm_data.yaml backups_$(date +%Y%m%d)/realm_data_original.yaml
+cp Simulator/CharacterRuntime.md backups_$(date +%Y%m%d)/CharacterRuntime_original.md
 cp Characters/*.md backups_$(date +%Y%m%d)/
 
 echo "Backups created in backups_$(date +%Y%m%d)/"
@@ -23,8 +23,8 @@ echo ""
 echo "Replacing core framework files..."
 cp Framework/Main_optimized.md Framework/Main.md
 cp Framework/Rules_Index_optimized.md Framework/Rules_Index.md
-cp Framework/Psychology/realm_data.yaml Framework/Psychology/realm_index.md
-cp RolePlaying/RoleplayEngine_optimized.md RolePlaying/RoleplayEngine.md
+cp Framework/Psychology/realm_data_optimized.yaml Framework/Psychology/realm_data.yaml
+cp Simulator/CharacterRuntime_optimized.md Simulator/CharacterRuntime.md
 
 echo "Core files replaced."
 echo ""
@@ -43,14 +43,11 @@ echo ""
 echo "Cleaning up temporary files..."
 rm -f Framework/Main_optimized.md
 rm -f Framework/Rules_Index_optimized.md
-rm -f RolePlaying/RoleplayEngine_optimized.md
+rm -f Framework/Psychology/realm_data_optimized.yaml
+rm -f Simulator/CharacterRuntime_optimized.md
 
 echo "Temporary files removed."
 echo ""
-
-# Update README reference
-echo "Updating README.md reference from realm_index.md to realm_data.yaml..."
-sed -i 's/realm_index\.md/realm_data.yaml/g' README.md
 
 echo "README.md updated."
 echo ""

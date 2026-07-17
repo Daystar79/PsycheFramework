@@ -20,6 +20,7 @@ import sys
 FRAMEWORK_FILES = [
     "Framework/Main.md",
     "Framework/Rules_Index.md",
+    "Framework/Psychology/realm_data.yaml",
     "Framework/natural_prose.md",
     "Framework/psyche_framework.md",      # stub → Main
     "Framework/Drafting_Workflow.md",     # stub → Main
@@ -39,7 +40,7 @@ FRAMEWORK_DIRS = [
     "Framework/Mechanics",
     "Framework/Psychology",
     "Framework/Prompts",
-    "RolePlaying",
+    "Simulator",
 ]
 
 NEW_BOOK_DIRS = [

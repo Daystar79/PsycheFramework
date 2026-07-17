@@ -1,7 +1,7 @@
 # Source Changes — Psyche Framework
 *Changes made from original source material during this chat*
 
-## 2026-07-13 — Finish Main entry path (post-Mistral cleanup) — **applied** (agent)
+## 2026-07-13 — Finish Main entry path (post-refactor cleanup) — **applied** (agent)
 
 - **Main.md:** Honest load protocol (always Main + Rules_Index + realm_index + cards); strip RP opening beat / CONFIG / `/debug`; add Prism §3c; de-B&L brief template; drafting-only execute loop; author commands cleaned.
 - **Rules_Index.md:** Drafting-first; playground reduced to pointer; generic phrase watchlist; book-local watchlist optional.
@@ -10,12 +10,12 @@
 - **deploy_framework.py:** Ships Main + Rules_Index first; keeps stubs for overwrite of old book installs.
 - **Characters/README** + `_template` point at Main; samples/ removed again.
 
-## 2026-07-13 — Remove Web/; RolePlaying/ holds playground — **applied** (agent)
+## 2026-07-13 — Remove Web/; Simulator/ holds playground — **applied** (agent)
 
 - **Deleted** `Web/` (mirrored flat copies no longer used).
-- **Created** `RolePlaying/`; moved root `playground.md` → `RolePlaying/playground.md`.
+- **Created** `Simulator/`; moved root `playground.md` → `Simulator/playground.md`.
 - Updated links in `psyche_framework.md`, `Characters/README.md`; relative path in playground to `../Framework/Mechanics/humanity.md`.
-- `deploy_framework.py`: distribute `RolePlaying/` (+ playground path); dropped `Web` from deploy dirs.
+- `deploy_framework.py`: distribute `Simulator/` (+ playground path); dropped `Web` from deploy dirs.
 
 ## 2026-07-13 — Ban debug dump in drafts/samples/prose — **applied** (agent)
 
@@ -28,7 +28,7 @@
 - **Psychology Realm Index:** Created [realm_index.md](./Psychology/realm_index.md) (and its Web copy `Web/realm_index.md`) to consolidate the somatic focus, release/passage states, bracing/remnants, and keys of all 10 Realms in one dense document.
 - **Loading Protocol update:** Updated `psyche_framework.md` and its copy `Web/psyche_framework.md` to load only `realm_index.md` by default, reducing the token overhead of loading individual realm files by thousands of tokens. Individual realm files are now only loaded for deep somatic audits.
 
-## 2026-07-12 — Mistral Refactor & Auditing — **applied** (agent)
+## 2026-07-12 — Refactor & Auditing — **applied** (agent)
 
 - **Humanity Protocol optimizations:** Refactored `humanity.md` and `Web/humanity.md` to organize human behavior rules under a clean bulleted `Core Rules` schema. Added a strict **Per-body-zone rule** to somatic pacing (limiting somatic updates to one explicit tell per body zone per turn/beat to prevent redundant visual/lexical ticks).
 - **Prose Style Auto-Locking:** Updated `prose.md` and `Web/prose.md` to introduce an auto-lock mechanism. If the style is `UNLOCKED` after the first character response, the engine automatically sets `Style Lock = LOCKED` to `llm` to prevent register drift. Restricted `UNLOCKED` to mean "user can change freely" rather than allowing model self-migration.

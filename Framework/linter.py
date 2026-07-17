@@ -144,7 +144,7 @@ def audit_directory(path, extensions=None):
                 # Ignore system logs, templates, framework configs, and character cards
                 rel_root = os.path.relpath(root, path)
                 root_parts = rel_root.split(os.path.sep)
-                if any(ignored in root_parts for ignored in [".system_generated", "__pycache__", "Characters", "Framework", "RolePlaying"]) or file.startswith("_template"):
+                if any(ignored in root_parts for ignored in [".system_generated", "__pycache__", "Characters", "Framework", "Simulator"]) or file.startswith("_template"):
                     continue
                 filepath = os.path.join(root, file)
                 findings = audit_file(filepath)

@@ -7,7 +7,7 @@ Named fictional people are the **unit of load**. Archetypes A–F are voice/matr
 Character cards are **pure YAML** (`.md` extension for tooling compatibility):
 
 - Entire card is a single YAML document between `---` fences
-- Structured fields: identity, psyche matrix, `transformation_weights`, `depth_of_knowledge`, `voice`, `history_anchors`, `scene_seeds`
+- Structured fields: identity, psyche matrix, transformation tracking, `depth_of_knowledge`, `voice`, `history_anchors`, `scene_seeds`
 - One-line load protocol after the closing `---`
 - No duplicate markdown tables — the YAML is the source of truth
 

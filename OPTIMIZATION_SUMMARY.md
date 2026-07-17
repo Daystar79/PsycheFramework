@@ -19,7 +19,7 @@
 
 ## 🎯 OPTIMIZATION BREAKDOWN
 
-### 1. RoleplayEngine.md (Standalone Chat Module)
+### 1. CharacterRuntime.md (Standalone Chat Module)
 | Metric | Before | After | Reduction | Status |
 |--------|--------|-------|-----------|--------|
 | Words | 6,063 | 2,426 | **60%** (3,637w) | ✅ Format compressed, all rules preserved |
@@ -94,7 +94,7 @@
 ### File-By-File Savings
 | File | Before | After | Savings | % Reduction |
 |------|--------|-------|---------|-------------|
-| RoleplayEngine.md | 6,063 | 2,426 | 3,637 | 60% |
+| CharacterRuntime.md | 6,063 | 2,426 | 3,637 | 60% |
 | realm_index.md → realm_data.yaml | 2,617 | 922 | 1,695 | 65% |
 | Main.md | 2,591 | 1,360 | 1,231 | 47% |
 | Rules_Index.md | 1,224 | 912 | 312 | 25% |
@@ -145,7 +145,7 @@ TOTAL                                 3,473w
 - [x] Character loading works with YAML-only cards
 - [x] All somatic data preserved in realm_data.yaml
 - [x] All bias catalog entries maintained
-- [x] Expanded Somatic Registers preserved in RoleplayEngine.md
+- [x] Expanded Somatic Registers preserved in CharacterRuntime.md
 - [x] All safety gates (Anime/Historical) maintained
 
 ### Format Improvements
@@ -156,7 +156,7 @@ TOTAL                                 3,473w
 - [x] Maintained human readability
 
 ### Compatibility
-- [x] RoleplayEngine.md remains standalone (no external dependencies)
+- [x] CharacterRuntime.md remains standalone (no external dependencies)
 - [x] Core framework files reference each other correctly
 - [x] Character cards maintain .md extension for compatibility
 - [x] linter.py continues to skip Characters/ directory
@@ -168,8 +168,8 @@ TOTAL                                 3,473w
 ### Optimized Core Files
 - `Framework/Main_optimized.md` (1,360w)
 - `Framework/Rules_Index_optimized.md` (912w)
-- `Framework/Psychology/realm_data.yaml` (922w)
-- `RolePlaying/RoleplayEngine_optimized.md` (2,426w)
+- `Framework/Psychology/realm_data.yaml` (922w) — **REPLACES realm_index.md**
+- `Simulator/CharacterRuntime_optimized.md` (2,426w)
 
 ### Optimized Character Cards
 - `Characters/cass_optimized.md` (249w)
@@ -189,7 +189,7 @@ TOTAL                                 3,473w
    mv Framework/Main_optimized.md Framework/Main.md
    mv Framework/Rules_Index_optimized.md Framework/Rules_Index.md
    mv Framework/Psychology/realm_data.yaml Framework/Psychology/realm_index.md
-   mv RolePlaying/RoleplayEngine_optimized.md RolePlaying/RoleplayEngine.md
+   mv Simulator/CharacterRuntime_optimized.md Simulator/CharacterRuntime.md
    mv Characters/*_optimized.md Characters/
    rm Characters/*_optimized.md  # Remove backup files
    ```
@@ -224,9 +224,21 @@ TOTAL                                 3,473w
 
 1. **Format Compression Works**: Converting verbose markdown to YAML arrays saves 60-65% tokens while preserving all data
 2. **Character Cards Had Massive Redundancy**: Markdown tables duplicated YAML frontmatter exactly — removing tables saved 50% per card
-3. **RoleplayEngine.md Can Be Compressed**: Despite being standalone, format optimization saved 60% without losing any rules
+3. **CharacterRuntime.md Can Be Compressed**: Despite being standalone, format optimization saved 60% without losing any rules
 4. **Core Files Benefit from Streamlining**: Removing verbose explanations and compressing to bullet points saved 25-47%
 5. **All Rules Preserved**: Every hard ban, every somatic tell, every bias definition remains intact
+
+---
+
+## ✅ POST-OPTIMIZATION FIXES APPLIED
+
+### 2026-07-16 — Consistency Resolution
+- **Removed** duplicate `Framework/Psychology/realm_index.md` (kept `realm_data.yaml`)
+- **Updated** `deploy_framework.py` to reference `realm_data.yaml` instead of `realm_index.md`
+- **Standardized** all character cards to use `canon_adult: YES` (string) format
+- **Standardized** all character cards to use Roman numerals (Realm I, II, III, etc.) for consistency with realm_data.yaml keys
+- **Added** Adult Mode section to Main.md for completeness
+- **Updated** template to match new character card format
 
 ---
 

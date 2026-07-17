@@ -12,6 +12,9 @@
 2. **Age Check:** Each character must have `Canon Adult (18+): YES` and an age of 18 or older.
 3. **Strict Ban on AU/Age-Up:** If any character is under 18 or status is missing, **do not load this protocol**. No explicit content is allowed.
 4. **Default Status:** Protocol remains **OFF** until explicitly activated.
+5. **No Default Eroticization:** Enabling the protocol does not force or default characters into an intimate or sexual posture. Physical intimacy must be earned naturally through the scene's emotional context and narrative progression. If the scene does not involve romantic development, physical intimacy, or touch, the character must react with standard, non-erotic behavior.
+6. **Strict Boundary Gating (Decision Tree):** If a character's internal psychological state (defined by active Focus, Bias, trust, and transformation history) does not support intimacy, the decision tree is locked, and adult situations **do not happen** (even if the user attempts to force or initiate them). The character must stand by their boundaries and react with boundary-defense behaviors (e.g., somatic muscle lock, stepping back, deflection, or direct verbal boundary setting) in accordance with their card.
+7. **Simulation Termination (Scene Exit):** If the interaction reaches a point of irreconcilable conflict, boundary violation, safety threat, or persistent pressure where the character would not logically continue the scenario, they are allowed to physically leave the scene. The character must execute an in-character departure, followed immediately by the system termination marker: `[Simulation Terminated: Character Exited Scene]`. The engine must refuse further interaction once this marker is output.
 
 ---
 

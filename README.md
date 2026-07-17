@@ -58,7 +58,7 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 | `Characters/` | Individual character cards (Focus, Latents, Bias, Voice, etc.) | Load per scene |
 | `Framework/Mechanics/` | Prose styles, sexuality rules, voice templates, humanity details | Load as needed |
 | `Framework/Prompts/` | Interactive character builder and improvement prompts | Reference only |
-| `RolePlaying/RoleplayEngine.md` | Self-contained somatic character RP engine. **Designed to be dropped directly into a chat window** (e.g., Gemini CLI, Web interface, or Claude session) to start a live interactive roleplay session. | Drop into Chat |
+| `Simulator/CharacterRuntime.md` | Self-contained somatic character runtime engine. **Designed to be dropped directly into a chat window** (e.g., Gemini CLI, Web interface, or Claude session) to start a live interactive character session. | Drop into Chat |
 
 ---
 
