@@ -113,4 +113,15 @@ Run `Framework/linter.py` on your drafts to scan for:
 
 ---
 
+## License
+
+Cognitive Middleware uses a hybrid open-source license model:
+
+* Software components (such as `Framework/linter.py` and `deploy_framework.py`) are licensed under the **MIT License**.
+* Creative content, manuals, character card formats, prompts, and YAML schemas are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
+
+Copyright (c) 2026 Cian Didymos. See [LICENSE.md](LICENSE.md) for full license details.
+
+---
+
 *Install once. Load for every session. Let the matrix run silently. Write clean prose.*
