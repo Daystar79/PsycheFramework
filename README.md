@@ -55,10 +55,11 @@ The framework is designed to fight common AI writing problems: therapy-speak, pe
 | `Framework/Rules_Index.md` | Hard bans, cleanup protocol, dialogue rules | **Always load** |
 | `Framework/Psychology/realm_data.yaml` | Somatic profiles for all 10 Realms | **Always load** |
 | `Framework/linter.py` | Automated prose linter to check for system leaks | Command-line utility |
-| `Characters/` | Individual character cards (Focus, Latents, Bias, Voice, etc.) | Load per scene |
+| `Characters/_template.md` | Public card scaffold (Focus, Latents, Bias, Voice, etc.) | Copy for new characters |
+| `Characters/` (named cards, `Relations.md`) | **Author-local only** — demo cast for private testing; not open-licensed; not deployed | Local testing |
 | `Framework/Mechanics/` | Prose styles, sexuality rules, voice templates, humanity details | Load as needed |
 | `Framework/Prompts/` | Interactive character builder and improvement prompts | Reference only |
-| `Simulator/CharacterRuntime.md` | Self-contained somatic character runtime engine. **Designed to be dropped directly into a chat window** (e.g., Gemini CLI, Web interface, or Claude session) to start a live interactive character session. | Drop into Chat |
+| `Simulator/CharacterRuntime.md` | Roleplay runtime — drop into a chat to rehearse how a card acts before drafting | Drop into chat + card |
 
 ---
 
@@ -118,7 +119,8 @@ Run `Framework/linter.py` on your drafts to scan for:
 Cognitive Middleware uses a hybrid open-source license model:
 
 * Software components (such as `Framework/linter.py` and `deploy_framework.py`) are licensed under the **MIT License**.
-* Creative content, manuals, character card formats, prompts, and YAML schemas are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
+* Creative content, manuals, the public character **template**, prompts, YAML schemas under `Framework/`, and **`Simulator/`** (Roleplay / CharacterRuntime) are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
+* **Author-local materials are not open-sourced:** named cards under `Characters/` (except `_template.md` / `README.md`) and `Characters/Relations.md`. All rights reserved; not distributed by `deploy_framework.py`.
 
 Copyright (c) 2026 Cian Didymos. See [LICENSE.md](LICENSE.md) for full license details.
 

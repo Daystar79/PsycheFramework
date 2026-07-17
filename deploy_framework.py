@@ -17,6 +17,11 @@ import sys
 
 # Define framework components to distribute
 # Core drafting entry: Main + Rules_Index + realm_data.yaml (via Psychology/) + cards template
+#
+# NOT deployed (author-local only; see LICENSE.md §3):
+#   - Named character cards (Characters/*.md except _template + README)
+#   - Characters/Relations.md
+# Simulator/ is public — authors can roleplay cards before drafting.
 FRAMEWORK_FILES = [
     "Framework/Main.md",
     "Framework/Rules_Index.md",
@@ -31,7 +36,6 @@ FRAMEWORK_FILES = [
     "Framework/linter.py",
     "Characters/_template.md",
     "Characters/README.md",
-    "Characters/Relations.md",
     ".gitignore",
     "README.md",
 ]
@@ -162,6 +166,7 @@ def deploy_to_path(source_dir, target_dir):
             print(f"    [WARNING] Source directory not found: {rel_dir}")
             
     print(f"[✓] Deployment to '{os.path.basename(target_dir)}' completed successfully!")
+    print("  (Skipped author-local only: named character cards, Relations.md)")
 
 def main():
     source_dir = get_source_dir()

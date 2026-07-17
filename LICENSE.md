@@ -1,9 +1,10 @@
 # Licensing for Cognitive Middleware
 
-Cognitive Middleware is a hybrid project containing both software utilities and creative, conceptual specifications. To accommodate both, the project is licensed under a dual hybrid structure:
+Cognitive Middleware is a hybrid project containing both software utilities and creative, conceptual specifications. To accommodate both, the project is licensed under a dual hybrid structure, with an explicit carve-out for author-local testing materials.
 
 1. **Software & Scripts:** All executable code, utility scripts, and program files (including `.py` files such as `Framework/linter.py` and `deploy_framework.py`) are licensed under the **MIT License**.
-2. **Creative Content & Specifications:** All markdown manuals, guides, rules, character templates, prompts, and YAML configurations (including `.md` and `.yaml` files in `Framework/`, `Characters/`, `Simulator/`, and other directories) are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
+2. **Creative Content & Specifications:** All markdown manuals, guides, rules, the public character **template**, prompts, YAML configurations under `Framework/`, and the Roleplay **Simulator** runtime are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
+3. **Author-Local Materials (Not Licensed):** Named character cards and relationship maps are **not** part of the open-source grant. See [§3](#3-author-local-materials-all-rights-reserved).
 
 ---
 
@@ -35,7 +36,14 @@ SOFTWARE.
 
 Copyright (c) 2026 Cian Didymos
 
-This license applies to all specifications, markdown documents, prompts, character cards, and schema files.
+This license applies to open specifications and scaffolding, including:
+
+* `Framework/` manuals, rules, prompts, mechanics, and YAML schemas
+* `Simulator/` Roleplay / CharacterRuntime engine (interactive pre-draft character testing)
+* `Characters/_template.md` and `Characters/README.md` (format documentation only)
+* Project `README.md` and other top-level documentation not listed in §3
+
+It does **not** apply to materials listed in §3.
 
 ### You are free to:
 * **Share** — copy and redistribute the material in any medium or format.
@@ -47,3 +55,23 @@ This license applies to all specifications, markdown documents, prompts, charact
 * **No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
 For the full legal code of the CC BY-SA 4.0, please visit [creativecommons.org](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+---
+
+## 3. Author-Local Materials (All Rights Reserved)
+
+Copyright (c) 2026 Cian Didymos. All rights reserved.
+
+The following paths (and any substantially similar copies or renames) are included in this repository **for the author’s local testing and private use only**. They are **not** licensed under MIT or CC BY-SA 4.0. No permission is granted to use, copy, modify, merge, publish, distribute, sublicense, or create derivative works from these materials, except as required for personal inspection of this repository or as expressly authorized in writing by the copyright holder.
+
+### Excluded paths
+
+* **Named character cards** under `Characters/` other than `_template.md` and `README.md` (for example: `cass.md`, `helen.md`, `lior.md`, `nora.md`, `reed.md`, `wren.md`, and any future cast cards)
+* **`Characters/Relations.md`** (cast relationship map)
+* Historical backups or renames of the above under `backups_*` (named cards and relations only; framework/engine backups that are not cast content follow their open counterparts)
+
+### Intent
+
+* Downstream book projects and redistributions should use **`Characters/_template.md`** to build their own cast, then optionally load cards into **`Simulator/CharacterRuntime.md`** to rehearse behaviour before drafting.
+* `deploy_framework.py` does **not** distribute named cards or `Relations.md`; it **does** distribute `Simulator/`.
+* Presence of reserved files in the repo does **not** constitute an open-source license grant for those files.

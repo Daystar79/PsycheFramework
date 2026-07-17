@@ -20,9 +20,12 @@ Character cards are **pure YAML** (`.md` extension for tooling compatibility):
 
 ## Files
 
-- [`_template.md`](./_template.md) — copy for new characters
-- Demo cards (`reed`, `helen`, `cass`, `wren`, `nora`, `lior`) — optional tests only; not required for novels
-- [`Relations.md`](./Relations.md) — central relationship dynamics index
+- [`_template.md`](./_template.md) — **public** scaffold; copy for new characters (CC BY-SA 4.0)
+- [`README.md`](./README.md) — this file (public format docs)
+- Demo cards (`reed`, `helen`, `cass`, `wren`, `nora`, `lior`) — **author-local testing only**; not open-licensed; not deployed to other book folders
+- [`Relations.md`](./Relations.md) — **author-local** cast relationship map; not open-licensed; not deployed
+
+See [LICENSE.md](../LICENSE.md) §3 for the carve-out. Downstream projects should start from `_template.md` only.
 
 ## Adding a novel character
 
