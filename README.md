@@ -1,4 +1,4 @@
-# Cognitive Middleware
+# CognitiveMiddleware
 
 **The product: an invisible cognitive middle layer for AI-assisted long-form fiction.**  
 Body-first psychology, bias distortion, and realm-aware somatics — running silently **off-page** so drafts stay clean manuscript prose.
@@ -9,7 +9,7 @@ Roleplay / chat drop-ins under `Simulator/` are optional side tools (card testin
 
 ## What It Is
 
-**Cognitive Middleware** is a file-native runtime for **character-driven novel drafting**. Load it with your cards and write movements; the matrix keeps characters consistent without leaking system jargon into the page.
+**CognitiveMiddleware** is a file-native runtime for **character-driven novel drafting**. Load it with your cards and write movements; the matrix keeps characters consistent without leaking system jargon into the page.
 
 - **Body Before Insight** — Physical reactions and somatic tells always precede psychological explanation.
 - **Character-First** — Named characters from card files are the single source of truth.
@@ -46,14 +46,9 @@ Built to fight common AI writing problems: therapy-speak, perfect recall, symmet
    # Windows PowerShell:
    # powershell -NoProfile -ExecutionPolicy Bypass -File scripts/windows/deploy.ps1
    ```
-3. For every drafting session, load:
-   - `Framework/Main.md`
-   - `Framework/Rules_Index.md`
-   - `Framework/Psychology/realm_data.yaml`
-   - On-scene character cards + `Characters/[slug]_log.yaml` (runtime matrix)
-   - `Framework/Continuity_Ledger.md` (scene timeline / close)
+3. For every drafting session, load the files according to the canonical load manifest in [Framework/Main.md](file:///mnt/Book/Authors_Framework/Framework/Main.md).
 4. Write movements/scenes using the brief + cards. The matrix runs silently.
-5. On approved movements: dual commit — Continuity_Ledger **and** character logs (not the cards).
+5. On approved movements: execute the Post-Movement State Commit (see [Framework/Main.md](file:///mnt/Book/Authors_Framework/Framework/Main.md)).
 6. Run the linter (again: auto launcher or OS-specific wrapper):
    ```bash
    python3 scripts/run.py lint Drafts/

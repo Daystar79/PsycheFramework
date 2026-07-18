@@ -1,9 +1,15 @@
+---
+generated_from: Characters/*_log.yaml
+generated_at: 2026-07-18T04:05:29Z
+schema_version: 1
+---
+
 # Character Change Log
 *Matrix evolution ledger — consolidated quick reference for the author.*
 
-**Individual logs** (`Characters/[slug]_log.yaml`) are the primary technical runtime data source loaded during drafting.
+**Individual logs** (`Characters/[slug]_log.yaml`) are the canonical mutable runtime state and the primary technical runtime data source loaded during drafting. **YAML always wins:** If this consolidated Markdown file differs from an individual YAML log, the YAML log wins and this consolidated file is regenerated.
 
-**This file** is a consolidated, human-readable quick reference for all character snapshots and history. Routine post-movement saves should update both the individual log files (for data loading) and this unified log (for visual reference).
+**This file** is a generated, human-readable quick reference projection for all character snapshots and history. Routine post-movement saves should update the individual log files and regenerate or synchronize this consolidated log as part of the Post-Movement State Commit.
 
 Do not write `transformation_history` (or movement-by-movement deltas) onto character cards.
 
@@ -11,14 +17,18 @@ Do not write `transformation_history` (or movement-by-movement deltas) onto char
 
 ---
 
-## Post-Movement Commit (with Continuity_Ledger)
+## Post-Movement State Commit
 
-On **every approved movement**, write **both** ledgers:
+On **every approved movement**, execute the Post-Movement State Commit:
+1. Write story continuity to `Framework/Continuity_Ledger.md`.
+2. Update canonical per-character runtime state (`Characters/[slug]_log.yaml`).
+3. Regenerate or synchronize this consolidated human-readable log (`Framework/Character_Change_Log.md`).
 
 | Save | File | Owns |
 |:---|:---|:---|
 | **Story ledger** | `Framework/Continuity_Ledger.md` | Day/time, draft path, **scene** somatic close, plot/continuity beats |
-| **Character change log** | This file + `Characters/[slug]_log.yaml` | Durable Focus/weight/somatic/bias-strength evolution + history of pressure events |
+| **Character log** | `Characters/[slug]_log.yaml` | Durable Focus/weight/somatic/bias-strength evolution + history of pressure events |
+| **Consolidated log** | This file | Regenerated human-readable snapshot and history reference for all characters |
 
 - Continuity_Ledger without character logs = incomplete matrix continuity.
 - Character logs without Continuity_Ledger = incomplete scene continuity.
@@ -29,7 +39,7 @@ On **every approved movement**, write **both** ledgers:
 ### Load order (next design/draft)
 0. **Ledger Integrity Pass** (Main.md) — clean empty/placeholder ledgers first
 1. On-scene character cards (identity, voice, bias name, build defaults)
-2. **Current Matrix Snapshot** below / per-slug `_log.yaml` snapshot (overrides card Focus / weights / baseline somatic / bias_strength when present)
+2. **Canonical mutable runtime state:** per-slug `_log.yaml` snapshot (overrides card Focus / weights / baseline somatic / bias_strength when present)
 3. Continuity_Ledger latest **real** row (scene time, props, close body state)
 
 ### Integrity notes for this file

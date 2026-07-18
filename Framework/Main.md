@@ -1,5 +1,11 @@
-# MAIN — Psyche Matrix Framework
-*Drafting entry point. Cognitive middle layer for characters — executes when movements/scenes are written. Invisible on the page.*
+# MAIN — CognitiveMiddleware (Psyche Matrix)
+*Host authoring environment: BookOS · Application: Character Simulator*
+
+### Core Product Hierarchy:
+- **Product:** CognitiveMiddleware
+- **Runtime model:** Psyche Matrix
+- **Host authoring environment:** BookOS
+- **Applications:** Roleplay Engine and Character Simulator
 
 ---
 
@@ -25,6 +31,15 @@
 - `source_changes.md`, `formatting_rules.md`, `Framework/Prompts/*`
 - Superseded stubs: `psyche_framework.md`, `Drafting_Workflow.md`
 - Demo cast cards unless testing
+
+---
+
+## CANONICAL STATE DECLARATION
+- **Canonical mutable runtime state:** `Characters/[slug]_log.yaml`
+- **Generated human-readable projection:** `Framework/Character_Change_Log.md`
+- **Conflict rule:** If the consolidated Markdown differs from an individual YAML log, the YAML log wins and the consolidated file is regenerated.
+
+Every runtime manifest must load the individual YAML. The consolidated log is optional for human orientation, not authoritative machine state.
 
 ---
 
@@ -56,12 +71,18 @@ Empty ledgers are normal on a new book. **Fake-empty** ledgers (placeholder rows
 | Approved Continuity_Ledger rows with no matching log history entry | **Backfill** the character's `_log.yaml` history (durable deltas if known; else empty/none) + refresh snapshot if needed |
 | No approved movements + history empty | **OK** — honest empty; do not invent history |
 
-### 3. Gate
+### 3. Consolidated Change Log Integrity
+- Compare consolidated snapshots against `Characters/[slug]_log.yaml`.
+- Missing or stale data: regenerate from YAML.
+- Consolidated Markdown never overrides YAML.
+- Regeneration failure: **BLOCKED**.
+
+### 4. Gate
 - **CLEAN** or **CLEAN (empty project)** → proceed to design/draft.
-- **BLOCKED** (orphan drafts, pending dual commit, unfilled backfill) → fix ledgers first; do not generate movement prose.
+- **BLOCKED** (orphan drafts, pending Post-Movement State Commit, unfilled backfill, consolidated log regeneration failure) → fix ledgers and logs first; do not generate movement prose.
 - Never invent canon to fill ledgers. Prefer honest empty over placeholder fiction.
 
-### 4. Status (only if needed)
+### 5. Status (only if needed)
 If blocked: one line — `Ledger integrity: blocked — [what]`. If clean: no banner required; continue silently.
 
 ---
@@ -111,14 +132,14 @@ No prose. **First:** Ledger Integrity Pass. Then pre-Q&A load: Rules_Index + on-
 - Ch. N, M2+: Every prior movement in Ch. N
 
 **Action steps:**
-0. **Ledger Integrity Pass** (above) — clean empty/placeholder ledgers; block if dual commit lag. **First.**
+0. **Ledger Integrity Pass** (above) — clean empty/placeholder ledgers; block if Post-Movement State Commit lag. **First.**
 1. **Manifest:** Movement Brief + preceding movement(s) + on-scene cards + character log snapshots + Continuity_Ledger + Rules_Index + realm_data.yaml (+ book-local refs if brief needs)
 2. **Generate:** Exactly one movement. On-page voice supersedes outlines.
 3. **Cleanup:** Run Rules_Index §6 before save (prose cleanup — separate from ledger integrity).
-4. **Post-Movement Commit (mandatory on approval):** Dual ledger save — Continuity_Ledger **and** character logs (see below). Do not start the next design/draft until both writes land.
+4. **Post-Movement State Commit (mandatory on approval):** Write story continuity, update canonical per-character runtime state, and regenerate or synchronize the consolidated human-readable log. Do not start the next design/draft until all required writes succeed.
 5. **Assemble:** Approved movements → `draft_chapter_N.md`. Merge to master only on approval.
 
-### Post-Movement Commit (dual ledger save)
+### Post-Movement State Commit
 *Runs after the movement is approved. Silent bookkeeping — never print into the draft file. Evolution is **not** written onto character cards.*
 
 | Write | File | What to record |
@@ -183,15 +204,41 @@ Never write finished Realm X Passage unless scene earns open hands without perfo
 Characters evolve or regress dynamically based on narrative pressure.
 - Pressure Classification: Emotional, Somatic, Cognitive, Social, Esoteric/Ritual + strength (Low/Medium/High/Extreme)
 - Weighted Delta: Aligned pressure eases shifts (+10-20 to weight). Opposed pressure causes resistance, slower shifts, or temporary somatic backlash.
-- Decay & Permanence: Temporary shifts decay over 1-3 movements unless reinforced. Medium/permanent shifts recorded in `Characters/[slug]_log.yaml` at Post-Movement Commit (not on the card).
+- Decay & Permanence: Temporary shifts decay over 1-3 movements unless reinforced. Medium/permanent shifts recorded in `Characters/[slug]_log.yaml` at Post-Movement State Commit (not on the card).
 - Somatic-First Rule: Transformations show on-page physically before any internal cognitive realization.
 
 ### Character Log write-back (end of movement — with Continuity_Ledger)
-Record durable evolution in `Characters/[slug]_log.yaml` only:
+Record durable evolution and track updates in `Characters/[slug]_log.yaml` only:
 
-1. **snapshot** — update values when any of these carry forward:
+1. **metadata** — protect against stale or concurrent writes:
+   - Include the following tracking keys in each `_log.yaml`:
+     ```yaml
+     schema_version: 1
+     revision: 1
+     updated_at: 2026-07-17T00:00:00Z
+     last_commit_id: chapter_1_m2
+     ```
+   - **Save rule:** Compare the loaded revision with the current file revision before writing. If they differ, stop and reconcile. Increment revision after a successful write.
+2. **snapshot** — update values when any of these carry forward:
    - active_focus, latent_weights, bias_strength, default_somatic, flexibility
-2. **history** — append an entry per on-scene character with Medium+ pressure or permanent shift:
+3. **temporary_effects** — track decayable deltas deterministically:
+   - Schema structure:
+     ```yaml
+     temporary_effects:
+       - id: unique-id
+         field: bias_strength
+         delta: 10
+         remaining_movements: 2
+         reinforced: 0
+         source: chapter_2_m3
+     ```
+   - **Rules:**
+     - Decrement after each approved movement in which the character appears.
+     - Reinforcement extends or resets duration.
+     - Remove expired effects before saving the snapshot.
+     - Temporary effects never overwrite build defaults.
+     - Promotion requires an explicit threshold or author decision.
+4. **history** — append an entry per on-scene character with Medium+ pressure or permanent shift:
    - pressure: e.g., `Emotional/High`
    - delta: e.g., `bias_strength +10; default somatic → jaw lock baseline`
    - permanence: `temporary` | `medium` | `permanent`
@@ -247,7 +294,11 @@ When generating or revising a movement/scene:
 7. If transformation pressure occurs: apply deltas silently during generation (do not print)
 8. Honor style lock and voice polarization (Rules_Index)
 9. Emit prose only. No footer, no audit appendix, no matrix notes.
-10. **On approval — Post-Movement Commit:** write Continuity_Ledger row **and** character logs (Snapshot + History). Sync Character_Change_Log. Do not write evolution onto character cards.
+10. **On approval — Post-Movement State Commit:**
+    a. Write the Continuity_Ledger row.
+    b. Update each affected `Characters/[slug]_log.yaml` snapshot/history.
+    c. Regenerate or synchronize `Framework/Character_Change_Log.md`.
+    Do not proceed until all required writes succeed.
 
 ---
 

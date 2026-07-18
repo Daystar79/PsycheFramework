@@ -7,9 +7,12 @@ This ledger is the source of truth for **narrative timeline, locations, and scen
 
 ---
 
-## Dual ledger save (with Character Logs)
+## Post-Movement State Commit
 
-On **every approved movement**, write this story ledger, update individual character logs, and sync the consolidated visual reference:
+On **every approved movement**, execute the Post-Movement State Commit:
+1. Write story continuity.
+2. Update canonical per-character runtime state (`Characters/[slug]_log.yaml`).
+3. Regenerate or synchronize the consolidated human-readable log (`Framework/Character_Change_Log.md`).
 
 | Save | Where | Owns |
 |:---|:---|:---|

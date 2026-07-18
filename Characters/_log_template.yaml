@@ -4,8 +4,12 @@
 #
 # Seed snapshot from the card's transformation_weights / default_somatic_alignment
 # with as_of: build. Append history only after approved movements with Medium+
-# pressure or durable shifts. Temporary tells → Continuity_Ledger close only.
+# pressure or durable shifts.
 ---
+schema_version: 1
+revision: 1
+updated_at: 2026-07-17T00:00:00Z
+last_commit_id: chapter_1_m2
 snapshot:
   active_focus: "[e.g. VIII — Integration]"
   latent_weights:
@@ -16,4 +20,5 @@ snapshot:
   default_somatic: "[baseline body tells from card]"
   flexibility: 40
   as_of: "build"
+temporary_effects: []
 history: []

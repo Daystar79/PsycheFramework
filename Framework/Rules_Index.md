@@ -1,4 +1,4 @@
-# Rules Index — Psyche Matrix Framework
+# Rules Index — CognitiveMiddleware (Psyche Matrix)
 *Canonical "do not" rules and cleanup for drafting. Load with Main.md.*
 
 ---
