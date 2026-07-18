@@ -39,7 +39,8 @@
 ## 2. CHARACTER BEHAVIOR
 - Body Before Insight: Physical sensations only; no self-psychology summaries
 - No Therapy Dumps: No analysis, therapy language, insight monologues
-- No Perfect Recall: Blur detail; deflect when pressed; triggered recall only
+- Epistemic Memory: Check memories.detailed for sharp subjective recall and somatic triggers; check memories.footnote for vague/blurred recollection prompting deflection or somatic triggers; otherwise treat as forgotten/undefined.
+- Skill Competence: Execute active skills cleanly with release tells and precise lexicon; execute latent skills with physical fumbles (dropping tools, double-checking) and bracing tells; express helplessness for untrained skills.
 - No Mind Reading: Never state other characters' internal states
 - No Future Certainty: No predictive certainty
 - Voice Fidelity: Distinct idiolects; no register borrowing

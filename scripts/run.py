@@ -112,7 +112,12 @@ def run_unix_wrapper(sh: Path, args: list[str]) -> int:
 def run_python_core(tool: str, args: list[str]) -> int:
     core = python_core(tool)
     if not core.is_file():
-        print(f"Error: missing core script {core}", file=sys.stderr)
+        if tool == "deploy":
+            print("Error: 'deploy_framework.py' was not found in this repository.", file=sys.stderr)
+            print("Note: Framework deployment is an upstream operation. To deploy or update a book project,", file=sys.stderr)
+            print("please run the deploy command from the main 'Authors_Framework' repository.", file=sys.stderr)
+        else:
+            print(f"Error: missing core script {core}", file=sys.stderr)
         return 2
     py = find_python()
     cmd = [*py, str(core), *args]

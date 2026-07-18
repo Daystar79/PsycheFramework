@@ -20,5 +20,11 @@ snapshot:
   default_somatic: "[baseline body tells from card]"
   flexibility: 40
   as_of: "build"
+skills:
+  active: []
+  latent: []
+memories:
+  detailed: []
+  footnote: []
 temporary_effects: []
 history: []

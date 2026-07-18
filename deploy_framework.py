@@ -41,6 +41,8 @@ FRAMEWORK_FILES = [
     "Framework/linter.py",
     "Framework/Continuity_Ledger.md",
     "Framework/Character_Change_Log.md",
+    "Framework/source_changes.md",
+    "Framework/degradation_protocol.md",
     "Characters/_template.md",
     "Characters/_log_template.yaml",
     "Characters/README.md",
@@ -109,7 +111,7 @@ def copy_file(src, dst):
     dst_dir = os.path.dirname(dst)
     if not os.path.exists(dst_dir):
         os.makedirs(dst_dir, exist_ok=True)
-    shutil.copy2(src, dst)
+    shutil.copyfile(src, dst)
     print(f"    Copied: {os.path.relpath(dst, get_parent_dir())}")
 
 def copy_directory(src_dir, dst_dir):
@@ -127,7 +129,7 @@ def copy_directory(src_dir, dst_dir):
         for file in files:
             src_file = os.path.join(root, file)
             dst_file = os.path.join(target_root, file)
-            shutil.copy2(src_file, dst_file)
+            shutil.copyfile(src_file, dst_file)
     print(f"    Synced folder: {os.path.relpath(dst_dir, get_parent_dir())}")
 
 def deploy_to_path(source_dir, target_dir):
