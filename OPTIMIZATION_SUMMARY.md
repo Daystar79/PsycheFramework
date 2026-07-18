@@ -207,7 +207,7 @@ TOTAL                                 3,473w
 
 ### Mechanics/ Directory
 - **Not modified** per user requirement (required for drafting)
-- Contains: prose.md, voices.md, humanity.md, sexuality.md
+- Contains: prose.md, voices.md, humanity.md, erotica.md
 - These remain available as optional load
 
 ### What Was NOT Changed

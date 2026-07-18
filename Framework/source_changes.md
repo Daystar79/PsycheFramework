@@ -1,6 +1,23 @@
 # Source Changes — Psyche Framework
 *Changes made from original source material during this chat*
 
+## 2026-07-17 — Rename Sexuality → Erotica module — **applied** (agent)
+
+- **Rename:** `Framework/Mechanics/sexuality.md` → `Framework/Mechanics/erotica.md`
+- **Modules.md:** Registry entry **Erotica Protocol** → path `erotica.md` (still `DISABLED`)
+- **Title:** Protocol renamed; ambient desire remains Main middleware; this file is scene craft only (content pass still pending)
+
+## 2026-07-17 — Main: embodiment baseline → runtime filters — **applied** (agent)
+
+- **Main.md (Psyche Matrix Core):** Added **Embodiment Baseline → Runtime Filters** pipeline. Body (card physical + sexed/hormonal capacity when established) sets silent baseline and low-amplitude ambient attraction/aversion; culture, occupation, Focus, belief/voice, memory, Bias, and scene pressure filter final output. No default eroticization; erotica/intimacy scene craft deferred to ENABLED modules. Explicitly bans generic sex-stereotype scripts.
+- **Execute on Movement:** Steps reordered — body baseline → filters → Focus/Bias → body-first prose → prism → modules → transform → bans → commit.
+
+## 2026-07-17 — Simulator `/adult on` one-switch for private RP — **applied** (agent)
+
+- **Problem:** Private RP partners had to juggle `/18+ on` + `/mode heat` + bond friction; no single toggle.
+- **Simulator/CharacterRuntime.md:** Added `/adult on|off` (aliases `/heat on|off`; `/18+ on|off` still sets auth). Sets `adult_auth` + HEAT when canon adult. Softens HEAT decision-tree friction on clear mutual intent (still hard_bans / bias tripwires / age gates). Added `/bond set …` for established-relationship setup. MEMORY field `adult_auth`. Boot + quick-start copy updated.
+- **Simulator/README.md** + root **README.md:** Document the one-switch path for private live RP.
+
 ## 2026-07-13 — Finish Main entry path (post-refactor cleanup) — **applied** (agent)
 
 - **Main.md:** Honest load protocol (always Main + Rules_Index + realm_index + cards); strip RP opening beat / CONFIG / `/debug`; add Prism §3c; de-B&L brief template; drafting-only execute loop; author commands cleaned.

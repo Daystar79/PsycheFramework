@@ -1,5 +1,5 @@
-# Sexuality Protocol (Optional — 18+ Only)
-*Location: `Framework/Mechanics/sexuality.md` · Commercial heat + somatic integrity.*
+# Erotica Protocol (Optional — 18+ Only)
+*Location: `Framework/Mechanics/erotica.md` · BookOS module: intimacy/sex **scene craft** only. Ambient desire/body baseline lives in Main.md.*
 
 > [!IMPORTANT]
 > This protocol is strictly optional and restricted to **canonically adult (18+)** characters only. It requires explicit user enablement via the `/18+ on` command or scene brief. Both conditions must be met.

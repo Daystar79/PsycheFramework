@@ -46,9 +46,9 @@ Built to fight common AI writing problems: therapy-speak, perfect recall, symmet
    # Windows PowerShell:
    # powershell -NoProfile -ExecutionPolicy Bypass -File scripts/windows/deploy.ps1
    ```
-3. For every drafting session, load the files according to the canonical load manifest in [Framework/Main.md](file:///mnt/Book/Authors_Framework/Framework/Main.md).
+3. For every drafting session, load the files according to the canonical load manifest in [Framework/Main.md](Framework/Main.md).
 4. Write movements/scenes using the brief + cards. The matrix runs silently.
-5. On approved movements: execute the Post-Movement State Commit (see [Framework/Main.md](file:///mnt/Book/Authors_Framework/Framework/Main.md)).
+5. On approved movements: execute the Post-Movement State Commit (see [Framework/Main.md](Framework/Main.md)).
 6. Run the linter (again: auto launcher or OS-specific wrapper):
    ```bash
    python3 scripts/run.py lint Drafts/
@@ -84,7 +84,7 @@ Built to fight common AI writing problems: therapy-speak, perfect recall, symmet
 
 Side path for **stress-testing a card in chat** before drafting, or private live sessions. **Product core remains Framework/ + Characters/ + ledgers.**
 
-Paste `Simulator/CharacterRuntime.md` into a chat if you want the drop-in (storage boot, Character Pack, `/mode test` default). Companion/heat modes are optional and gated — details in that file and `Simulator/README.md`.
+Paste `Simulator/CharacterRuntime.md` into a chat if you want the drop-in (storage boot, Character Pack, `/mode test` default). Companion/heat modes are optional and gated. For private adult RP sessions: load a canon-adult pack, then **`/adult on`** (one switch). Details in that file and `Simulator/README.md`.
 
 ## Author Commands (drafting)
 
