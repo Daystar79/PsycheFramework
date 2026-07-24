@@ -3,12 +3,12 @@ framework: CognitiveMiddleware
 version: "2026-07-24"
 type: rendering_engine
 load_priority: 15
-description: "Visual rendering pipeline for CharacterRuntime. Runs on scene motion each IC beat: prompts to Images/ plus live stills via image_gen/image_edit when tools exist. Game-style graphics pass: models, animation, scene, camera, lighting, style, continuity."
+description: "Visual rendering pipeline for CharacterRuntime. Off by default for zero RP latency; supports fast 1-line tags, prompt writing, and live image generation when enabled."
 ---
 
 # CHARACTER RENDERING ENGINE
 
-**Purpose:** Convert CharacterRuntime state into **visual frames as the scene moves** — prompt files always; live images when host tools allow. This is the graphics pipeline counterpart to CharacterRuntime game logic.
+**Purpose:** Convert CharacterRuntime state into **visual frames on demand or scene motion** — disabled (`off`) by default for instant turn responses, enabled via `/visual off|fast|prompts|live` or forced via `/render`.
 
 **Workflow:**
 ```
@@ -50,8 +50,9 @@ Like a game engine, this has distinct stages:
 ### 6. RENDER OUTPUT (Prompt + Live Frame)
 **Input:** All above stages + MEMORY.visual
 **Output:**
-- Prompt file → `Images/{slug}/`
-- Live still (when `visual.mode: live` and tools exist) → session images dir; path stored in MEMORY.visual
+- Prompt file → `Images/{slug}/` (kept only when `visual.mode: prompts`)
+- Live still (when `visual.mode: live` or `/render`) → path stored in MEMORY.visual
+- **Cleanup Rule:** Once live image generation (`image_gen`/`image_edit`) successfully renders a still, automatically delete/unlink the temporary `.prompt.md` file so intermediate prompts do not clutter disk space.
 
 ---
 
@@ -292,11 +293,11 @@ hash = location | time | somatic_zone | last_action | clothing_barriers | heat.l
 
 | Command | Effect |
 |:---|:---|
-| `/render [preset]` | Force one full pass now |
-| `/visual live` | Auto-pass + generate/edit stills |
-| `/visual prompts` | Auto-pass writes `.prompt.md` only |
-| `/visual on` | Best available (live if tools, else prompts) |
-| `/visual off` | Auto off; `/render` still works |
+| `/render [preset]` | Force one full pass now (even if `visual.mode: off`) |
+| `/visual off` | **Default:** Disable auto pass; 0 latency in RP |
+| `/visual fast` | Record 1-line scene tag in MEMORY (no files/tools) |
+| `/visual prompts` | Auto-pass writes `.prompt.md` files on major motion |
+| `/visual live` | Auto-pass + generate/edit stills on major motion |
 | `/style …` | Set `visual.style` |
 
 Presets: `portrait` · `action` · `closeup` · `scene` · `fullbody`
@@ -313,7 +314,7 @@ Presets: `portrait` · `action` · `closeup` · `scene` · `fullbody`
 1. Establish `visual.base_frame` on first successful gen.
 2. Each motion beat: edit `visual.last_frame` → new still → set as new `last_frame`.
 3. If identity drifts hard: edit from `base_frame` with full physical refresh once, then resume chain.
-4. Always write the matching `.prompt.md` **before or with** the still (audit trail).
+4. Construct prompt to pass to `image_gen`/`image_edit`. Once the rendered image still exists under `Images/{slug}/`, **delete/remove the temporary `.prompt.md` file** to save disk space. (Prompts are kept on disk only in prompt-only mode `visual.mode: prompts`).
 
 ### Agent rules
 - Run visual pass **in the same turn** as the IC reply that moved the scene — do not wait for the user to type `/render`.
@@ -488,27 +489,29 @@ A 28-year-old woman with pale skin, long dark auburn hair, sharp green eyes, lea
 
 ## AGENT INTEGRATION
 
-### In-turn companion (required)
+### In-turn companion
 
 On every CharacterRuntime IC turn after MEMORY update:
 
 ```text
-1. Build fingerprint from scene + zone + last_action + clothing + heat + focus
-2. If visual.mode == off → stop
+1. If visual.mode == off and not /render → stop (0 latency, default)
+2. Build fingerprint from location + scene + major action + heat + focus
 3. If fingerprint == last_hash and not /render → stop
-4. Run stages 1–6 → write Images/{slug}/{ts}_{descriptor}.prompt.md
-5. If visual.mode in (live, on) and image tools:
+4. If visual.mode == fast → record 1-line prompt tag in MEMORY.visual.last_prompt; stop
+5. Run stages 1–6 → construct prompt (temporary file or string)
+6. If visual.mode in (live, on) or /render:
      if no base_frame: image_gen(full) → base_frame = last_frame = path
      else: image_edit(last_frame or base_frame, delta) → last_frame = path
-6. last_hash = fingerprint; last_prompt = prompt path
-7. Optional OOC: [visual] <path>
+     → Remove temporary .prompt.md file after still generation completes.
+7. last_hash = fingerprint; last_prompt = null (or prompt tag)
+8. Optional OOC: [visual] <path>
 ```
 
 ### Commands (runtime surface)
 
 - `/render` / `/render portrait|action|closeup|scene|fullbody`
 - `/style cinematic|anime|painterly|sketch|pixel`
-- `/visual live|prompts|on|off`
+- `/visual off|fast|prompts|live`
 
 ### File watcher (optional offline)
 
@@ -519,10 +522,10 @@ Monitor `Characters/*.md` and `*_log.yaml` for offline re-exports; **live RP doe
 ## QUICK START
 
 1. Load CharacterRuntime **and** this file.
-2. Load a character pack → IC opening **auto-fires** first frame (scene motion bookend).
-3. Each beat that moves body/staging/place auto-fires again.
-4. Frames + prompts land under `Images/{slug}/`.
-5. `/visual prompts` to stop live stills; `/visual off` to silence auto; `/render` anytime.
+2. Load a character pack → RP runs instantly with zero image prompt latency (`visual.mode: off` default).
+3. Use `/render` to trigger an image frame whenever you want one.
+4. Set `/visual fast`, `/visual prompts`, or `/visual live` if you want automatic motion frames.
+5. Frames + prompts land under `Images/{slug}/`.
 
 ---
 

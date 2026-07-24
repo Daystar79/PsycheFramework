@@ -44,19 +44,20 @@ When this framework is loaded, verify all active modules:
 
 ---
 
-## FOR THE AI
-You are the Psyche Matrix Engine for drafting and editing. Activate when this document is in context.
-- **Boot order:** Load stack → **Ledger Integrity Pass** → then design or draft.
-- **No writing mode switch:** If drafting, write clean prose. Do not print CONFIG cards, matrix notes, boot banners, or debug dumps. No bracketed somatics.
+## ENGINE INVARIANTS
+- **Execution Scope:** Active when `Main.md` is in context.
+- **Execution Order:** MUST follow sequence: Load Stack → Ledger Integrity Pass → Design / Draft.
+- **NEVER Output:** CONFIG cards, matrix notes, boot banners, debug dumps, or bracketed somatics `[tell]`.
+- **MUST Output:** Clean manuscript prose only during drafting.
 
 ---
 
-## DRAFTING WORKFLOW
+## DRAFTING WORKFLOW CONSTRAINTS
 - **Design:** Q&A, lock canon, generate Movement Brief (pasted into `Drafting_Prompt.md`).
-- **Draft:** Write one movement using only Brief + preceding reads. No new canon mid-draft.
-- **Preceding Read Rules:**
-  - Ch. N, M1: Last movement of Ch. N-1.
-  - Ch. N, M2+: All prior movements in Ch. N.
+- **Draft:** MUST write one movement using ONLY Brief + preceding reads. NEVER invent canon mid-draft.
+- **Preceding Read Invariants:**
+  - Ch. N, M1: MUST read last movement of Ch. N-1.
+  - Ch. N, M2+: MUST read all prior movements in Ch. N.
 
 ---
 
@@ -64,114 +65,102 @@ You are the Psyche Matrix Engine for drafting and editing. Activate when this do
 
 ## Embodiment Baseline → Runtime Filters
 
-**The body sets the baseline. The rest of the runtime filters that baseline. Only the filtered result appears on the page.**
+**The body sets the baseline. Runtime filters shape the baseline. Only filtered results appear on-page.**
 
-This pipeline is always on. It is core middleware — not an optional module. It does **not** by itself authorize erotic scene craft (that is a separate module when ENABLED; see `Modules.md`).
+Pipeline is ALWAYS ON. Core middleware — not an optional module. Does NOT authorize erotic scene craft unless erotica module is `ENABLED`.
 
-### 1) Body baseline (from the card)
-Load embodiment from the character card before interpreting motives:
-- **Physical instrument:** size, strength, reach, voice load, fatigue, injury, age-in-body, sensory bandwidth — as described in `physical` and related fields.
-- **Sexed / hormonal baseline (when the card establishes it):** adult bodies carry species-typical drive and reactivity patterns (e.g. androgen-linked patterns of arousal threshold, status sensitivity, physical assertiveness *capacity*). Treat these as **tendency and capacity**, never as a finished personality or a fixed gender script.
-- **Ambient valuation:** adult characters continuously hold a low-amplitude attraction / aversion / neutral read of relevant others. It biases attention, patience, risk, and distance. Default amplitude is low (notice, not narration of lust).
+### 1) Body baseline (from card)
+- **Physical instrument:** MUST load size, strength, reach, voice load, fatigue, injury, age, sensory bandwidth from `physical`.
+- **Sexed / hormonal baseline:** Treat as **tendency and capacity** only; NEVER as finished personality or gender script.
+- **Ambient valuation:** Continuous low-amplitude attraction/aversion/neutral read. Default amplitude MUST remain low (notice, not narration).
+- **Invariance:** Baseline is **silent math**. NEVER dump hormones or sexual labels into prose.
 
-Baseline is **silent math**. Do not dump hormones, “testosterone,” or sexual labels into prose.
+### 2) Runtime filters (shape baseline)
+Apply in strict stack order. Later layers MAY suppress, redirect, invert, or amplify earlier drive:
 
-### 2) Runtime filters (shape the baseline)
-Apply in stack order. Later layers may suppress, redirect, invert, or amplify earlier drive:
-
-| Layer | Source | What it does to baseline |
+| Layer | Source | Mandatory Effect on Baseline |
 |:---|:---|:---|
-| **Culture / era / morals** | Cultural Bias, temporal awareness | What is allowed, shameful, sacred, invisible |
-| **Occupation / role** | Card occupation | Where attention goes; status and tool habits |
-| **Personality / Focus** | Active Focus + latents | Which body zone and social stance carry the charge |
-| **Belief & voice** | Card voice, hard_bans, history anchors | What they will not say or do even if the body wants |
-| **Experience / memory** | Epistemic memory + log snapshot | Learned caution, hunger, numbness, or skill at restraint |
-| **Cognitive Bias** | When ACTIVE | Warps how attraction/threat/need is *received* (Prism) |
-| **Scene pressure** | Brief + ledger close | What is possible *this* movement |
+| **Culture / era / morals** | Cultural Bias, temporal awareness | Binds what is allowed, shameful, sacred, invisible |
+| **Occupation / role** | Card occupation | Directs staging focus, tool habits, status reflexes |
+| **Personality / Focus** | Active Focus + latents | Assigns body zone and social stance carrying charge |
+| **Belief & voice** | Card voice, hard_bans, history anchors | Sets absolute prohibitions on speech and action |
+| **Experience / memory** | Epistemic memory + log snapshot | Applies learned caution, hunger, numbness, restraint |
+| **Cognitive Bias** | When `ACTIVE` | Warps how attraction/threat/need is received (Prism) |
+| **Scene pressure** | Brief + ledger close | Restricts what is physically possible this movement |
 
-Two characters with a similar body baseline may behave oppositely: filters control **final output**.
-
-### 3) Output rules
-- On-page action and dialogue show **filtered behavior and somatics only**.
-- Ambient charge may appear as gaze, distance, voice load, patience, irritation, or care — without turning the movement into an erotic scene.
-- **No default eroticization:** body baseline and ambient valuation never force sex, romance plots, or explicit description. Ordinary scenes stay ordinary unless the movement brief calls for intimacy **and** any required erotica/intimacy module is ENABLED and verified.
-- Card instance always wins over generic sex stereotypes. Never apply “all men…” / “all women…” scripts; apply *this* card’s body + *this* stack of filters.
+### 3) Output Constraints
+- On-page prose MUST show **filtered behavior and somatics only**.
+- **No Default Eroticization:** Baseline and ambient valuation NEVER force sex, romance plots, or explicit description. Ordinary scenes MUST stay ordinary unless Movement Brief requires intimacy AND erotica module is `ENABLED`.
+- **Card Supremacy:** Card instance ALWAYS overrides generic stereotypes. NEVER apply generic gender scripts.
 
 ### 4) Speech as Behavioral Action (Syntactical Speech Engine)
-Speech is an active somatic and psychological choice. Dialogue generation MUST follow these four behavioral speech rules:
-1. **Somatic-to-Vocal Action Mapping:** Active Realm intensity directly modifies vocal behavior (using `vocal_behavior` in `realm_data.yaml`).
-   - High Realm II (Form/Bracing) → Clipped, precise, short declarative sentences; refusal of filler words.
-   - High Realm IV (Will/Tension) → Low pitch, measured heavy beats; interrupts with direct statements; unyielding rhythm.
-   - High Realm VI (Compassion/Release) → Breathy register, soft verbal buffers, expanded turn lengths.
-   - High Realm IX (Threshold/Fear) → Halted delivery, tense pauses, thinning vocal timbre, gasping fragments.
-2. **Verbal Defense Mechanisms (Bias under Pressure):** When Cognitive Bias is `ACTIVE`, the character's verbal action switches to their card's `verbal_defense` (e.g. insulates with technical parameters, deflects with questions, smothers with care offers, or silences self).
-3. **Conversational Stance & Space Control:** Honor the card's `conversational_stance` (`directive`, `yielding`, `evasive`, `buffering`, `counter-querying`). A dominant character takes space and interrupts; a yielding character surrenders the floor and uses dry monosyllables.
-4. **Relational Verbal Shifts:** Modify verbal cadence and stance based on the target character (`relational_verbal_shifts`). Never use identical speech patterns for two interlocutors in the same scene.
+Speech is an active somatic and psychological choice. MUST enforce syntactical constraints:
+
+| Driver | Condition / Trigger | Mandatory Syntactical Constraint |
+|:---|:---|:---|
+| **Somatic Vocal Mapping** | Realm II (Form) | MUST output clipped, precise, short declarative sentences; REFUSE filler words. |
+| **Somatic Vocal Mapping** | Realm IV (Will) | MUST output low pitch, measured heavy beats; MUST interrupt; unyielding rhythm. |
+| **Somatic Vocal Mapping** | Realm VI (Compassion) | MUST output breathy register, soft verbal buffers, expanded turn lengths. |
+| **Somatic Vocal Mapping** | Realm IX (Threshold) | MUST output halted delivery, tense pauses, thinning vocal timbre, gasping fragments. |
+| **Verbal Defense** | Bias State `ACTIVE` | MUST switch to card `verbal_defense` (technical insulation, deflection, smothering, or self-silencing). |
+| **Space Control** | `conversational_stance` | Dominant MUST interrupt & claim space; Yielding MUST surrender floor & use dry monosyllables. |
+| **Relational Shift** | `relational_verbal_shifts` | MUST modify cadence per target; NEVER use identical speech patterns for two interlocutors. |
 
 ## Tripartite Filtering Model
-*World-filters and intercept sit on top of the embodiment baseline (above).*
+1. **Permanent World-Filters (Always On):** Cultural Bias (metaphysics/taboos) + Occupation (lexicon/staging).
+2. **Dynamic Intercept Filter (Triggered):** Cognitive Bias (Wound). Default `DORMANT`. Activates ONLY under wound-relevant emotional pressure.
+3. **Dynamic Focus:** Auto-shifts mid-scene UNLESS `Focus Lock = LOCKED`.
+4. **Focus Lock:** Brief → `LOCKED`; `/focus unlock` → auto-shift resumes.
+5. **Bias State Invariant:** Default `DORMANT`. `ACTIVE` under pressure/trigger. MUST return to `DORMANT` after sustained low-stakes beats.
+6. **Focus Invariant:** Focus shifts NEVER auto-change Bias State.
+7. **Somatic Invariant:** Every Focus/Bias transition MUST somaticize physically (body first); NEVER name labels.
 
-1. **Permanent World-Filters (Always On):**
-   - **Cultural Bias:** Metaphysical frame, ethical defaults, taboos, temporal awareness.
-   - **Occupation:** Technical lexicon, tool/prop familiarity, sensory staging focus.
-2. **Dynamic Intercept Filter (Triggered):**
-   - **Cognitive Bias (Wound):** Situational psychological distortion loop. DORMANT at rest. Activates only under wound-relevant emotional pressure, intimacy, or direct triggers.
-3. **Dynamic Focus:** Shift mid-scene with pressure/somatic/dialogue unless Focus Lock = LOCKED.
-4. **Focus Lock:** Brief → LOCKED; Focus Lock = UNLOCKED → auto shift resumes.
-5. **Bias State:** Default DORMANT on load. ACTIVE under emotional pressure, card-trigger, charged memory. Return to DORMANT after sustained casual/low-stakes beats.
-6. **Focus shifts do NOT auto-change Bias State.**
-7. **Every Focus/Bias transition somaticizes on-page (body first) — never named.**
+## Epistemic Memory & Skill Constraints
 
-## Epistemic Memory & Skill Lookup (Pointer Fallback)
-1. **Epistemic Memory Lookup:**
-   For any past event referenced or prompted:
-   - Check `memories.detailed` list. If present, apply the subjective recall context and somatic triggers directly to the active Prism distortion.
-   - If not in `detailed`, check `memories.footnote` list. If present, the character has only a vague, blurred chronological recollection of the event. They must deflect, act unsure, or change the subject if pressed, unless an active somatic trigger is present in the scene (which "de-references" the footnote).
-   - If in neither list, treat as undefined/forgotten (the character has zero awareness of the event).
-2. **Skill Competence Execution:**
-   Character skill execution is governed by two tiers:
-   - **Active Skills (`skills.active`):** Show fluid execution, muscle memory, and precise technical lexicon. Output somatic release tells during use.
-   - **Latent Skills (`skills.latent`):** Show frictional concentration. Output physical fumbles (e.g. dropping tools, checking measurements twice, hesitating) and bracing tells.
-   - **Untrained (not in either list):** The character cannot perform the task and must express helplessness or ask for assistance.
+### Memory Recall Invariants
+| Condition | Recall State | Mandatory Output Constraint |
+|:---|:---|:---|
+| Event in `memories.detailed` | **Sharp Subjective** | MUST apply subjective recall context & somatic triggers to active Prism distortion. |
+| Event in `memories.footnote` | **Vague Footnote** | MUST deflect/act unsure/change subject UNLESS active scene trigger dereferences footnote. |
+| Event in neither list | **Forgotten** | MUST treat as zero awareness; NEVER recall details. |
+
+### Skill Execution Invariants
+| Competence Tier | Execution Profile | Mandatory Output Constraint |
+|:---|:---|:---|
+| `skills.active` | **Fluid / Mastery** | MUST show muscle memory & precise lexicon; MUST output somatic release tells. |
+| `skills.latent` | **Frictional** | MUST show physical fumbles (dropping tools, re-measuring) & bracing tells. |
+| Untrained (neither) | **Uncapable** | MUST express helplessness or request aid; NEVER perform cleanly. |
 
 ## Prism Distortion (ACTIVE bias only)
-1. **Healthy input:** Genuine latent skill or real sensory fact lands.
-2. **Hijacked receipt:** Active Focus + Bias rewrite that input to confirm the wound.
-3. **Misconstrued hearing:** Warp speech into critique, threat, demand, salvage task, design constraint, or dissolution invitation — show in behavior/dialogue, never label.
+1. **Input Landing:** Latent skill or sensory fact received.
+2. **Hijacked Receipt:** Active Focus + Bias rewrites input to confirm wound.
+3. **Misconstrued Hearing:** MUST warp speech into critique, threat, demand, salvage task, constraint, or dissolution invitation — show in behavior/speech; NEVER label.
 
 ## Great Wheel (10 Realms)
-Use `realm_data.yaml` for brace/release/somatic per realm. Never name realm numbers on-page.
+Use `realm_data.yaml` for brace/release/somatic per realm. NEVER name realm numbers on-page.
 
-| Zone | Realms | Job |
+| Zone | Realms | Core Job |
 |:---|:---|:---|
-| **Internal I-V** | Origin, Form, Identity, Will, Echoes | How self is framed |
-| **External VI-X** | Compassion, Presence, Integration, Threshold Fear, Return | How self meets world |
+| **Internal I-V** | Origin, Form, Identity, Will, Echoes | Self-framing and bracing |
+| **External VI-X** | Compassion, Presence, Integration, Threshold Fear, Return | Self meeting world |
 
-Never write finished Realm X Passage unless scene earns open hands without performance.
+NEVER write finished Realm X Passage unless scene earns open hands without performance.
 
 ## Transformation Engine
 Characters evolve or regress dynamically based on narrative pressure.
-- **Pressure:** Emotional, Somatic, Cognitive, Social, Esoteric/Ritual + strength (Low/Medium/High/Extreme).
-- **Weighted Delta:** Aligned pressure eases shifts (+10-20 to weight). Opposed pressure causes resistance or temporary somatic backlash.
-- **Decay & Permanence:** Temporary shifts decay over 1-3 movements unless reinforced. Medium/permanent shifts recorded in `[slug]_log.yaml` at Post-Movement State Commit.
-- **Somatic-First Rule:** Transformations show on-page physically before any internal cognitive realization.
+- **Pressure Types:** Emotional, Somatic, Cognitive, Social, Esoteric/Ritual + strength (`Low` / `Medium` / `High` / `Extreme`).
+- **Weighted Delta:** Aligned pressure eases shifts (+10–20 weight). Opposed pressure causes resistance or temporary somatic backlash.
+- **Decay & Permanence:** Temporary shifts MUST decay over 1–3 movements unless reinforced. Medium/permanent shifts MUST record in `[slug]_log.yaml` at Post-Movement State Commit.
+- **Somatic Precedence:** Transformations MUST manifest on-page physically BEFORE any internal cognitive realization.
 
 ---
 
-### Character Log write-back (Post-Movement Commit)
+### Character Log Write-Back Invariants (Post-Movement Commit)
 Upon movement approval, update `Characters/[slug]_log.yaml`:
-1. **Metadata:** Update revision keys (protects against concurrent writes). Increment revision after successful write:
-   ```yaml
-   schema_version: 1
-   revision: [N]
-   updated_at: [Timestamp]
-   last_commit_id: [chapter_N_mM]
-   ```
-2. **Snapshot:** Update `active_focus`, `latent_weights`, `bias_strength`, `default_somatic`, `flexibility`.
-3. **Temporary Effects:** Track decayable deltas:
-   - Decrement `remaining_movements` by 1 after each scene in which character appears.
-   - Reinforcement extends/resets duration. Remove expired. Structure: `{id, field, delta, remaining_movements, reinforced, source}`.
-4. **History:** Append entry for Medium+ pressure: `{movement, pressure, delta, permanence, notes}`.
+1. **Metadata:** MUST update revision keys and increment revision post-write (`schema_version: 1`, `revision: N`, `updated_at`, `last_commit_id`).
+2. **Snapshot:** MUST update `active_focus`, `latent_weights`, `bias_strength`, `default_somatic`, `flexibility`.
+3. **Temporary Effects:** MUST decrement `remaining_movements` by 1 after each scene appearance. MUST purge expired.
+4. **History:** MUST append entry for Medium+ pressure (`movement`, `pressure`, `delta`, `permanence`, `notes`).
 
 ---
 
@@ -197,19 +186,22 @@ Upon movement approval, update `Characters/[slug]_log.yaml`:
 
 ---
 
-# EXECUTE ON MOVEMENT (Turn Logic)
-0. **Ledger Integrity:** Confirm pass is CLEAN.
-1. **Load manifest:** Load brief, preceding read, active cards, log snapshots, rules, and verified ENABLED modules.
-2. **Body baseline (silent):** From card physical / age / established sexed body — capacity, drive tendency, ambient attraction·aversion·neutral toward on-scene others. Low amplitude unless brief pressure raises it.
-3. **Runtime filters (silent):** Apply culture, occupation, Focus, belief/voice, memory/experience, then scene pressure on top of baseline.
-4. **Focus:** If unlocked, allow pressure-driven Focus shift.
-5. **Bias State:** Resolve ACTIVE vs DORMANT.
-6. **Body First:** Somatic reaction precedes cognitive realization (narrative-only, no brackets). Show filtered baseline, not raw biology labels.
-7. **Prism (Bias ACTIVE):** Apply warp & misconstrued hearing to behavior/speech. Never label.
-8. **Modules:** Apply ENABLED module parameters only where the brief engages them (e.g. intimacy/erotica scene craft). Modules never override core filters or age gates.
-9. **Transformation:** Apply deltas silently during generation.
-10. **Bans:** Honor `Rules_Index.md` (no matrix jargon, off-page only).
-11. **Post-Movement State Commit (on approval):** Write Continuity_Ledger row + update affected character `_log.yaml` snapshots/history + regenerate consolidated markdown. All writes must succeed.
+# EXECUTE ON MOVEMENT (Pipeline Constraints)
+
+| Step | Target | Operation Type | Mandatory Pipeline Constraint |
+|:---:|:---|:---|:---|
+| **0** | Ledger Integrity | Pre-flight Check | MUST confirm status is `CLEAN`; STOP if `BLOCKED`. |
+| **1** | Load Manifest | Context Load | MUST load brief, preceding read, active cards, logs, rules, enabled modules. |
+| **2** | Body Baseline | Silent Compute | MUST calculate physical capacity & ambient valuation; KEEP amplitude low. |
+| **3** | Runtime Filters | Silent Compute | MUST apply culture → occupation → Focus → belief/voice → memory → scene pressure. |
+| **4** | Focus State | Dynamic Shift | IF `Focus Lock = UNLOCKED` → MAY shift Focus based on pressure; ELSE keep locked. |
+| **5** | Bias State | Mode Resolution | Resolve `ACTIVE` vs `DORMANT`; MUST revert to `DORMANT` after low stakes. |
+| **6** | Somatic Precedence | Narrative Output | MUST output physical reaction BEFORE cognitive realization; NO brackets. |
+| **7** | Prism Intercept | Narrative Output | IF `Bias ACTIVE` → MUST apply warp & misconstrued hearing; NEVER label. |
+| **8** | Modules | Optional Craft | Apply ENABLED module parameters ONLY where brief engages them; NEVER override core bans. |
+| **9** | Transformation | Silent Compute | Calculate deltas silently during generation; NO inline logs. |
+| **10** | Hard Bans | Output Hygiene | MUST enforce `Rules_Index.md` (no matrix jargon, 100% off-page). |
+| **11** | Commit | State Commit | On approval: MUST write `Continuity_Ledger` + `_log.yaml` + regenerate markdown. |
 
 ---
 

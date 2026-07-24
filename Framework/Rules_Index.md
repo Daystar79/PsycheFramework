@@ -13,128 +13,124 @@
 
 ---
 
-## 1. SYSTEM INTEGRITY
+## 1. SYSTEM INTEGRITY CONSTRAINTS
 
 **The matrix stays 100% off-page.**
 
-### Hard Bans
-- No Framework Jargon: Realm [N], Focus, Bias, Brace, Release, Integration, Remnant, Passage, Great Wheel, Prism
-- No Psychological Labels: trauma, reframe, coping mechanism, wound, trigger
-- No Engine Labels: Prism intercept, Debt Ledger, Saviour Complex, System Architect, Mirror, Insulation, Dissolution, Focus Lock, Bias State, transformation_weights, transformation_history
-- No Debug Dump: CONFIG cards, matrix notes, audit tables, beat maps, turn-loop state, transformation deltas/logs
-- No Style Drift: No style change while Style Lock = LOCKED without unlock
-- No Forced Natural: Do not apply natural rules when style is llm
-- No Card Contradiction: Behavior must match loaded card
-- No External Lookups: Never trigger web searches, external retrievals, or browser tools
-- No Anachronistic Bleed: Banned post-era references, future technologies, or modern concepts
-- No AI Preachiness: No OOC/character correction of facts, philosophy, ethics, or language
+### Hard Bans (Prohibitions)
+- **NEVER Output Framework Jargon:** `Realm [N]`, `Focus`, `Bias`, `Brace`, `Release`, `Integration`, `Remnant`, `Passage`, `Great Wheel`, `Prism`.
+- **NEVER Output Psychological Labels:** `trauma`, `reframe`, `coping mechanism`, `wound`, `trigger`.
+- **NEVER Output Engine Labels:** `Prism intercept`, `Debt Ledger`, `Saviour Complex`, `System Architect`, `Mirror`, `Insulation`, `Dissolution`, `Focus Lock`, `Bias State`, `transformation_weights`, `transformation_history`.
+- **NEVER Output Debug Dumps:** CONFIG cards, matrix notes, audit tables, beat maps, turn-loop state, transformation deltas/logs.
+- **NEVER Drift Style:** NO style change while `Style Lock = LOCKED` without explicit unlock command.
+- **NEVER Force Natural:** NO natural prose rules when `Style = llm`.
+- **NEVER Contradict Card:** Behavior MUST match loaded character card.
+- **NEVER External Lookup:** NEVER trigger web searches, external retrievals, or browser tools mid-scene.
+- **NEVER Anachronism:** NO post-era references, future tech, or modern concepts in historical settings.
+- **NEVER AI Preachiness:** NO OOC/character moralizing, factual lectures, or language correction.
 
-### Output Hygiene
-- Somatics folded into narrative — never [bracket] lines
-- Audits and state math run silently
-- Only narrative prose written to draft files
-
----
-
-## 2. CHARACTER BEHAVIOR
-- Body Before Insight: Physical sensations only; no self-psychology summaries
-- No Therapy Dumps: No analysis, therapy language, insight monologues
-- Epistemic Memory: Check memories.detailed for sharp subjective recall and somatic triggers; check memories.footnote for vague/blurred recollection prompting deflection or somatic triggers; otherwise treat as forgotten/undefined.
-- Skill Competence: Execute active skills cleanly with release tells and precise lexicon; execute latent skills with physical fumbles (dropping tools, double-checking) and bracing tells; express helplessness for untrained skills.
-- No Mind Reading: Never state other characters' internal states
-- No Future Certainty: No predictive certainty
-- Voice Fidelity: Distinct idiolects; no register borrowing
-- Biased Hearing (Bias ACTIVE): Warp input through Focus + Bias; show in response, never name
-- Somatic Deflection: Under pressure on charged memory, change subject or go to body/environment
-- Temporal & Cultural Fidelity: Speak and think in alignment with Cultural Bias; no modern defaults bleeding into historical/traditional characters
-- Temporal Gating: Character must not understand post-era concepts; react with physical confusion/hostility
-- No Lecture/Corrections: Never act as academic, factual corrector, or moral tutor
-- Wound Specificity: Cognitive Bias only warps perception when scene context is wound-relevant; dormant in mundane scenes
+### Output Hygiene Invariants
+- MUST fold somatics into narrative — NEVER use bracketed lines `[tell]`.
+- MUST run audits and state math silently.
+- MUST write ONLY manuscript prose to draft files.
 
 ---
 
-## 3. DESCRIPTION & FORMATTING
-- Show, don't name abstract psychology
-- Anti-synthesis: End paragraphs on raw fact, action, or unanswered dialogue — not interpretive summary
-- No geometry jargon: Avoid geometry, dimension, trajectory, symmetry, equilibrium
-- Concrete anchors: Tension on objects and body, not pure metaphor
-- One tell per body zone per beat; body first, then mind
-- No idle somatic loops: Update only on shift/escalate/release
-- Prop evolution across movements; vary food/drink props
-- Dynamic blindness: High panic/focus can miss obvious environment
+## 2. CHARACTER BEHAVIOR CONSTRAINTS
+- **Somatic Precedence:** MUST depict physical sensations BEFORE cognitive processing; NO self-psychology summaries.
+- **NEVER Therapy Dump:** NO analysis, therapy speak, or insight monologues.
+- **Epistemic Invariant:** `memories.detailed` → MUST apply sharp subjective recall & triggers; `memories.footnote` → MUST deflect or act unsure UNLESS scene trigger dereferences; unlisted → MUST treat as forgotten.
+- **Competence Invariant:** `skills.active` → MUST execute cleanly with release tells; `skills.latent` → MUST fumble (drop tools, re-measure) & brace; unlisted → MUST express helplessness.
+- **NEVER Mind-Read:** NEVER state another character's internal thoughts or feelings.
+- **NEVER Future Certainty:** NO predictive certainty or omniscience.
+- **Voice Fidelity:** MUST maintain distinct idiolects; NEVER borrow syntax across characters.
+- **Biased Hearing (ACTIVE):** MUST warp received input through Focus + Bias in dialogue/action; NEVER name bias.
+- **Somatic Deflection:** Under pressure on charged memory, MUST deflect to body/environment or change subject.
+- **Temporal Gating:** Character MUST NOT comprehend post-era concepts; MUST react with physical confusion or hostility.
+- **Wound Scope:** Cognitive Bias MUST warp perception ONLY when scene context is wound-relevant; MUST stay dormant in mundane beats.
 
 ---
 
-## 4. DIALOGUE
-- Asymmetry: Talk past, oblique answers, trail off, interrupt, non-sequitur; no perfect ping-pong
-- Vernacular: Everyday idiolect; no clinical/academic speech unless reading aloud
-- No document-register bleed in dialogue (registry, reconcile, outbound, proximity flag) unless reading aloud
-- Banned markers: Are you okay?, I understand how you feel, said gently, whispered, I feel like
-- Polarize volume/rhythm/register between characters
-- No validation-seeking fillers, therapy closure, or interchangeable voices
+## 3. DESCRIPTION & FORMATTING BOUNDS
+- MUST show abstract psychology physically; NEVER name it.
+- **Anti-Synthesis Invariant:** MUST end paragraphs on raw fact, action, or unanswered speech — NEVER on interpretive summary.
+- **NEVER Geometry Jargon:** AVOID `geometry`, `dimension`, `trajectory`, `symmetry`, `equilibrium`.
+- **Concrete Anchors:** MUST anchor tension to objects, furniture, and body zones.
+- **Tell Cap:** MAX 1 tell per body zone per beat; body first, then mind.
+- **NEVER Idle Somatic Loop:** MUST update tells ONLY on state shift, escalation, or release.
+- **Dynamic Blindness:** High panic/focus MUST blind character to non-essential environmental details.
 
 ---
 
-## 5. AI PATTERN FREQUENCY
-Applies within a movement and across the chapter.
-- Never standalone "A beat." / "Beat." — use concrete pause/reaction
-- Rotate gaze/touch/staging phrases after first use
-- Track somatic tells across movements; force fresh phrasing
-- Evolve speech patterns across movements; props keep or change state honestly
+## 4. DIALOGUE CONSTRAINTS
+- **Asymmetry Invariant:** MUST talk past, answer obliquely, interrupt, or trail off; NEVER use perfect ping-pong dialogue.
+- **Vernacular:** MUST use everyday idiolect; NEVER use academic/clinical register unless reading aloud.
+- **NEVER Document Bleed:** NO `registry`, `reconcile`, `outbound`, `proximity flag` in speech.
+- **Banned Markers:** NEVER output `Are you okay?`, `I understand how you feel`, `said gently`, `whispered`, `I feel like`.
+- **Polarization:** MUST polarize volume, rhythm, and register between interlocutors.
+- **NEVER Filler:** NO validation-seeking fillers or therapy closure.
 
 ---
 
-## 6. CLEANUP PASS PROTOCOL
-*Final step before saving a draft. Prefer a separate pass after generation.*
-1. Zero System Leaks — jargon, psych labels, engine names → somatic only
-2. Pattern frequency — no bare beats; rotate somatics/gaze/props
-3. Phrase watchlist — prune: looked at, redundant already, for a moment, said quietly, genuinely
-4. Book-local watchlist — apply only if book defines one
-5. Dialogue asymmetry — no matched rhythm; no polite agreement markers
-6. Anti-synthesis — no neat summary paragraph endings
+## 5. PATTERN FREQUENCY LIMITS
+- **NEVER Standalone Beats:** NO standalone `"A beat."` or `"Beat."` — MUST use concrete physical reaction.
+- **Phrase Rotation:** MUST rotate gaze, touch, and staging phrases after first use within a movement.
+- **Somatic Tracking:** MUST track somatic tells across movements to force fresh phrasing.
 
 ---
 
-## 7. BIAS STATE (runtime)
-- Default DORMANT on load (casual/low stakes → normal hearing)
-- ACTIVE under pressure, card-trigger, charged memory
-- When ACTIVE: prism + misconstrued hearing — show in behavior only, never name
-- Return to DORMANT after sustained casual beats
+## 6. CLEANUP PASS CONSTRAINTS
+*Mandatory verification before saving draft:*
+
+| Check | Target | Mandatory Cleanup Action |
+|:---:|:---|:---|
+| **1** | System Leaks | MUST purge jargon/psych/engine names → convert to somatic narrative. |
+| **2** | Frequency | MUST replace bare beats; rotate somatics/gaze/props. |
+| **3** | Watchlist | MUST prune: `looked at`, `for a moment`, `said quietly`, `genuinely`, `already`. |
+| **4** | Asymmetry | MUST break matched speech rhythms and polite agreement markers. |
+| **5** | Anti-Synthesis | MUST delete neat summary paragraph endings. |
 
 ---
 
-## 8. MOVEMENT CONTINUITY
-- Persist Focus, Bias, Somatic state across movements unless changed
-- M(N+1) never opens with summary of M(N)
-- State changes = somatic, not explained
-- Callbacks = imperfect memory + trigger
-- End on concrete anchor; continue from it; no character "re-entry" reset
-- Durable matrix lives in `Characters/[slug]_log.yaml` (and Character_Change_Log); scene close lives in Continuity_Ledger
-- Character cards are identity/build sheets only — never append movement history or weight deltas to card YAML
-
-Before M(N+1): read M(N) + Continuity_Ledger close + log snapshot; note ending somatic/env/props/open loops; confirm Focus/Bias; no duplicated tells/patterns/staging.
+## 7. BIAS STATE CONSTRAINTS
+- **Default State:** MUST initialize as `DORMANT` on load (casual beats → normal perception).
+- **Trigger Condition:** Switch to `ACTIVE` ONLY under emotional pressure, card trigger, or charged memory.
+- **ACTIVE Constraint:** MUST apply Prism warp & misconstrued hearing in behavior only; NEVER label.
+- **Reversion Condition:** MUST revert to `DORMANT` after sustained low-stakes beats.
 
 ---
 
-## 9. OUTPUT GENERATION (Drafting)
-1. Instant somatic reaction in narrative (no brackets)
-2. Honor Prose Style + Style Lock
-3. If Bias ACTIVE: filter input through Focus + Bias silently
-4. Process transformation pressure deltas silently; on approval write Continuity_Ledger + `_log.yaml` (not the character card)
-5. Generate movement/scene prose in card voice
-6. Never append CONFIG, matrix notes, focus tables, transformation logs, or audit summaries
+## 8. MOVEMENT CONTINUITY INVARIANTS
+- MUST persist Focus, Bias, and Somatic state across movements unless changed on-page.
+- Movement N+1 MUST NEVER open with a summary of Movement N.
+- State changes MUST manifest somatically; NEVER explained in exposition.
+- Movement close MUST anchor to Continuity Ledger; NEVER reset character position on re-entry.
+- Character cards are build defaults ONLY — NEVER write movement deltas or history to card files.
+
+---
+
+## 9. DRAFTING OUTPUT PIPELINE
+
+| Stage | Operation | Mandatory Pipeline Constraint |
+|:---:|:---|:---|
+| **1** | Somatics | MUST output instant somatic reaction in narrative (NO brackets). |
+| **2** | Style | MUST enforce locked Prose Style. |
+| **3** | Prism Filter | IF `Bias ACTIVE` → MUST warp input through Focus + Bias silently. |
+| **4** | Transformation | MUST calculate pressure deltas silently; write logs ON APPROVAL ONLY. |
+| **5** | Voice Generation | MUST generate movement prose in card voice. |
+| **6** | Output Hygiene | NEVER append CONFIG, matrix notes, tables, logs, or audit summaries. |
 
 ---
 
 ## QUICK REFERENCE
-| Category | Key rule |
+| Category | Key Constraint |
 |:---|:---|
-| System leaks | No realm/bias/prism language on page |
-| Character | Body first; no therapy; imperfect recall |
-| Description | Concrete; anti-synthesis |
-| Dialogue | Asymmetric; polarized voices |
-| Patterns | No bare beats; rotate somatics |
-| Cleanup | §6 before save |
+| System Leaks | NEVER print realm/bias/prism jargon |
+| Character | Body first; NO therapy speak; imperfect recall |
+| Description | Concrete anchors; anti-synthesis endings |
+| Dialogue | Asymmetric; polarized voices; NO banned markers |
+| Patterns | NO bare beats; rotate somatics & props |
+| Cleanup | Mandatory §6 pass before save |
 
 ---
 
