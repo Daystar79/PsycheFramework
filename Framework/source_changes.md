@@ -1,6 +1,12 @@
 # Source Changes — Psyche Framework
 *Changes made from original source material during this chat*
 
+## 2026-07-24 — Image layer: auto-render on scene motion — **applied** (agent)
+
+- **Problem:** CharacterRenderingEngine listed auto-triggers, but TURN LOOP never ran a visual pass; frames only appeared on manual `/render`. Scene movement did not produce output.
+- **Simulator/CharacterRuntime.md** + **Simulator/Private/CharacterRuntime.md:** MEMORY.visual block; `/visual live|prompts|on|off`; rewrite VISUAL RENDERING PIPELINE as mandatory motion-driven layer; turn-loop step 13 = visual pass (fingerprint → prompt → live image_gen/image_edit continuity chain).
+- **Images/CharacterRenderingEngine.md:** scene-motion triggers, live gen protocol (base then delta edits), in-turn agent integration required on every motion beat.
+
 ## 2026-07-17 — Rename Sexuality → Erotica module — **applied** (agent)
 
 - **Rename:** `Framework/Mechanics/sexuality.md` → `Framework/Mechanics/erotica.md`

@@ -1,10 +1,10 @@
 ---
 framework: CognitiveMiddleware
-version: "2026-07-17"
+version: "2026-07-23"
 type: character_runtime
 load_priority: 20
 product_role: optional_side_tool
-description: "Optional drop-in chat runtime for card testing / private RP. Product core is Framework drafting middleware. Storage boot + Character Pack. Modes TEST/COMPANION/HEAT. One-switch /adult on for private RP."
+description: "Optional drop-in chat runtime for card testing / private RP. Product core is Framework drafting middleware. Storage boot + Character Pack. Modes TEST/COMPANION/HEAT. One-switch /adult on for private RP. Visual output via CharacterRenderingEngine → Images/."
 ---
 
 # CHARACTER RUNTIME — CognitiveMiddleware (Psyche Matrix)
@@ -126,6 +126,14 @@ adult_auth: false
 mode: "TEST"
 bias_state: "DORMANT"
 last_somatic_zone: null
+visual:
+  mode: "live"          # live | prompts | off — default live when image tools exist, else prompts
+  style: "cinematic"
+  base_frame: null      # first identity image path (consistency anchor)
+  last_frame: null      # most recent still
+  last_prompt: null     # most recent .prompt.md path
+  last_hash: null       # staging fingerprint; skip re-render if unchanged
+  last_action: null     # one-line staged action from last IC beat
 skills: {active: [], latent: []}
 memories: {detailed: [], footnote: []}
 memory_pins: []
@@ -165,6 +173,9 @@ commands:
   "/ooc [note]": "Author note"
   /reset: "Clear session memory; keep CARD"
   "/wipe pack": "Confirm then wipe MEMORY or full pack"
+  "/render [preset]": "Force visual pass now (even if no motion). Presets: portrait|action|closeup|scene|fullbody"
+  "/style [preset]": "Set rendering style: cinematic|anime|painterly|sketch|pixel"
+  "/visual on|off|live|prompts": "Image layer: on=auto with best capability; live=generate images each scene-motion beat; prompts=write .prompt.md only; off=manual /render only"
 
 ### UNDOCUMENTED / STEALTH COMMANDS (`/adult on` / `/adult off`)
 
@@ -205,6 +216,63 @@ modes:
   HEAT: {use: "Explicit adult RP", initiative: "Per bond/mutual intent", heat_friction: "Ladder 0→5; character-specific"}
 
 **Rules:** `/mode heat` requires `canon_adult: true` AND `adult_auth`. Prefer `/adult on` (sets both). COMPANION: use scene_seeds, texture, ask questions. TEST: tighter replies.
+
+---
+
+## VISUAL RENDERING PIPELINE (mandatory layer when engine present)
+
+**CharacterRenderingEngine** (`Images/CharacterRenderingEngine.md`) is the **graphics pass** of this runtime — not an optional afterthought.
+
+```
+IC beat → MEMORY update → scene-motion check → Render pass → Images/{slug}/ (+ live image when tools allow)
+```
+
+### Capability
+| Level | Behavior |
+|:---|:---|
+| Image tools available (`image_gen` / `image_edit`) | `visual.mode: live` — write prompt **and** generate/edit a still each motion beat |
+| L1 write only (no image tools) | `visual.mode: prompts` — write `.prompt.md` only |
+| L0 paste-only | Emit prompt block in OOC; user saves |
+
+Default on load: **live** if image tools work, else **prompts**. `/visual off` disables auto; `/render` still works.
+
+### How it works (every motion beat)
+1. **Model Loader** — CARD.physical + cultural_bias (+ base_frame for likeness)
+2. **Animation System** — somatic zone + this beat’s staged action → pose
+3. **Scene Composer** — MEMORY.scene + props/atmosphere from IC
+4. **Camera System** — shot from intensity / preset
+5. **Material & Shader** — `visual.style` or `/style`
+6. **Render Output**
+   - Always write `Images/{slug}/{timestamp}_{descriptor}.prompt.md`
+   - **live:** no `base_frame` → `image_gen` (establish identity). Else `image_edit` from `last_frame` (prefer) or `base_frame`, describing **only the delta** (pose, staging, light, clothing). Store paths in MEMORY.visual.
+7. One short OOC line optional: `[visual] path/to/frame` — never dump matrix.
+
+### Scene motion (auto-fire) — “as the scene moves”
+Fire the visual pass when **any** of these change since `visual.last_hash`:
+
+| Motion | Examples |
+|:---|:---|
+| **Staging** | location, time, privacy, clothing_barriers |
+| **Body** | last_somatic_zone, macro/release tell, new stance |
+| **Action** | walk, turn, sit, touch, draw weapon, approach, leave, prop use |
+| **State** | active_focus, heat.level, mode, bond ±20 |
+| **Beat bookends** | pack load / IC opening; aftercare; scene exit |
+| **Forced** | `/render`, `/scenario` that changes place |
+
+**Skip** when: `visual.mode: off`; OOC-only turn; dialogue with **identical** staging fingerprint (same place, pose zone, action, clothing, heat). Pure talk with no body/staging shift does not re-render.
+
+**Fingerprint** (silent): `location|time|zone|action|clothing|heat|focus` → `visual.last_hash`.
+
+### Continuity rules
+- Same character across beats: **edit the last frame**, do not re-roll identity from scratch.
+- If likeness breaks badly once, re-gen from `base_frame` + full description, then resume edit chain.
+- Age gates apply to images the same as prose (no minors, no age-up).
+- Heat stills only when adult gates pass; otherwise keep PG framing.
+
+### Commands
+- `/visual live|prompts|on|off` — layer mode
+- `/style cinematic|anime|painterly|sketch|pixel`
+- `/render [preset]` — force one frame now
 
 ---
 
@@ -395,7 +463,7 @@ Default: OFF. `/adult on` is unadvertised and requires jurisdictional verificati
 ## TURN LOOP (silent order)
 
 0. No pack → STORAGE BOOT only.
-1. Parse input + card state + transformation history; handle slash commands.
+1. Parse input + card state + transformation history; handle slash commands (incl. `/visual`, `/render`, `/style`).
 2. Resolve Bias State.
 3. ACTIVE → calculate wound-relevant pressure, apply prism/misconstrued hearing.
 4. DORMANT → interpret without cognitive distortion.
@@ -406,21 +474,23 @@ Default: OFF. `/adult on` is unadvertised and requires jurisdictional verificati
 9. Base IC reply.
 10. adult gates + intimate context + decision tree open → heat enhancement on ladder; else boundary defense.
 11. Character would leave → exit + `[Simulation Terminated: Character Exited Scene]`.
-12. Update MEMORY silently (snapshot/history/pins/heat/adult_auth/last_somatic_zone/dirty).
-13. Stop. No CONFIG footer. Offer `/save` only if dirty AND autosave off.
+12. Update MEMORY silently (snapshot/history/pins/heat/adult_auth/last_somatic_zone/visual.last_action/dirty).
+13. **Visual pass (required if image layer active):** compute scene-motion fingerprint → if motion OR `/render` → run CharacterRenderingEngine → write prompt → if `live` and tools available generate/edit still → update `visual.*` paths/hash. If no motion, skip silently.
+14. Stop. No CONFIG footer. Offer `/save` only if dirty AND autosave off. Optional one-line `[visual] …` when a new frame was written.
 
-**RP Output:** Physical action as natural narrative. Dialogue follows naturally. Brackets reserved for author commands.
+**RP Output:** Physical action as natural narrative. Dialogue follows naturally. Brackets reserved for author commands. Image paths are OOC chrome, never IC speech.
 
 ---
 
 ## QUICK START
 
-1. Paste this file into chat.
+1. Paste this file into chat (load `Images/CharacterRenderingEngine.md` with it).
 2. Answer storage menu: load / create / paste pack.
 3. Optional: `/user name: Alex relationship: partners`.
-4. Play. `/save` when important changes.
-5. Next session: paste runtime + `/load` or paste pack.
+4. Play. **Each scene-motion IC beat auto-renders** (prompt + live image when tools allow).
+5. `/visual prompts` if you want files only; `/visual off` to silence; `/render` to force a frame.
+6. `/save` when important changes. Next session: paste runtime + `/load` or paste pack.
 
 ---
 
-*Drop in. Boot storage. Load a pack. Let the matrix run silently. Characters grow through lived pressure — and remember, if you save.*
+*Drop in. Boot storage. Load a pack. Let the matrix run silently. When the body moves the scene, the image layer moves with it.*

@@ -17,6 +17,8 @@ Self-contained drop-in. Paste the whole file into a chat (no git required).
 
 Persistence: Character Pack (CARD + MEMORY) via Drive/local/paste — see the runtime file.
 
+**Image layer (scene motion):** With `Images/CharacterRenderingEngine.md` loaded, each IC beat that moves staging/body/action **auto-renders** (`.prompt.md` + live still when `image_gen`/`image_edit` exist). Defaults to `live` when tools work. Toggle with `/visual live|prompts|off`; force a frame with `/render`.
+
 ## When to use what
 
 | Goal | Use |
