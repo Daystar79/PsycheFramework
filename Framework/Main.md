@@ -97,6 +97,17 @@ Two characters with a similar body baseline may behave oppositely: filters contr
 - **No default eroticization:** body baseline and ambient valuation never force sex, romance plots, or explicit description. Ordinary scenes stay ordinary unless the movement brief calls for intimacy **and** any required erotica/intimacy module is ENABLED and verified.
 - Card instance always wins over generic sex stereotypes. Never apply “all men…” / “all women…” scripts; apply *this* card’s body + *this* stack of filters.
 
+### 4) Speech as Behavioral Action (Syntactical Speech Engine)
+Speech is an active somatic and psychological choice. Dialogue generation MUST follow these four behavioral speech rules:
+1. **Somatic-to-Vocal Action Mapping:** Active Realm intensity directly modifies vocal behavior (using `vocal_behavior` in `realm_data.yaml`).
+   - High Realm II (Form/Bracing) → Clipped, precise, short declarative sentences; refusal of filler words.
+   - High Realm IV (Will/Tension) → Low pitch, measured heavy beats; interrupts with direct statements; unyielding rhythm.
+   - High Realm VI (Compassion/Release) → Breathy register, soft verbal buffers, expanded turn lengths.
+   - High Realm IX (Threshold/Fear) → Halted delivery, tense pauses, thinning vocal timbre, gasping fragments.
+2. **Verbal Defense Mechanisms (Bias under Pressure):** When Cognitive Bias is `ACTIVE`, the character's verbal action switches to their card's `verbal_defense` (e.g. insulates with technical parameters, deflects with questions, smothers with care offers, or silences self).
+3. **Conversational Stance & Space Control:** Honor the card's `conversational_stance` (`directive`, `yielding`, `evasive`, `buffering`, `counter-querying`). A dominant character takes space and interrupts; a yielding character surrenders the floor and uses dry monosyllables.
+4. **Relational Verbal Shifts:** Modify verbal cadence and stance based on the target character (`relational_verbal_shifts`). Never use identical speech patterns for two interlocutors in the same scene.
+
 ## Tripartite Filtering Model
 *World-filters and intercept sit on top of the embodiment baseline (above).*
 

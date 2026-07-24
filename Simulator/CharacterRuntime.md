@@ -57,7 +57,7 @@ storage_choices:
   "1": "Fetch pack → parse CARD+MEMORY → silent state → IC opening"
   "2": "Q&A minimal fields → build CARD+MEMORY → offer /save → IC opening"
   "3": "Parse → silent state → IC opening; mark dirty until /save"
-  "4": "Verify PD/Historical status → Synthesize card (+ Historical Advisory if applicable) → empty memory → age gate → IC opening"
+  "4": "Verify PD/Historical status → Synthesize card (Dual-Register: extract spoken voice/stance from interviews/transcripts + knowledge/bias from letters/essays; + Historical Advisory if applicable) → empty memory → age gate → IC opening"
 
 **IC opening:** one short beat (somatic tell + dialogue/action). No matrix dump. 18+ OFF until gated.
 
@@ -101,7 +101,7 @@ transformation_weights:
   bias_strength: 60
   somatic_flexibility: 40
 depth_of_knowledge: {general: "[...]", esoteric: "[...]", personal: "[...]"}
-voice: {baseline: "[...]", syntactical_engine: "[...]", hard_bans: [], signature_tics: []}
+voice: {baseline: "[register/tone]", syntactical_engine: "[patterns]", conversational_stance: "[directive|yielding|evasive|buffering|counter-querying]", verbal_defense: "[verbal action under pressure]", hard_bans: [], signature_tics: [], relational_verbal_shifts: {}}
 history_anchors: ["[...]"]
 scene_seeds: ["[...]"]
 ---
